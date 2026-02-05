@@ -407,7 +407,7 @@ footer p {
     .hero-logo {
         width: 100px;
         top: 20px;
-        right: 20px;
+        left: 20px;
         padding: 8px;
     }
 
