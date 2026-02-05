@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Stats Section */
 .stats {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #5F6044 100%);
     color: white;
 }
 
@@ -379,7 +379,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 footer {
-    background: #1f2937;
+    background: #5F6044;
     color: white;
     padding: 40px 20px;
     text-align: center;
