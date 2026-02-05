@@ -97,7 +97,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
     padding-bottom: 80px;
     padding-left: 60px;
-    max-width: 800px;
+    padding-right: 60px;
+    max-width: 100%;
+    margin-left: 0;
 }
 
 .hero h1 {
@@ -107,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     text-transform: uppercase;
+    max-width: 900px;
 }
 
 .vision h2,
@@ -121,6 +124,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
     opacity: 0.95;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    max-width: 800px;
 }
 
 .hero .tagline {
