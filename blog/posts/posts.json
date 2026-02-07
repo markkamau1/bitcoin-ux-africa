@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "title": "Getting Started with Bitcoin UX: A Designer's Guide",
+      "slug": "getting-started-bitcoin-ux",
+      "date": "2026-02-06",
+      "author": "Bitcoin UX Africa Team",
+      "category": "Tutorial",
+      "featured_image": "/images/blog/getting-started-bitcoin-ux.jpg",
+      "excerpt": "New to Bitcoin UX design? This comprehensive guide covers everything you need to know to start designing better Bitcoin experiences for African users.",
+      "tags": ["bitcoin", "ux", "design", "tutorial", "beginner"],
+      "published": true
+    }
+  ]
+}

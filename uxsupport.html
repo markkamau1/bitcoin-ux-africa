@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Wallet UX Assessment - Pre-Engagement Form | Bitcoin UX Africa</title>
+    <meta name="description" content="Comprehensive assessment form for Bitcoin wallet teams seeking UX infrastructure support across Africa.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/founders-grotesk-x-condensed">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .form-header h1 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 2.5rem;
+            color: #047857;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-header p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .form-section {
+            margin-bottom: 50px;
+        }
+
+        .form-section h2 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 1.8rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #047857;
+        }
+
+        .form-section-description {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group label .required {
+            color: #dc2626;
+            margin-left: 4px;
+        }
+
+        .form-group .label-description {
+            display: block;
+            font-weight: 400;
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="url"],
+        .form-group input[type="number"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Satoshi', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #047857;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"],
+        .radio-item input[type="radio"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label,
+        .radio-item label {
+            cursor: pointer;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .btn-submit {
+            background: #047857;
+            color: white;
+            padding: 16px 60px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Satoshi', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: #065f46;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(4, 120, 87, 0.3);
+        }
+
+        .rating-scale {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .rating-option {
+            flex: 1;
+            text-align: center;
+        }
+
+        .rating-option input[type="radio"] {
+            display: none;
+        }
+
+        .rating-option label {
+            display: block;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .rating-option input[type="radio"]:checked + label {
+            background: #047857;
+            color: white;
+            border-color: #047857;
+        }
+
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+                border-radius: 8px;
+            }
+
+            .form-header h1 {
+                font-size: 1.75rem;
+                line-height: 1.2;
+            }
+            
+            .form-header p {
+                font-size: 1rem;
+            }
+
+            .form-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .rating-scale {
+                flex-wrap: wrap;
+            }
+
+            .rating-option {
+                flex: 1 1 45%;
+                min-width: 80px;
+            }
+
+            .rating-option label {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .btn-submit {
+                width: 100%;
+                padding: 14px 40px;
+            }
+            
+            .form-header img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px 15px;
+            }
+            
+            .form-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .form-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .rating-option {
+                flex: 1 1 30%;
+            }
+            
+            .rating-option label {
+                padding: 8px 4px;
+                font-size: 0.85rem;
+            }
+            
+            .form-group label {
+                font-size: 0.95rem;
+            }
+            
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="url"],
+            .form-group input[type="number"],
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <a href="index.html" style="display: inline-block; margin-bottom: 20px; color: #047857; text-decoration: none; font-weight: 600;">
+                ← Back to Home
+            </a>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/bitcoin_ux_africa_logo.svg" alt="Bitcoin UX Africa Logo" style="width: 100px; height: 100px; margin: 0 auto;">
+            </div>
+            <h1>Bitcoin Wallet UX Assessment</h1>
+            <p>Pre-Engagement Form for Bitcoin UX Infrastructure Program</p>
+            <p style="margin-top: 10px; font-size: 0.95rem;">This comprehensive assessment helps us understand your current UX state and establish baseline metrics for measuring impact.</p>
+        </div>
+
+       <form id="ux-assessment-form" action="https://formspree.io/f/xnjbqqay" method="POST">
+
+            <!-- SECTION 1: Organization Information -->
+            <div class="form-section">
+                <h2>1. Organization Information</h2>
+                <p class="form-section-description">Tell us about your wallet and team</p>
+
+                <div class="form-group">
+                    <label for="wallet-name">
+                        Wallet/Product Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="wallet-name" name="wallet_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization-name">
+                        Organization/Company Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="organization-name" name="organization_name" required>
+                </div>
+
+                <div class="two-column">
+                    <div class="form-group">
+                        <label for="contact-name">
+                            Primary Contact Name <span class="required">*</span>
+                        </label>
+                        <input type="text" id="contact-name" name="contact_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-role">
+                            Role/Title <span class="required">*</span>
+                        </label>
+                        <input type="text" id="contact-role" name="contact_role" required>
+                    </div>
+                </div>
+
+                <div class="two-column">
+                    <div class="form-group">
+                        <label for="contact-email">
+                            Email Address <span class="required">*</span>
+                        </label>
+                        <input type="email" id="contact-email" name="contact_email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">
+                            Website/Product URL
+                        </label>
+                        <input type="url" id="website" name="website">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="headquarters">
+                        Headquarters Location <span class="required">*</span>
+                        <span class="label-description">City, Country</span>
+                    </label>
+                    <input type="text" id="headquarters" name="headquarters" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="target-markets">
+                        Primary African Markets <span class="required">*</span>
+                        <span class="label-description">Which African countries are you targeting or operating in?</span>
+                    </label>
+                    <textarea id="target-markets" name="target_markets" required></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Product Details -->
+            <div class="form-section">
+                <h2>2. Product Details</h2>
+                <p class="form-section-description">Help us understand your wallet's current state</p>
+
+                <div class="form-group">
+                    <label>
+                        Current Stage <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="stage-concept" name="product_stage" value="concept" required>
+                            <label for="stage-concept"><strong>Concept/Planning</strong> - Still in ideation phase</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="stage-development" name="product_stage" value="development">
+                            <label for="stage-development"><strong>In Development</strong> - Building the product</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="stage-beta" name="product_stage" value="beta">
+                            <label for="stage-beta"><strong>Beta/Testing</strong> - Limited release with users</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="stage-live" name="product_stage" value="live">
+                            <label for="stage-live"><strong>Live/Production</strong> - Publicly available</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="stage-scaling" name="product_stage" value="scaling">
+                            <label for="stage-scaling"><strong>Scaling</strong> - Established product, growing user base</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-count">
+                        Current User Count (Approximate)
+                        <span class="label-description">If not yet launched, enter 0</span>
+                    </label>
+                    <input type="number" id="user-count" name="user_count" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="monthly-active">
+                        Monthly Active Users (Approximate)
+                        <span class="label-description">Users who interact with your wallet at least once per month</span>
+                    </label>
+                    <input type="number" id="monthly-active" name="monthly_active" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="wallet-type">
+                        Wallet Type <span class="required">*</span>
+                    </label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="type-mobile" name="wallet_type[]" value="mobile">
+                            <label for="type-mobile">Mobile (iOS/Android)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="type-web" name="wallet_type[]" value="web">
+                            <label for="type-web">Web Application</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="type-desktop" name="wallet_type[]" value="desktop">
+                            <label for="type-desktop">Desktop Application</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="type-hardware" name="wallet_type[]" value="hardware">
+                            <label for="type-hardware">Hardware Wallet Integration</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="key-features">
+                        Key Features/Functionality <span class="required">*</span>
+                        <span class="label-description">What can users do with your wallet? (sending, receiving, Lightning, savings, etc.)</span>
+                    </label>
+                    <textarea id="key-features" name="key_features" required></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Current UX State (Baseline Metrics) -->
+            <div class="form-section">
+                <h2>3. Current UX State (Baseline Metrics)</h2>
+                <p class="form-section-description">These metrics will help us measure improvement. Best estimates are fine if you don't have exact data.</p>
+
+                <div class="form-group">
+                    <label for="onboarding-completion">
+                        Onboarding Completion Rate (%)
+                        <span class="label-description">What % of users who start onboarding complete it successfully?</span>
+                    </label>
+                    <input type="number" id="onboarding-completion" name="onboarding_completion" min="0" max="100" placeholder="e.g., 65">
+                </div>
+
+                <div class="form-group">
+                    <label for="onboarding-time">
+                        Average Onboarding Time (Minutes)
+                        <span class="label-description">How long does it take users to complete first-time setup?</span>
+                    </label>
+                    <input type="number" id="onboarding-time" name="onboarding_time" min="0" placeholder="e.g., 15">
+                </div>
+
+                <div class="form-group">
+                    <label for="seed-phrase-completion">
+                        Seed Phrase Backup Completion Rate (%)
+                        <span class="label-description">What % of users successfully complete seed phrase backup?</span>
+                    </label>
+                    <input type="number" id="seed-phrase-completion" name="seed_phrase_completion" min="0" max="100" placeholder="e.g., 45">
+                </div>
+
+                <div class="form-group">
+                    <label for="first-transaction-success">
+                        First Transaction Success Rate (%)
+                        <span class="label-description">What % of users successfully complete their first transaction?</span>
+                    </label>
+                    <input type="number" id="first-transaction-success" name="first_transaction_success" min="0" max="100" placeholder="e.g., 70">
+                </div>
+
+                <div class="form-group">
+                    <label for="day7-retention">
+                        Day 7 Retention Rate (%)
+                        <span class="label-description">What % of users return after 7 days?</span>
+                    </label>
+                    <input type="number" id="day7-retention" name="day7_retention" min="0" max="100" placeholder="e.g., 30">
+                </div>
+
+                <div class="form-group">
+                    <label for="day30-retention">
+                        Day 30 Retention Rate (%)
+                        <span class="label-description">What % of users return after 30 days?</span>
+                    </label>
+                    <input type="number" id="day30-retention" name="day30_retention" min="0" max="100" placeholder="e.g., 15">
+                </div>
+
+                <div class="form-group">
+                    <label for="support-tickets">
+                        Monthly Support Tickets (UX-related)
+                        <span class="label-description">Approximate number of support requests related to usability issues</span>
+                    </label>
+                    <input type="number" id="support-tickets" name="support_tickets" min="0" placeholder="e.g., 50">
+                </div>
+
+                <div class="form-group">
+                    <label for="common-issues">
+                        Most Common User Issues <span class="required">*</span>
+                        <span class="label-description">What do users struggle with most? What generates the most support tickets?</span>
+                    </label>
+                    <textarea id="common-issues" name="common_issues" required></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 4: UX Maturity Assessment -->
+            <div class="form-section">
+                <h2>4. UX Maturity Assessment</h2>
+                <p class="form-section-description">Rate your current capabilities (1 = Very Weak, 5 = Very Strong)</p>
+
+                <div class="form-group">
+                    <label>
+                        User Research Capability <span class="required">*</span>
+                        <span class="label-description">How capable is your team at conducting user research and testing?</span>
+                    </label>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <input type="radio" id="research-1" name="research_capability" value="1" required>
+                            <label for="research-1">1</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="research-2" name="research_capability" value="2">
+                            <label for="research-2">2</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="research-3" name="research_capability" value="3">
+                            <label for="research-3">3</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="research-4" name="research_capability" value="4">
+                            <label for="research-4">4</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="research-5" name="research_capability" value="5">
+                            <label for="research-5">5</label>
+                        </div>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Very Weak</span>
+                        <span>Very Strong</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Design System Maturity <span class="required">*</span>
+                        <span class="label-description">Do you have consistent, documented design patterns and components?</span>
+                    </label>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <input type="radio" id="design-1" name="design_system" value="1" required>
+                            <label for="design-1">1</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="design-2" name="design_system" value="2">
+                            <label for="design-2">2</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="design-3" name="design_system" value="3">
+                            <label for="design-3">3</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="design-4" name="design_system" value="4">
+                            <label for="design-4">4</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="design-5" name="design_system" value="5">
+                            <label for="design-5">5</label>
+                        </div>
+                    </div>
+                    <div class="rating-labels">
+                        <span>No System</span>
+                        <span>Comprehensive</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        African Market Understanding <span class="required">*</span>
+                        <span class="label-description">How well do you understand African users' needs and contexts?</span>
+                    </label>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <input type="radio" id="market-1" name="market_understanding" value="1" required>
+                            <label for="market-1">1</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="market-2" name="market_understanding" value="2">
+                            <label for="market-2">2</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="market-3" name="market_understanding" value="3">
+                            <label for="market-3">3</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="market-4" name="market_understanding" value="4">
+                            <label for="market-4">4</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="market-5" name="market_understanding" value="5">
+                            <label for="market-5">5</label>
+                        </div>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Very Limited</span>
+                        <span>Deep Knowledge</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Accessibility Implementation <span class="required">*</span>
+                        <span class="label-description">How accessible is your wallet to users with disabilities?</span>
+                    </label>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <input type="radio" id="accessibility-1" name="accessibility" value="1" required>
+                            <label for="accessibility-1">1</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="accessibility-2" name="accessibility" value="2">
+                            <label for="accessibility-2">2</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="accessibility-3" name="accessibility" value="3">
+                            <label for="accessibility-3">3</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="accessibility-4" name="accessibility" value="4">
+                            <label for="accessibility-4">4</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="accessibility-5" name="accessibility" value="5">
+                            <label for="accessibility-5">5</label>
+                        </div>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Not Considered</span>
+                        <span>Fully Compliant</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="design-team">
+                        Current Design Team Size
+                        <span class="label-description">How many people work on UX/UI design?</span>
+                    </label>
+                    <input type="number" id="design-team" name="design_team_size" min="0" placeholder="e.g., 2">
+                </div>
+
+                <div class="form-group">
+                    <label for="user-testing">
+                        Have you conducted user testing with African users? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="testing-no" name="user_testing" value="no" required>
+                            <label for="testing-no">No, not yet</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="testing-limited" name="user_testing" value="limited">
+                            <label for="testing-limited">Limited testing (fewer than 20 users)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="testing-moderate" name="user_testing" value="moderate">
+                            <label for="testing-moderate">Moderate testing (20-100 users)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="testing-extensive" name="user_testing" value="extensive">
+                            <label for="testing-extensive">Extensive testing (100+ users)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: UX Needs & Goals -->
+            <div class="form-section">
+                <h2>5. UX Needs & Goals</h2>
+                <p class="form-section-description">What are you hoping to achieve through this engagement?</p>
+
+                <div class="form-group">
+                    <label for="primary-challenges">
+                        Top 3 UX Challenges <span class="required">*</span>
+                        <span class="label-description">What are your biggest user experience problems right now?</span>
+                    </label>
+                    <textarea id="primary-challenges" name="primary_challenges" required placeholder="1. 
+2. 
+3. "></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ux-priorities">
+                        What UX support do you need most? <span class="required">*</span>
+                    </label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-research" name="ux_priorities[]" value="user_research">
+                            <label for="priority-research">User research and testing with African users</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-patterns" name="ux_priorities[]" value="design_patterns">
+                            <label for="priority-patterns">Design patterns and best practices</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-onboarding" name="ux_priorities[]" value="onboarding">
+                            <label for="priority-onboarding">Onboarding flow optimization</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-seed" name="ux_priorities[]" value="seed_phrase">
+                            <label for="priority-seed">Seed phrase / backup UX improvement</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-mobile" name="ux_priorities[]" value="mobile_optimization">
+                            <label for="priority-mobile">Mobile-first optimization</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-accessibility" name="ux_priorities[]" value="accessibility">
+                            <label for="priority-accessibility">Accessibility improvements</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-language" name="ux_priorities[]" value="localization">
+                            <label for="priority-language">Multi-language support and localization</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-system" name="ux_priorities[]" value="design_system">
+                            <label for="priority-system">Design system development</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority-training" name="ux_priorities[]" value="team_training">
+                            <label for="priority-training">Team training and capacity building</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="success-metrics">
+                        What would success look like? <span class="required">*</span>
+                        <span class="label-description">What specific outcomes are you hoping to achieve? (e.g., increase retention by 30%, reduce support tickets by 50%)</span>
+                    </label>
+                    <textarea id="success-metrics" name="success_metrics" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">
+                        Desired Timeline <span class="required">*</span>
+                        <span class="label-description">When do you need to see improvements?</span>
+                    </label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select timeline...</option>
+                        <option value="immediate">Immediate (1-2 months)</option>
+                        <option value="short">Short-term (3-6 months)</option>
+                        <option value="medium">Medium-term (6-12 months)</option>
+                        <option value="long">Long-term (12+ months)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SECTION 6: Resources & Commitment -->
+            <div class="form-section">
+                <h2>6. Resources & Commitment</h2>
+                <p class="form-section-description">Understanding your capacity helps us plan the engagement effectively</p>
+
+                <div class="form-group">
+                    <label for="team-availability">
+                        Team Availability <span class="required">*</span>
+                        <span class="label-description">How much time can your team commit to this engagement weekly?</span>
+                    </label>
+                    <select id="team-availability" name="team_availability" required>
+                        <option value="">Select availability...</option>
+                        <option value="limited">Limited (2-5 hours/week)</option>
+                        <option value="moderate">Moderate (5-10 hours/week)</option>
+                        <option value="significant">Significant (10-20 hours/week)</option>
+                        <option value="full">Full engagement (20+ hours/week)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-access">
+                        Can you provide access to your current users for testing? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="access-yes" name="user_access" value="yes" required>
+                            <label for="access-yes">Yes, we can facilitate user testing</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="access-limited" name="user_access" value="limited">
+                            <label for="access-limited">Limited access (need help recruiting)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="access-no" name="user_access" value="no">
+                            <label for="access-no">No current users / need full recruitment support</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="implementation-capacity">
+                        Implementation Capacity <span class="required">*</span>
+                        <span class="label-description">Can your team implement UX recommendations quickly?</span>
+                    </label>
+                    <select id="implementation-capacity" name="implementation_capacity" required>
+                        <option value="">Select capacity...</option>
+                        <option value="limited">Limited - We need significant development support</option>
+                        <option value="moderate">Moderate - We can implement with some guidance</option>
+                        <option value="strong">Strong - We have full development capacity</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-sharing">
+                        Are you willing to share anonymized usage data for research? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="data-yes" name="data_sharing" value="yes" required>
+                            <label for="data-yes">Yes, we can share anonymized data</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="data-limited" name="data_sharing" value="limited">
+                            <label for="data-limited">Limited sharing with privacy safeguards</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="data-no" name="data_sharing" value="no">
+                            <label for="data-no">No, data must remain private</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="case-study">
+                        Case Study Participation <span class="required">*</span>
+                        <span class="label-description">Would you be willing to be featured as a case study showing the impact of our work?</span>
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="case-yes" name="case_study" value="yes" required>
+                            <label for="case-yes">Yes, we're open to being featured publicly</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="case-maybe" name="case_study" value="maybe">
+                            <label for="case-maybe">Maybe, depending on results and anonymization options</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="case-no" name="case_study" value="no">
+                            <label for="case-no">No, we prefer to remain private</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: Additional Information -->
+            <div class="form-section">
+                <h2>7. Additional Information</h2>
+
+                <div class="form-group">
+                    <label for="how-heard">
+                        How did you hear about Bitcoin UX Africa?
+                    </label>
+                    <input type="text" id="how-heard" name="how_heard" placeholder="e.g., Conference, referral, social media">
+                </div>
+
+                <div class="form-group">
+                    <label for="additional-context">
+                        Anything else we should know?
+                        <span class="label-description">Share any additional context, challenges, or questions</span>
+                    </label>
+                    <textarea id="additional-context" name="additional_context"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <p style="color: #6b7280; margin-bottom: 20px; font-size: 0.95rem;">
+                    By submitting this form, you consent to Bitcoin UX Africa using this information to assess fit for the UX Infrastructure Program and to establish baseline metrics for case study purposes.
+                </p>
+                <button type="submit" class="btn-submit">Submit Assessment</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // Form validation and handling
+        document.getElementById('ux-assessment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check if at least one checkbox is selected for required checkbox groups
+            const walletTypeChecked = document.querySelectorAll('input[name="wallet_type[]"]:checked').length > 0;
+            const prioritiesChecked = document.querySelectorAll('input[name="ux_priorities[]"]:checked').length > 0;
+            
+            if (!walletTypeChecked) {
+                alert('Please select at least one wallet type.');
+                return;
+            }
+            
+            if (!prioritiesChecked) {
+                alert('Please select at least one UX priority.');
+                return;
+            }
+            
+            // If validation passes, you can submit the form
+            // For now, we'll just show a success message
+            alert('Thank you for submitting your assessment! We will review your application and get back to you within 5 business days.');
+            
+            // In production, you would actually submit the form here:
+            // this.submit();
+        });
+    </script>
+</body>
+</html>

@@ -23,8 +23,52 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog-styles.css">
     
+    <style>
+        /* Secondary button style for UX Support CTA */
+        .btn-secondary {
+            background: transparent;
+            color: #047857;
+            border: 2px solid #047857;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: #047857;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(4, 120, 87, 0.3);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-secondary, .btn-primary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/bitcoin_ux_africa_logo.svg">
+    <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
     
     <!-- SEO Enhancement Script -->
     <script>
@@ -348,6 +392,7 @@
             <p>We're building the AWS for Bitcoin UX in Africa. Infrastructure that makes Bitcoin accessible to the next billion users.</p>
             <div class="cta-buttons">
                 <a href="/cdn-cgi/l/email-protection#2851475d5a064d45494144684d50494558444d064b4745" class="btn btn-primary">Get in Touch</a>
+                <a href="uxsupport.html" class="btn btn-secondary">Need UX Support?</a>
             </div>
         </div>
     </section>

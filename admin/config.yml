@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main # Change this to 'master' if your default branch is master
+
+# Optional: Use this for local development
+# local_backend: true
+
+media_folder: "images/blog" # Where uploaded images will be stored
+public_folder: "/images/blog" # Public URL path for images
+
+# Collections define the structure of your content
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog Posts" # Used in the UI
+    folder: "blog/posts" # Path where blog post files are stored
+    create: true # Allow users to create new posts
+    slug: "{{slug}}" # Filename template, e.g., bitcoin-ux-infrastructure.md
+    fields: # The fields for each blog post
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Author", name: "author", widget: "string", required: true}
+      - {label: "Category", name: "category", widget: "select", options: ["White Paper", "Design Patterns", "User Research", "Case Study", "Tutorial", "News"], required: true}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: true}
+      - {label: "Excerpt", name: "excerpt", widget: "text", required: true, hint: "Short description shown on blog index page (150-200 characters)"}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Add relevant tags (e.g., UX, Bitcoin, Africa, Wallets)"}
+      - {label: "Meta Description", name: "meta_description", widget: "text", required: false, hint: "SEO description (150-160 characters)"}
+      - {label: "Published", name: "published", widget: "boolean", default: true, hint: "Uncheck to save as draft"}
+
+# Optional: Configure the editor
+editor:
+  preview: true # Show live preview as you type
