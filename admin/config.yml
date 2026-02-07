@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # Change this to 'master' if your default branch is master
-
+  name: github
+  repo: markkamau1/bitcoin-ux-africa
+  branch: main
+  
 # Optional: Use this for local development
 # local_backend: true
 
