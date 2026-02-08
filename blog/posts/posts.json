@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "title": "Why Bitcoin UX Infrastructure Matters",
+      "slug": "why-bitcoin-ux-infrastructure-matters",
+      "date": "2026-02-08",
+      "author": "Bitcoin UX Africa Team",
+      "category": "Infrastructure",
+      "featured_image": "/images/blog/bitcoin-infrastructure.jpg",
+      "excerpt": "Exploring the critical role of UX infrastructure in Bitcoin adoption across Africa.",
+      "tags": ["bitcoin", "ux", "infrastructure", "africa"],
+      "published": true
+    },
+    {
       "title": "Getting Started with Bitcoin UX: A Designer's Guide",
       "slug": "getting-started-bitcoin-ux",
       "date": "2026-02-06",
