@@ -477,23 +477,29 @@
             dot.addEventListener('click', () => showSlide(index));
         });
      </script>
-    <script>
+   <script>
 // Load blog posts dynamically from posts.json
 async function loadBlogPosts() {
     try {
         const response = await fetch('/blog/posts/posts.json');
         const data = await response.json();
         
-        // Get the blog container (using correct class name)
-        const blogGrid = document.querySelector('#bitcoin-ux-insights .blog-container');
+        console.log('Loaded posts:', data.posts); // Debug
         
-        if (!blogGrid) {
+        // Get the blog container
+        const blogContainer = document.querySelector('#bitcoin-ux-insights .blog-container');
+        
+        if (!blogContainer) {
             console.error('Blog container not found');
             return;
         }
         
-        // Clear existing hardcoded posts
-        blogGrid.innerHTML = '';
+        console.log('Found container, clearing...'); // Debug
+        
+        // Clear ALL existing posts (hardcoded or otherwise)
+        blogContainer.innerHTML = '';
+        
+        console.log('Container cleared, adding posts...'); // Debug
         
         // Generate HTML for each post (show first 3 on homepage)
         data.posts.slice(0, 3).forEach(post => {
@@ -515,13 +521,21 @@ async function loadBlogPosts() {
                 </div>
             `;
             
-            blogGrid.appendChild(article);
+            blogContainer.appendChild(article);
         });
+        
+        console.log('Posts added successfully!'); // Debug
         
     } catch (error) {
         console.error('Error loading blog posts:', error);
     }
 }
 
-// Load posts when page loads
-document.addEventListener('DOMContentLoaded', loadBlogPosts);
+// Try multiple ways to ensure it runs
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+} else {
+    // DOM already loaded
+    loadBlogPosts();
+}
+</script>
