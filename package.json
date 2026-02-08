@@ -10,37 +10,3 @@
     "gray-matter": "^4.0.3"
   }
 }
-```
-
-3. **If `package.json` already exists**, just add:
-   - `"gray-matter": "^4.0.3"` to the `dependencies` section
-   - The two scripts to the `scripts` section
-
----
-
-## **STEP 3: Update Netlify Build Settings**
-
-1. Go to your Netlify dashboard
-2. Click on your site: **soft-raindrop-d773eb**
-3. Go to **Site settings** → **Build & deploy** → **Build settings**
-4. Update the **Build command** to:
-```
-npm install && npm run build
-```
-
-5. Make sure **Publish directory** is set to: `/` (root) or whatever your current publish directory is
-
-6. Click **Save**
-
----
-
-## **STEP 4: Test It!**
-
-1. **Commit all changes** to GitHub (the new `scripts/generate-posts.js` and updated `package.json`)
-2. **Trigger a deploy** on Netlify (it should happen automatically, or you can click "Trigger deploy")
-3. **Wait 2-3 minutes** for the build to complete
-4. **Check the deploy log** - you should see:
-```
-   🔍 Scanning for blog posts...
-   📝 Found 2 markdown files
-   ✅ Generated posts.json with 2 published posts
