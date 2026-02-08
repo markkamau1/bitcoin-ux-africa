@@ -472,10 +472,11 @@
             showSlide(currentSlide);
         }, 5000);
 
-        // Manual dot navigation
-        dots.forEach((dot,
-
-
+ // Manual dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+    </script>
 <script>
 // Load blog posts dynamically from posts.json
 async function loadBlogPosts() {
