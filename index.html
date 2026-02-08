@@ -484,11 +484,11 @@ async function loadBlogPosts() {
         const response = await fetch('/blog/posts/posts.json');
         const data = await response.json();
         
-        // Get the blog grid container
-        const blogGrid = document.querySelector('#bitcoin-ux-insights .blog-grid');
+        // Get the blog container (using correct class name)
+        const blogGrid = document.querySelector('#bitcoin-ux-insights .blog-container');
         
         if (!blogGrid) {
-            console.error('Blog grid not found');
+            console.error('Blog container not found');
             return;
         }
         
@@ -525,4 +525,3 @@ async function loadBlogPosts() {
 
 // Load posts when page loads
 document.addEventListener('DOMContentLoaded', loadBlogPosts);
-</script>
