@@ -476,46 +476,45 @@
         dots.forEach((dot,
 
 
-                      <script>
+<script>
 // Load blog posts dynamically from posts.json
 async function loadBlogPosts() {
     try {
         const response = await fetch('/blog/posts/posts.json');
         const data = await response.json();
         
-        // Get the blog container (you'll need to identify the correct ID/class)
-        const blogContainer = document.getElementById('bitcoin-ux-insights'); // Change this to match your actual blog section ID
+        // Get the blog grid container
+        const blogGrid = document.querySelector('#bitcoin-ux-insights .blog-grid');
         
-        if (!blogContainer) {
-            console.error('Blog container not found');
+        if (!blogGrid) {
+            console.error('Blog grid not found');
             return;
         }
         
         // Clear existing hardcoded posts
-        const articlesGrid = blogContainer.querySelector('.articles-grid') || blogContainer;
-        articlesGrid.innerHTML = '';
+        blogGrid.innerHTML = '';
         
-        // Generate HTML for each post
-        data.posts.slice(0, 3).forEach(post => { // Show only first 3 posts on homepage
+        // Generate HTML for each post (show first 3 on homepage)
+        data.posts.slice(0, 3).forEach(post => {
             const article = document.createElement('article');
-            article.className = 'article-card';
+            article.className = 'blog-card';
             
             article.innerHTML = `
-                <div class="article-image">
+                <div class="blog-image">
                     <img src="${post.featured_image}" alt="${post.title}">
                 </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">${post.category}</span>
-                        <span class="date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">${post.category}</span>
+                        <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     </div>
                     <h3>${post.title}</h3>
                     <p>${post.excerpt}</p>
-                    <a href="/blog/posts/${post.slug}.html" class="read-more">Read More →</a>
+                    <a href="blog/posts/${post.slug}.html" class="blog-link">Read Article →</a>
                 </div>
             `;
             
-            articlesGrid.appendChild(article);
+            blogGrid.appendChild(article);
         });
         
     } catch (error) {
