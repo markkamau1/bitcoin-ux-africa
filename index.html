@@ -16,7 +16,7 @@
     <meta name="rating" content="general">
     
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/founders-grotesk-x-condensed">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/founders-grotesk-x-condensed"> 
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi">
     
     <!-- Stylesheet -->
@@ -126,7 +126,7 @@
       "name": "Bitcoin UX Infrastructure for Africa",
       "alternateName": "Bitcoin UX Africa",
       "url": "https://yoursite.com",
-      "logo": "https://yoursite.com/images/bitcoin_ux_africa_logo.svg",
+      "logo": "https://yoursite.com/images/bitcoinUX_Logo.svg",
       "description": "Leading Bitcoin UX research and design infrastructure for Africa, providing expert user experience design, wallet usability testing, and design patterns for Bitcoin applications.",
       "sameAs": [
         "https://twitter.com/yourhandle",
@@ -184,7 +184,7 @@
 <body>
     <!-- Hero Section -->
     <section class="hero" itemscope itemtype="https://schema.org/Service">
-        <img src="images/bitcoin_ux_africa_logo.svg" alt="Bitcoin UX Africa - Expert Bitcoin User Experience Design" class="hero-logo" itemprop="logo">
+        <img src="images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa - Expert Bitcoin User Experience Design" class="hero-logo" itemprop="logo">
         
         <div class="hero-slide hero-slide-1 active"></div>
         <div class="hero-slide hero-slide-2"></div>
@@ -472,27 +472,34 @@
             showSlide(currentSlide);
         }, 5000);
 
-        // Manual dot navigation
-        dots.forEach((dot,
-
-
-<script>
+// Manual dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+     </script>
+   <script>
 // Load blog posts dynamically from posts.json
 async function loadBlogPosts() {
     try {
         const response = await fetch('/blog/posts/posts.json');
         const data = await response.json();
         
-        // Get the blog grid container
-        const blogGrid = document.querySelector('#bitcoin-ux-insights .blog-grid');
+        console.log('Loaded posts:', data.posts); // Debug
         
-        if (!blogGrid) {
-            console.error('Blog grid not found');
+        // Get the blog container
+        const blogContainer = document.querySelector('#bitcoin-ux-insights .blog-container');
+        
+        if (!blogContainer) {
+            console.error('Blog container not found');
             return;
         }
         
-        // Clear existing hardcoded posts
-        blogGrid.innerHTML = '';
+        console.log('Found container, clearing...'); // Debug
+        
+        // Clear ALL existing posts (hardcoded or otherwise)
+        blogContainer.innerHTML = '';
+        
+        console.log('Container cleared, adding posts...'); // Debug
         
         // Generate HTML for each post (show first 3 on homepage)
         data.posts.slice(0, 3).forEach(post => {
@@ -514,14 +521,21 @@ async function loadBlogPosts() {
                 </div>
             `;
             
-            blogGrid.appendChild(article);
+            blogContainer.appendChild(article);
         });
+        
+        console.log('Posts added successfully!'); // Debug
         
     } catch (error) {
         console.error('Error loading blog posts:', error);
     }
 }
 
-// Load posts when page loads
-document.addEventListener('DOMContentLoaded', loadBlogPosts);
+// Try multiple ways to ensure it runs
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+} else {
+    // DOM already loaded
+    loadBlogPosts();
+}
 </script>
