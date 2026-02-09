@@ -1,0 +1,46 @@
+/* Founders Grotesk X-Condensed */
+@font-face {
+    font-family: 'Founders Grotesk X-Condensed';
+    src: url('../fonts/Founders Grotesk Cond Reg.ttf') format('ttf'),
+         url('../fonts/Founders Grotesk Cond Reg.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Founders Grotesk X-Condensed';
+    src: url('../fonts/Founders Grotesk X-Condensed Bold.otf') format('otf'),
+         url('../fonts/Founders Grotesk X-Condensed Bold.otf') format('otf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Satoshi */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Regular.ttf') format('ttf'),
+         url('../fonts/Satoshi-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Medium.ttf') format('ttf'),
+         url('../fonts/Satoshi-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Bold.ttf') format('ttf'),
+         url('../fonts/Satoshi-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
