@@ -7,36 +7,59 @@ const postsDirectory = path.join(process.cwd(), 'blog/posts');
 const templatePath = path.join(process.cwd(), 'blog/post-template.html');
 const outputFile = path.join(postsDirectory, 'posts.json');
 
-// Simple markdown to HTML converter
+// Enhanced markdown to HTML converter with styling support
 function markdownToHtml(markdown) {
   let html = markdown;
   
-  // Headers
+  // Horizontal rules (---)
+  html = html.replace(/^---$/gim, '<hr style="border: none; border-top: 2px solid #e5e7eb; margin: 40px 0;">');
+  
+  // Headers with styling
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
   
-  // Bold
+  // Bold with color
+  html = html.replace(/\*\*\*\*(.*?)\*\*\*\*/g, '<span class="stat-highlight">$1</span>');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   
   // Italic
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
   
   // Links
-  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
+  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #f7931a; text-decoration: none; font-weight: 600;">$1</a>');
   
-  // Lists - Unordered
-  html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');
-  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+  // Blockquotes
+  html = html.replace(/^&gt; (.*$)/gim, '<blockquote style="border-left: 4px solid #f7931a; padding-left: 20px; color: #6b7280; font-style: italic; margin: 20px 0;">$1</blockquote>');
   
-  // Lists - Ordered
+  // Unordered lists
+  html = html.split('\n').map(line => {
+    if (line.trim().match(/^[\*\-] (.+)$/)) {
+      return line.replace(/^[\*\-] (.+)$/, '<li>$1</li>');
+    }
+    return line;
+  }).join('\n');
+  
+  // Wrap consecutive <li> in <ul>
+  html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => {
+    return `<ul style="margin: 20px 0; padding-left: 30px;">${match}</ul>`;
+  });
+  
+  // Ordered lists
   html = html.replace(/^\d+\. (.*$)/gim, '<li>$1</li>');
+  html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => {
+    if (!match.includes('<ul')) {
+      return `<ol style="margin: 20px 0; padding-left: 30px;">${match}</ol>`;
+    }
+    return match;
+  });
   
   // Paragraphs - split by double newlines
   const paragraphs = html.split(/\n\n+/);
   html = paragraphs.map(p => {
-    // Don't wrap headers, lists, or already wrapped content
-    if (p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<ol') || p.startsWith('<li')) {
+    // Don't wrap headers, lists, already wrapped content, or horizontal rules
+    if (p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<ol') || 
+        p.startsWith('<li') || p.startsWith('<hr') || p.startsWith('<blockquote')) {
       return p;
     }
     // Don't wrap empty paragraphs
@@ -44,7 +67,7 @@ function markdownToHtml(markdown) {
       return '';
     }
     return `<p>${p.trim()}</p>`;
-  }).join('\n');
+  }).join('\n\n');
   
   // Clean up extra newlines
   html = html.replace(/\n{3,}/g, '\n\n');
@@ -101,83 +124,72 @@ function generateBlogPages(posts, template) {
   });
 }
 
-// Read all .md files from blog/posts
-function generatePostsJson() {
-  console.log('🔍 Scanning for blog posts...');
-  
-  // Get all files in the posts directory
-  const files = fs.readdirSync(postsDirectory);
-  
-  // Filter only .md files
-  const mdFiles = files.filter(file => file.endsWith('.md'));
-  
-  console.log(`📝 Found ${mdFiles.length} markdown files`);
-  
-  // Parse each .md file
-  const posts = mdFiles.map(filename => {
-    const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
+// Main function
+async function generatePosts() {
+  try {
+    console.log('🔍 Scanning for blog posts...');
     
-    // Parse frontmatter and content
-    const { data, content } = matter(fileContents);
+    // Read all .md files from posts directory
+    const files = fs.readdirSync(postsDirectory)
+      .filter(file => file.endsWith('.md'));
     
-    // Create slug from filename (remove .md extension)
-    const slug = filename.replace('.md', '');
+    console.log(`📝 Found ${files.length} markdown files`);
     
-    // Convert markdown content to HTML
-    const htmlContent = markdownToHtml(content);
+    // Read template
+    const template = fs.readFileSync(templatePath, 'utf8');
     
-    // Calculate read time
-    const readTime = calculateReadTime(content);
+    // Parse each markdown file
+    const posts = files.map(filename => {
+      const filePath = path.join(postsDirectory, filename);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = matter(fileContents);
+      
+      // Convert markdown to HTML
+      const htmlContent = markdownToHtml(content);
+      
+      // Calculate read time
+      const readTime = calculateReadTime(content);
+      
+      return {
+        slug: data.slug || filename.replace('.md', ''),
+        title: data.title,
+        date: data.date,
+        author: data.author,
+        category: data.category,
+        featured_image: data.featured_image,
+        excerpt: data.excerpt,
+        tags: data.tags || [],
+        published: data.published !== false, // Default to true
+        read_time: readTime,
+        html_content: htmlContent
+      };
+    });
     
-    return {
-      title: data.title || 'Untitled',
-      slug: slug,
-      date: data.date || new Date().toISOString().split('T')[0],
-      author: data.author || 'Bitcoin UX Africa Team',
-      category: data.category || 'Uncategorized',
-      featured_image: data.featured_image || data.image || '/images/blog/default.jpg',
-      excerpt: data.excerpt || data.description || '',
-      tags: data.tags || [],
-      published: data.published !== false, // Default to true unless explicitly false
-      read_time: readTime,
-      html_content: htmlContent
+    // Filter published posts
+    const publishedPosts = posts.filter(post => post.published);
+    
+    // Sort by date (newest first)
+    publishedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    // Generate individual blog pages
+    generateBlogPages(publishedPosts, template);
+    
+    // Generate posts.json (without html_content for lighter payload)
+    const jsonPosts = publishedPosts.map(({ html_content, ...post }) => post);
+    const jsonOutput = {
+      posts: jsonPosts,
+      total: jsonPosts.length,
+      generated: new Date().toISOString()
     };
-  });
-  
-  // Sort by date (newest first)
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-  
-  // Filter only published posts
-  const publishedPosts = posts.filter(post => post.published);
-  
-  // Read template file
-  const template = fs.readFileSync(templatePath, 'utf8');
-  
-  // Generate individual blog pages
-  generateBlogPages(publishedPosts, template);
-  
-  // Create JSON structure (without html_content for the index)
-  const postsForJson = publishedPosts.map(post => {
-    const { html_content, read_time, ...postWithoutHtml } = post;
-    return postWithoutHtml;
-  });
-  
-  const output = {
-    posts: postsForJson
-  };
-  
-  // Write to posts.json
-  fs.writeFileSync(outputFile, JSON.stringify(output, null, 2));
-  
-  console.log(`✅ Generated posts.json with ${publishedPosts.length} published posts`);
-  console.log(`📄 Output: ${outputFile}`);
+    
+    fs.writeFileSync(outputFile, JSON.stringify(jsonOutput, null, 2));
+    console.log(`✅ Generated posts.json with ${jsonPosts.length} published posts`);
+    
+  } catch (error) {
+    console.error('❌ Error generating posts:', error);
+    process.exit(1);
+  }
 }
 
-// Run the script
-try {
-  generatePostsJson();
-} catch (error) {
-  console.error('❌ Error generating posts:', error);
-  process.exit(1);
-}
+// Run
+generatePosts();
