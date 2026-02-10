@@ -7,8 +7,8 @@ featured_image: /images/blog/bitcoin-ux-infrastructure.jpg
 excerpt: 1.5 billion people. 89% failure rate. $95 billion in remittances.
   Africa represents Bitcoin's greatest opportunity and its biggest UX challenge.
   This white paper makes the strategic case for shared Bitcoin design
-  infrastructure—the foundational layer that transforms Bitcoin from unusable to
-  universal across Africa.
+  infrastructure. The foundational layer that transforms Bitcoin from unusable
+  to universal across Africa.
 published: true
 ---
 **Executive Summary**
