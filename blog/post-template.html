@@ -145,6 +145,8 @@
             color: #1f2937;
             margin: 50px 0 25px;
             font-weight: 700;
+            border-bottom: 3px solid #f7931a;
+            padding-bottom: 12px;
         }
         
         .article-content h3 {
@@ -159,6 +161,23 @@
             margin-bottom: 20px;
         }
         
+        .article-content strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: #f7931a;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s ease;
+        }
+        
+        .article-content a:hover {
+            border-bottom: 1px solid #f7931a;
+        }
+        
         .article-content ul, .article-content ol {
             margin: 20px 0;
             padding-left: 30px;
@@ -166,6 +185,20 @@
         
         .article-content li {
             margin-bottom: 10px;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #f7931a;
+            padding-left: 20px;
+            color: #6b7280;
+            font-style: italic;
+            margin: 25px 0;
+        }
+        
+        .article-content hr {
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            margin: 40px 0;
         }
         
         .data-box {
@@ -185,9 +218,11 @@
         
         .stat-highlight {
             background: #fef3c7;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            color: #92400e;
+            font-size: 1.05em;
         }
         
         .back-link {
