@@ -78,6 +78,7 @@
                 text-align: center;
             }
         }
+
     </style>
     
     <!-- Favicon -->
@@ -363,53 +364,71 @@
         <div class="container">
             <h2>Latest Bitcoin UX Insights</h2>
             <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.1rem; color: #4b5563;">Expert perspectives on Bitcoin design, user research, and accessibility in Africa</p>
-            
-            <div class="blog-container">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/bitcoin-ux-infrastructure.jpg" alt="Bitcoin UX Infrastructure for Africa White Paper">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">White Paper</span>
-                            <span class="blog-date">February 7, 2026</span>
-                        </div>
-                        <h3>Why Bitcoin UX Infrastructure Matters: The Case for Africa</h3>
-                        <p>How shared design infrastructure can unlock Bitcoin adoption for 1.5 billion people and why Africa can't afford to wait. A comprehensive white paper for funders, builders, and advocates.</p>
-                        <a href="blog/posts/why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read White Paper →</a>
-                    </div>
-                </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/bitcoin-wallet-patterns.jpg" alt="Bitcoin Wallet Design Patterns">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Design Patterns</span>
-                            <span class="blog-date">February 1, 2026</span>
-                        </div>
-                        <h3>5 Bitcoin Wallet UX Patterns That Increase User Retention by 40%</h3>
-                        <p>Through testing with 500+ African users, we've identified the critical design patterns that make the difference between users staying or leaving.</p>
-                        <a href="blog/posts/bitcoin-wallet-patterns.html" class="blog-link">Read Article →</a>
-                    </div>
-                </article>
+            <div class="blog-slider-wrapper">
+                <button class="blog-slider-btn blog-slider-prev" aria-label="Previous posts" disabled>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/seed-phrase-ux.jpg" alt="Seed Phrase User Experience">
+                <div class="blog-slider-viewport">
+                    <div class="blog-container" id="blog-slider-track">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="images/blog/bitcoin-ux-infrastructure.jpg" alt="Bitcoin UX Infrastructure for Africa White Paper">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">White Paper</span>
+                                    <span class="blog-date">February 7, 2026</span>
+                                </div>
+                                <h3>Why Bitcoin UX Infrastructure Matters: The Case for Africa</h3>
+                                <p>How shared design infrastructure can unlock Bitcoin adoption for 1.5 billion people and why Africa can't afford to wait.</p>
+                                <a href="blog/posts/why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read White Paper →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="images/blog/bitcoin-wallet-patterns.jpg" alt="Bitcoin Wallet Design Patterns">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Design Patterns</span>
+                                    <span class="blog-date">February 1, 2026</span>
+                                </div>
+                                <h3>5 Bitcoin Wallet UX Patterns That Increase User Retention by 40%</h3>
+                                <p>Through testing with 500+ African users, we've identified the critical design patterns that make the difference between users staying or leaving.</p>
+                                <a href="blog/posts/bitcoin-wallet-patterns.html" class="blog-link">Read Article →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="images/blog/seed-phrase-ux.jpg" alt="Seed Phrase User Experience">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">User Research</span>
+                                    <span class="blog-date">January 28, 2026</span>
+                                </div>
+                                <h3>Why 73% of Users Fail at Seed Phrase Backup (And How to Fix It)</h3>
+                                <p>Our research across 6 African countries reveals the hidden barriers in self-custody onboarding. It's not about intelligence, it's about design.</p>
+                                <a href="blog/posts/seed-phrase-ux.html" class="blog-link">Read Article →</a>
+                            </div>
+                        </article>
                     </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">User Research</span>
-                            <span class="blog-date">January 28, 2026</span>
-                        </div>
-                        <h3>Why 73% of Users Fail at Seed Phrase Backup (And How to Fix It)</h3>
-                        <p>Our research across 6 African countries reveals the hidden barriers in self-custody onboarding. It's not about intelligence, it's about design.</p>
-                        <a href="blog/posts/seed-phrase-ux.html" class="blog-link">Read Article →</a>
-                    </div>
-                </article>
+                </div>
+
+                <button class="blog-slider-btn blog-slider-next" aria-label="Next posts">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
+
+            <div class="blog-slider-dots" id="blog-slider-dots"></div>
         </div>
     </section>
 
@@ -507,48 +526,124 @@
         });
      </script>
    <script>
-// Load blog posts dynamically from posts.json
-async function loadBlogPosts() {
-    try {
-        const response = await fetch('/blog/posts/posts.json');
-        if (!response.ok) throw new Error('posts.json not found');
-        const data = await response.json();
+// ── Blog Slider ──────────────────────────────────────────────────────────────
+(function () {
+    const VISIBLE = 3;
+    let current = 0;
+    let total = 0;
 
-        const blogContainer = document.querySelector('#bitcoin-ux-insights .blog-container');
-        if (!blogContainer) return;
-
-        // Replace hardcoded cards with dynamic ones
-        blogContainer.innerHTML = '';
-
-        data.posts.forEach(post => {
-            const article = document.createElement('article');
-            article.className = 'blog-card';
-            article.innerHTML = `
-                <div class="blog-image">
-                    <img src="${post.featured_image}" alt="${post.title}" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">${post.category}</span>
-                        <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                    </div>
-                    <h3>${post.title}</h3>
-                    <p>${post.excerpt}</p>
-                    <a href="blog/posts/${post.slug}.html" class="blog-link">Read Article →</a>
-                </div>
-            `;
-            blogContainer.appendChild(article);
-        });
-
-    } catch (error) {
-        // posts.json unavailable — hardcoded cards stay, links already fixed
-        console.log('Using hardcoded blog cards:', error.message);
+    function cardsPerView() {
+        if (window.innerWidth <= 640)  return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
     }
-}
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadBlogPosts);
-} else {
-    loadBlogPosts();
-}
+    function buildDots(count) {
+        const dotsEl = document.getElementById('blog-slider-dots');
+        if (!dotsEl) return;
+        dotsEl.innerHTML = '';
+        const pages = Math.ceil(count / cardsPerView());
+        for (let i = 0; i < pages; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'blog-dot' + (i === 0 ? ' active' : '');
+            btn.setAttribute('aria-label', 'Page ' + (i + 1));
+            btn.addEventListener('click', () => goTo(i * cardsPerView()));
+            dotsEl.appendChild(btn);
+        }
+    }
+
+    function updateDots() {
+        document.querySelectorAll('.blog-dot').forEach((d, i) =>
+            d.classList.toggle('active', i === Math.floor(current / cardsPerView()))
+        );
+    }
+
+    function updateButtons() {
+        const prev = document.querySelector('.blog-slider-prev');
+        const next = document.querySelector('.blog-slider-next');
+        if (prev) prev.disabled = current === 0;
+        if (next) next.disabled = current + cardsPerView() >= total;
+    }
+
+    function goTo(index) {
+        const track = document.getElementById('blog-slider-track');
+        if (!track) return;
+        const cards = track.querySelectorAll('.blog-card');
+        if (!cards.length) return;
+        const cv = cardsPerView();
+        current = Math.max(0, Math.min(index, total - cv));
+        const cardW = cards[0].offsetWidth;
+        track.style.transform = 'translateX(-' + (current * (cardW + 30)) + 'px)';
+        updateDots();
+        updateButtons();
+    }
+
+    function initSlider(count) {
+        total = count;
+        buildDots(count);
+        updateButtons();
+
+        const prev = document.querySelector('.blog-slider-prev');
+        const next = document.querySelector('.blog-slider-next');
+        if (prev) prev.addEventListener('click', () => goTo(current - cardsPerView()));
+        if (next) next.addEventListener('click', () => goTo(current + cardsPerView()));
+
+        // Touch swipe
+        const vp = document.querySelector('.blog-slider-viewport');
+        if (vp) {
+            let sx = 0;
+            vp.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+            vp.addEventListener('touchend', e => {
+                const diff = sx - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + cardsPerView() : current - cardsPerView());
+            }, { passive: true });
+        }
+
+        window.addEventListener('resize', () => { buildDots(total); goTo(current); });
+    }
+
+    async function loadBlogPosts() {
+        try {
+            const response = await fetch('/blog/posts/posts.json');
+            if (!response.ok) throw new Error('posts.json not found');
+            const data = await response.json();
+
+            const track = document.getElementById('blog-slider-track');
+            if (!track) throw new Error('track not found');
+
+            track.innerHTML = '';
+            data.posts.forEach(post => {
+                const a = document.createElement('article');
+                a.className = 'blog-card';
+                a.innerHTML = `
+                    <div class="blog-image">
+                        <img src="${post.featured_image}" alt="${post.title}" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${post.category}</span>
+                            <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.excerpt}</p>
+                        <a href="blog/posts/${post.slug}.html" class="blog-link">Read Article →</a>
+                    </div>`;
+                track.appendChild(a);
+            });
+            initSlider(data.posts.length);
+
+        } catch (error) {
+            // Fall back to hardcoded cards already in the DOM
+            const track = document.getElementById('blog-slider-track');
+            const count = track ? track.querySelectorAll('.blog-card').length : 0;
+            if (count) initSlider(count);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    } else {
+        loadBlogPosts();
+    }
+})();
 </script>
