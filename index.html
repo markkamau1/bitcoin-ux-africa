@@ -376,6 +376,21 @@
                     <div class="blog-container" id="blog-slider-track">
                         <article class="blog-card">
                             <div class="blog-image">
+                                <img src="images/blog/state-of-bitcoin-ux-2026.jpg" alt="The State of Bitcoin UX in Africa 2026 Research Report">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Research Report</span>
+                                    <span class="blog-date">February 17, 2026</span>
+                                </div>
+                                <h3>The State of Bitcoin UX in Africa 2026: Research Report</h3>
+                                <p>Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia. What's broken, what's working, and what builders must fix.</p>
+                                <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html" class="blog-link">Read Report →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card">
+                            <div class="blog-image">
                                 <img src="images/blog/bitcoin-ux-infrastructure.jpg" alt="Bitcoin UX Infrastructure for Africa White Paper">
                             </div>
                             <div class="blog-content">
@@ -604,7 +619,7 @@
 
     async function loadBlogPosts() {
         try {
-            const response = await fetch('/blog/posts/posts.json');
+            const response = await fetch('blog/posts/posts.json');
             if (!response.ok) throw new Error('posts.json not found');
             const data = await response.json();
 
