@@ -758,16 +758,3 @@ footer p {
         left: 40px;
     }
 }
-
-    .problem h2, .vision h2, .impact h2, .stats h2 {
-        font-size: 2rem;
-    }
-
-    .cta h2 {
-        font-size: 2rem;
-    }
-
-    .cta p {
-        font-size: 1.2rem;
-    }
-}
