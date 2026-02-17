@@ -1,26 +1,36 @@
 {
   "posts": [
     {
-      "title": "Why Bitcoin UX Infrastructure Matters",
-      "slug": "why-bitcoin-ux-infrastructure-matters",
-      "date": "2026-02-08",
-      "author": "Bitcoin UX Africa Team",
-      "category": "Infrastructure",
-      "featured_image": "/images/blog/bitcoin-infrastructure.jpg",
-      "excerpt": "Exploring the critical role of UX infrastructure in Bitcoin adoption across Africa.",
-      "tags": ["bitcoin", "ux", "infrastructure", "africa"],
-      "published": true
+      "slug": "state-of-bitcoin-ux-africa-2026",
+      "title": "The State of Bitcoin UX in Africa 2026: Research Report",
+      "excerpt": "Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia. What's broken, what's working, and what every Bitcoin builder must fix this year.",
+      "category": "Research Report",
+      "date": "2026-02-17",
+      "featured_image": "images/blog/state-of-bitcoin-ux-2026.jpg"
     },
     {
-      "title": "Getting Started with Bitcoin UX: A Designer's Guide",
-      "slug": "getting-started-bitcoin-ux",
-      "date": "2026-02-06",
-      "author": "Bitcoin UX Africa Team",
-      "category": "Tutorial",
-      "featured_image": "/images/blog/getting-started-bitcoin-ux.jpg",
-      "excerpt": "New to Bitcoin UX design? This comprehensive guide covers everything you need to know to start designing better Bitcoin experiences for African users.",
-      "tags": ["bitcoin", "ux", "design", "tutorial", "beginner"],
-      "published": true
+      "slug": "why-bitcoin-ux-infrastructure-matters",
+      "title": "Why Bitcoin UX Infrastructure Matters: The Case for Africa",
+      "excerpt": "How shared design infrastructure can unlock Bitcoin adoption for 1.5 billion people and why Africa can't afford to wait. A comprehensive white paper for funders, builders, and advocates.",
+      "category": "White Paper",
+      "date": "2026-02-07",
+      "featured_image": "images/blog/bitcoin-ux-infrastructure.jpg"
+    },
+    {
+      "slug": "bitcoin-wallet-patterns",
+      "title": "5 Bitcoin Wallet UX Patterns That Increase User Retention by 40%",
+      "excerpt": "Through testing with 500+ African users, we've identified the critical design patterns that make the difference between users staying or leaving.",
+      "category": "Design Patterns",
+      "date": "2026-02-01",
+      "featured_image": "images/blog/bitcoin-wallet-patterns.jpg"
+    },
+    {
+      "slug": "seed-phrase-ux",
+      "title": "Why 73% of Users Fail at Seed Phrase Backup (And How to Fix It)",
+      "excerpt": "Our research across 6 African countries reveals the hidden barriers in self-custody onboarding. It's not about intelligence, it's about design.",
+      "category": "User Research",
+      "date": "2026-01-28",
+      "featured_image": "images/blog/seed-phrase-ux.jpg"
     }
   ]
 }
