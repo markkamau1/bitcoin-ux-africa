@@ -147,7 +147,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "your.mark@foundation.africa",
+        "email": "your.email@example.com",
         "contactType": "Customer Service"
       },
       "areaServed": {
@@ -376,7 +376,7 @@
                         </div>
                         <h3>Why Bitcoin UX Infrastructure Matters: The Case for Africa</h3>
                         <p>How shared design infrastructure can unlock Bitcoin adoption for 1.5 billion people and why Africa can't afford to wait. A comprehensive white paper for funders, builders, and advocates.</p>
-                        <a href="blog/why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read White Paper →</a>
+                        <a href="blog/posts/why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read White Paper →</a>
                     </div>
                 </article>
 
@@ -391,7 +391,7 @@
                         </div>
                         <h3>5 Bitcoin Wallet UX Patterns That Increase User Retention by 40%</h3>
                         <p>Through testing with 500+ African users, we've identified the critical design patterns that make the difference between users staying or leaving.</p>
-                        <a href="blog/bitcoin-wallet-patterns.html" class="blog-link">Read Article →</a>
+                        <a href="blog/posts/bitcoin-wallet-patterns.html" class="blog-link">Read Article →</a>
                     </div>
                 </article>
 
@@ -406,7 +406,7 @@
                         </div>
                         <h3>Why 73% of Users Fail at Seed Phrase Backup (And How to Fix It)</h3>
                         <p>Our research across 6 African countries reveals the hidden barriers in self-custody onboarding. It's not about intelligence, it's about design.</p>
-                        <a href="blog/seed-phrase-ux.html" class="blog-link">Read Article →</a>
+                        <a href="blog/posts/seed-phrase-ux.html" class="blog-link">Read Article →</a>
                     </div>
                 </article>
             </div>
@@ -511,33 +511,21 @@
 async function loadBlogPosts() {
     try {
         const response = await fetch('/blog/posts/posts.json');
+        if (!response.ok) throw new Error('posts.json not found');
         const data = await response.json();
-        
-        console.log('Loaded posts:', data.posts); // Debug
-        
-        // Get the blog container
+
         const blogContainer = document.querySelector('#bitcoin-ux-insights .blog-container');
-        
-        if (!blogContainer) {
-            console.error('Blog container not found');
-            return;
-        }
-        
-        console.log('Found container, clearing...'); // Debug
-        
-        // Clear ALL existing posts (hardcoded or otherwise)
+        if (!blogContainer) return;
+
+        // Replace hardcoded cards with dynamic ones
         blogContainer.innerHTML = '';
-        
-        console.log('Container cleared, adding posts...'); // Debug
-        
-        // Generate HTML for each post (show first 3 on homepage)
-        data.posts.slice(0, 3).forEach(post => {
+
+        data.posts.forEach(post => {
             const article = document.createElement('article');
             article.className = 'blog-card';
-            
             article.innerHTML = `
                 <div class="blog-image">
-                    <img src="${post.featured_image}" alt="${post.title}">
+                    <img src="${post.featured_image}" alt="${post.title}" loading="lazy">
                 </div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -549,16 +537,18 @@ async function loadBlogPosts() {
                     <a href="blog/posts/${post.slug}.html" class="blog-link">Read Article →</a>
                 </div>
             `;
-            
             blogContainer.appendChild(article);
         });
-        
-        console.log('Posts added successfully!'); // Debug
-        
+
     } catch (error) {
-        console.error('Error loading blog posts:', error);
+        // posts.json unavailable — hardcoded cards stay, links already fixed
+        console.log('Using hardcoded blog cards:', error.message);
     }
 }
 
-// Try multiple ways to ensure it runs
-if (document.readyStat
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+} else {
+    loadBlogPosts();
+}
+</script>
