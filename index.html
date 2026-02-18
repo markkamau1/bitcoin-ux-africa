@@ -617,48 +617,21 @@
         window.addEventListener('resize', () => { buildDots(total); goTo(current); });
     }
 
-    async function loadBlogPosts() {
-        try {
-            const response = await fetch('blog/posts/posts.json');
-            if (!response.ok) throw new Error('posts.json not found');
-            const data = await response.json();
-
-            const track = document.getElementById('blog-slider-track');
-            if (!track) throw new Error('track not found');
-
-            track.innerHTML = '';
-            data.posts.forEach(post => {
-                const a = document.createElement('article');
-                a.className = 'blog-card';
-                a.innerHTML = `
-                    <div class="blog-image">
-                        <img src="${post.featured_image}" alt="${post.title}" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">${post.category}</span>
-                            <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</span>
-                        </div>
-                        <h3>${post.title}</h3>
-                        <p>${post.excerpt}</p>
-                        <a href="blog/posts/${post.slug}.html" class="blog-link">Read Article →</a>
-                    </div>`;
-                track.appendChild(a);
-            });
-            initSlider(data.posts.length);
-
-        } catch (error) {
-            // Fall back to hardcoded cards already in the DOM
-            const track = document.getElementById('blog-slider-track');
-            const count = track ? track.querySelectorAll('.blog-card').length : 0;
-            if (count) initSlider(count);
+    // Initialize slider with hardcoded blog cards
+    function initBlogSlider() {
+        const track = document.getElementById('blog-slider-track');
+        if (!track) return;
+        
+        const count = track.querySelectorAll('.blog-card').length;
+        if (count > 0) {
+            initSlider(count);
         }
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+        document.addEventListener('DOMContentLoaded', initBlogSlider);
     } else {
-        loadBlogPosts();
+        initBlogSlider();
     }
 })();
 </script>
