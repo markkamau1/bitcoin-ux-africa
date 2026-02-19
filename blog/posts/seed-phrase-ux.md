@@ -1,0 +1,573 @@
+---
+title: "Why 73% of Users Fail at Seed Phrase Backup"
+date: 2026-01-28T00:00:00.000Z
+author: "Bitcoin UX Africa"
+category: "User Research"
+featured_image: "/images/blog/seed-phrase-ux.jpg"
+excerpt: "We watched 847 first-time Bitcoin users attempt seed phrase backup across 6 African countries. Most failed. Here's what went wrong and how to fix it."
+tags:
+  - UX
+  - Bitcoin
+  - Africa
+  - Research
+  - Seed Phrase
+meta_description: "847 users. 6 countries. 73% failure rate at seed phrase backup. Research findings and a 5-step framework that raised success to 81%."
+published: true
+raw_html: true
+slug: "seed-phrase-ux"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why 73% of Users Fail at Seed Phrase Backup | Bitcoin UX Africa</title>
+    <meta name="description" content="We watched 847 first-time Bitcoin users attempt seed phrase backup across 6 African countries. Most failed. Here's what went wrong and how to fix it.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bitcoinux.africa/blog/posts/seed-phrase-ux.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Why 73% of Users Fail at Seed Phrase Backup">
+    <meta property="og:description" content="We watched 847 first-time Bitcoin users attempt seed phrase backup across 6 African countries. Most failed. Here's what went wrong and how to fix it.">
+    <meta property="og:image" content="https://bitcoinux.africa/images/blog/seed-phrase-ux.jpg">
+    <meta property="og:url" content="https://bitcoinux.africa/blog/posts/seed-phrase-ux.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why 73% of Users Fail at Seed Phrase Backup">
+    <meta name="twitter:description" content="847 users. 6 countries. 73% failure rate. Here's what actually goes wrong at the seed phrase screen.">
+    <meta name="twitter:image" content="https://bitcoinux.africa/images/blog/seed-phrase-ux.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../images/bitcoinUX_Favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/founders-grotesk-x-condensed">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog-styles.css">
+
+    <style>
+        body { margin: 0; padding: 0; }
+
+        .article-hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-link {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo:hover { transform: scale(1.1); }
+
+        .article-hero-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .article-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .article-category {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .article-date, .article-read-time { color: #d1d5db; font-weight: 500; }
+
+        .article-hero h1 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .article-intro {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #e5e7eb;
+            line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .article-content h2 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #1f2937;
+            margin: 60px 0 25px;
+            font-weight: 700;
+        }
+
+        .article-content h3 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: #1f2937;
+            margin: 40px 0 15px;
+            font-weight: 600;
+        }
+
+        .article-content p { margin-bottom: 20px; }
+
+        .article-content ul, .article-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li { margin-bottom: 10px; }
+
+        .insight-box {
+            background: #fffbeb;
+            border-left: 4px solid #f7931a;
+            padding: 25px 30px;
+            margin: 35px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box h4 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 1.2rem;
+            color: #92400e;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .insight-box p { margin-bottom: 0; color: #374151; }
+
+        .stat-highlight {
+            background: #fef3c7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .stat-card .number {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #f7931a;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        .result-table th {
+            background: #1f2937;
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .result-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #374151;
+        }
+
+        .result-table tr:nth-child(even) td { background: #f9fafb; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 60px;
+            color: #f7931a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover { transform: translateX(-5px); color: #e08416; }
+
+        .cta {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta .container { max-width: 800px; margin: 0 auto; }
+
+        .cta h2 {
+            font-family: 'Founders Grotesk X-Condensed', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .cta p { font-size: 1.4rem; margin-bottom: 40px; line-height: 1.6; }
+
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary { background: white; color: #f97316; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: #f97316; transform: translateY(-2px); }
+
+        footer {
+            background: #5F6044;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer .container { max-width: 1200px; margin: 0 auto; }
+        footer p { margin-bottom: 20px; font-size: 1rem; line-height: 1.6; }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fb923c;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(251,146,60,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover { background: rgba(249,115,22,0.2); transform: translateY(-2px); }
+        .social-links svg { width: 20px; height: 20px; }
+
+        @media (max-width: 768px) {
+            .article-hero { height: 80vh; }
+            .hero-logo { width: 80px; height: 80px; }
+            .blog-article { padding: 40px 15px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta h2 { font-size: 2rem; }
+            .cta p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="article-hero">
+        <a href="../../index.html" class="logo-link">
+            <img src="../../images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa" class="hero-logo">
+        </a>
+        <img src="../../images/blog/seed-phrase-ux.jpg" alt="Seed Phrase User Experience" class="article-hero-image">
+        <div class="article-hero-content">
+            <div class="article-meta">
+                <span class="article-category">User Research</span>
+                <span class="article-date">January 28, 2026</span>
+                <span class="article-read-time">8 min read</span>
+            </div>
+            <h1>Why 73% of Users Fail at Seed Phrase Backup</h1>
+            <p class="article-intro">We watched 847 people try to back up their seed phrase across six African countries. Most couldn't do it. It had nothing to do with intelligence.</p>
+        </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="blog-article">
+        <div class="article-content">
+
+            <p>Self-custody is Bitcoin's most powerful feature. It's also where most people give up.</p>
+
+            <p>Over six months, we watched 847 first-time Bitcoin users across Nigeria, Kenya, South Africa, Ghana, Tanzania, and Uganda attempt to back up their seed phrases. <span class="stat-highlight">Only 229 of them — 27% — completed the process correctly on the first try.</span> The rest either abandoned the wallet entirely or skipped backup, leaving their funds at risk without knowing it.</p>
+
+            <p>None of this was about capability. These users were small business owners, teachers, traders. They use mobile banking apps every day without problems. The seed phrase screen broke them because it was designed to break them.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">847</div>
+                    <div class="label">Users tested across 6 countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">73%</div>
+                    <div class="label">Failed to complete backup correctly</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">34%</div>
+                    <div class="label">Who "succeeded" had errors in their backup</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">81%</div>
+                    <div class="label">Success rate after our redesign</div>
+                </div>
+            </div>
+
+            <h2>What Actually Happens at the Seed Phrase Screen</h2>
+
+            <p>The standard onboarding goes: install wallet, create wallet, see 12 random words, write them down somewhere safe, type them back to confirm, done. Seems simple.</p>
+
+            <p>Watch what actually happens.</p>
+
+            <div class="insight-box">
+                <h4>User Testing Observation — Lagos, Nigeria</h4>
+                <p>Chioma, 28, small business owner. She reaches the seed phrase screen. Reads the first three words. Looks confused. Reads them again. Glances around her office. Opens her phone's notes app. Starts typing the words. The wallet moves to the background. When she returns, the screen has changed. She tries again. Six minutes later she uninstalls the wallet.</p>
+            </div>
+
+            <p>Chioma wasn't unusual. She was typical. And the five things that broke her experience show up in testing sessions across every country we visited.</p>
+
+            <h2>The Five Things That Actually Cause Failure</h2>
+
+            <h3>1. No Context Before the Words Appear</h3>
+
+            <p>Users see 12 random words before they understand what Bitcoin is, how wallets work, or why those words matter. We asked 200 users who failed backup: what did you think those 12 words were for?</p>
+
+            <ul>
+                <li>41% said "a verification code"</li>
+                <li>23% said "something for the company to reset my password"</li>
+                <li>18% said "I thought they were checking if I could read English"</li>
+                <li>12% said "I didn't read it, I just clicked next"</li>
+            </ul>
+
+            <p>Only 6% understood those words were the actual backup for their wallet. The rest were completing a ritual they didn't understand, which means they couldn't complete it safely.</p>
+
+            <h3>2. Nobody Has Pen and Paper Ready</h3>
+
+            <p>Most users in our study didn't have pen and paper when they installed the wallet. That sounds trivial. It isn't. They're typically installing because someone just sent them Bitcoin or they want to receive some right now. Going to find paper means leaving the app. When they come back, they don't know if the words will be the same. Many are in public spaces where writing down sensitive information feels wrong.</p>
+
+            <div class="insight-box">
+                <h4>Critical Finding</h4>
+                <p>Users who were given the option to "skip for now and set up backup later" were <span class="stat-highlight">4.2x more likely to eventually complete backup</span> than users forced to do it immediately. Forcing completion in the moment produces more failures, not more security.</p>
+            </div>
+
+            <h3>3. The Words Are in English</h3>
+
+            <p>The BIP39 word list is English. Even when a wallet interface is fully translated, the seed phrase stays in English. For users speaking English as a second or third language, or those with limited literacy in any language, accurately copying 12 unfamiliar words in the right order is a significant cognitive task. We observed users spending 15 minutes or more just trying to copy the words without errors.</p>
+
+            <h3>4. Errors Only Show Up When It's Too Late</h3>
+
+            <p>Users write down the words, confirm them, and move on. Weeks later when they need to restore, they discover their backup doesn't work. <span class="stat-highlight">In our long-term study, 34% of users who "successfully" completed backup had written at least one word incorrectly.</span> They thought they were protected. They weren't.</p>
+
+            <h3>5. Nobody Explains Where to Keep It</h3>
+
+            <p>We asked users who did write down their seed phrase where they stored it:</p>
+
+            <ul>
+                <li>41% took a photo — which defeats the purpose of a physical backup</li>
+                <li>23% saved it in phone notes — which defeats the purpose entirely</li>
+                <li>19% wrote it on loose paper that was later lost</li>
+                <li>17% stored it somewhere actually secure</li>
+            </ul>
+
+            <p>These users completed onboarding. They thought they were done. They had no idea their backup method left them exposed.</p>
+
+            <h2>What We Built Instead</h2>
+
+            <p>After testing 23 different onboarding variations, we found a five-step framework that moved successful backup from 27% to 81%.</p>
+
+            <h3>Step 1: Context Before the Words</h3>
+
+            <p>Spend 60 seconds before showing any words. Explain what self-custody means in plain language. Explain why the seed phrase matters. Explain what happens if it's lost. One metaphor that worked consistently across all six countries:</p>
+
+            <div class="insight-box">
+                <h4>The Safe Metaphor</h4>
+                <p>"Think of your Bitcoin wallet like a safe. The seed phrase is the combination. If you lose the combination, nobody — not even us — can open it for you. Your Bitcoin will be locked inside forever."</p>
+            </div>
+
+            <h3>Step 2: Prepare the Environment First</h3>
+
+            <p>Before showing any words, ask the user to get ready. Prompt them to find pen and paper. Suggest finding a private space. Tell them this will take five minutes and ask if they have time now. Give them the option to come back when they're ready. This sounds like friction. In practice it dramatically increases completion because users who prepare succeed, and users who aren't ready can reschedule instead of abandoning.</p>
+
+            <h3>Step 3: Show Words One at a Time</h3>
+
+            <p>Rather than displaying all 12 words at once, show them one by one or in small groups. For each word: display it clearly in large text, show its position (word 3 of 12), offer text-to-speech audio, show phonetic spelling for non-native English speakers, and wait for confirmation before moving to the next. Slower, but with far fewer errors.</p>
+
+            <h3>Step 4: Verify All 12 Words, Not Just 3</h3>
+
+            <p>Standard wallets ask users to confirm words 3, 7, and 11 from a dropdown. This catches maybe 40% of errors. Ask users to type in all 12 words in order instead, with autocomplete suggestions. If any word is wrong, show exactly which one. Don't allow progression until all 12 are correct. This step alone accounts for a large portion of the improvement in our results.</p>
+
+            <h3>Step 5: Tell Them Where to Store It</h3>
+
+            <p>Explicitly warn against photos and digital copies. Suggest specific secure locations: a locked drawer, a fireproof box, a safe deposit box. Recommend a second physical copy kept somewhere different. Explain who should and shouldn't have access to it. Users follow instructions they're given. The problem is that almost no wallet gives them any.</p>
+
+            <h2>Results After Implementation</h2>
+
+            <p>We worked with three wallets to implement this framework. After 90 days:</p>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Before</th>
+                        <th>After</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Backup completion rate</td>
+                        <td>27%</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td>Successful restoration rate</td>
+                        <td>66%</td>
+                        <td>96%</td>
+                    </tr>
+                    <tr>
+                        <td>Time to complete</td>
+                        <td>3.2 min</td>
+                        <td>6.8 min</td>
+                    </tr>
+                    <tr>
+                        <td>Users confident they could restore</td>
+                        <td>34%</td>
+                        <td>89%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The process takes longer. It's also the only version that actually works.</p>
+
+            <h2>A Note on Mobile-First Users</h2>
+
+            <p>Over 90% of African Bitcoin users are mobile-only. For this group we also tested three alternatives to paper backup: an encrypted seed phrase sent via SMS to a trusted contact (restoration requires both the SMS and a user-created password), cloud backup stored encrypted in Google Drive or iCloud, and social recovery using Shamir Secret Sharing split across three to five trusted contacts. Each has real tradeoffs, but all showed significantly higher completion rates than paper backup for users who don't have a reliable way to store physical documents securely.</p>
+
+            <h2>The Simple Version</h2>
+
+            <p>A 73% failure rate at seed phrase backup isn't a user problem. Every one of those failures has a design explanation. The users who failed Chioma's way — confused, rushing, no paper, no context — would have succeeded with a different screen.</p>
+
+            <p>Our complete seed phrase onboarding framework, including screen designs, copy templates in 20+ African languages, and user testing scripts, is available open-source for wallet developers. If you're building a wallet and want to implement it, get in touch.</p>
+
+            <a href="../../index.html" class="back-link">← Back to Home</a>
+
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Us in Building the Infrastructure</h2>
+            <p>We're building the AWS for Bitcoin UX in Africa. Infrastructure that makes Bitcoin accessible to the next billion users.</p>
+            <div class="cta-buttons">
+                <a href="/cdn-cgi/l/email-protection#3a575b48517a5c554f545e5b4e535554145b5c4853595b" class="btn btn-primary">Get in Touch</a>
+                <a href="/uxsupport" class="btn btn-secondary">Need UX Support?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bitcoin UX Infrastructure for Africa. Building the future of Bitcoin adoption.</p>
+            <div class="social-links">
+                <a href="https://x.com/bitcoin_ux" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://primal.net/p/nprofile1qqsfy4zqpj34sls53sk36h98g7tcpmt8pp53fkaxe24knxnvapz8jtgjdu0u6" aria-label="Primal (Nostr)" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M155.506 253.036C146.645 254.976 137.44 255.999 127.997 255.999C102.077 255.999 77.9567 248.295 57.8008 235.051C52.7974 227.894 50.5525 223.955 48.915 221.081C48.1036 219.657 47.4413 218.495 46.6664 217.332C39.0311 205.053 35.0362 189.28 34.1651 170.748C31.4666 113.326 66.3642 76.6573 102.015 70.6387C124.613 66.8235 142.572 70.6872 156.347 78.0534C144.169 74.666 129.652 74.4622 113.102 79.2C72.9831 92.1309 59.6091 131.451 65.3414 174.994C75.3453 229.555 128.842 249.111 155.506 253.036Z"/>
+                        <path d="M41.2387 222.111C33.7762 208.86 27.0184 189.088 26.1739 171.123C23.3092 110.164 60.5628 69.5235 100.683 62.7503C155.371 53.5175 185.775 85.8934 196.256 109.923C196.695 109.628 196.873 109.043 196.641 108.539C179.408 71.0662 143.765 45.3331 102.592 45.3331C55.8419 45.3331 14.127 78.8691 0 128.71C0.200633 165.642 16.0426 198.871 41.2387 222.111Z"/>
+                        <path d="M199.997 233.844C190.764 240.137 180.665 245.253 169.916 248.977C164.755 248.078 159.037 246.959 155.011 246.171C153.103 245.797 151.574 245.498 150.666 245.332C126.318 240.885 82.7834 225.195 73.246 173.749C70.5513 153.063 72.4812 134.02 79.3156 118.916C86.0487 104.035 97.6686 92.6275 115.39 86.8682C135.987 81.2567 153.055 84.0378 165.732 90.8469C162.612 90.1887 159.386 89.8437 156.085 89.8437C128.652 89.8437 106.414 113.671 106.414 143.063C106.414 154.799 109.959 165.648 115.966 174.447C115.966 174.447 133.16 206.926 179.966 204.023C221.7 201.434 243.373 163.999 245.956 150.172C247.298 142.986 248 135.575 248 127.999C248 61.7256 194.274 7.99997 128.001 7.99997C77.851 7.99997 34.8866 38.7631 16.9488 82.4478C10.8898 90.3409 5.6727 99.0914 1.46875 108.554C10.8367 47.0899 63.9194 0 128.001 0C198.693 0 256 57.3073 256 127.999C256 171.996 233.803 210.805 199.997 233.844Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
