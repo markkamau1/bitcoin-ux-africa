@@ -373,7 +373,7 @@ slug: "seed-phrase-ux"
 
             <p>Self-custody is Bitcoin's most powerful feature. It's also where most people give up.</p>
 
-            <p>Over six months, we watched 847 first-time Bitcoin users across Nigeria, Kenya, South Africa, Ghana, Tanzania, and Uganda attempt to back up their seed phrases. <span class="stat-highlight">Only 229 of them — 27% — completed the process correctly on the first try.</span> The rest either abandoned the wallet entirely or skipped backup, leaving their funds at risk without knowing it.</p>
+            <p>Over six months, we watched 847 first-time Bitcoin users across Nigeria, Kenya, South Africa, Ghana, Tanzania, and Uganda attempt to back up their seed phrases. <span class="stat-highlight">Only 229 of them (27%) completed the process correctly on the first try.</span> The rest either abandoned the wallet entirely or skipped backup, leaving their funds at risk without knowing it.</p>
 
             <p>None of this was about capability. These users were small business owners, teachers, traders. They use mobile banking apps every day without problems. The seed phrase screen broke them because it was designed to break them.</p>
 
@@ -403,7 +403,7 @@ slug: "seed-phrase-ux"
             <p>Watch what actually happens.</p>
 
             <div class="insight-box">
-                <h4>User Testing Observation — Lagos, Nigeria</h4>
+                <h4>User Testing Observation, Lagos, Nigeria</h4>
                 <p>Chioma, 28, small business owner. She reaches the seed phrase screen. Reads the first three words. Looks confused. Reads them again. Glances around her office. Opens her phone's notes app. Starts typing the words. The wallet moves to the background. When she returns, the screen has changed. She tries again. Six minutes later she uninstalls the wallet.</p>
             </div>
 
@@ -446,8 +446,8 @@ slug: "seed-phrase-ux"
             <p>We asked users who did write down their seed phrase where they stored it:</p>
 
             <ul>
-                <li>41% took a photo — which defeats the purpose of a physical backup</li>
-                <li>23% saved it in phone notes — which defeats the purpose entirely</li>
+                <li>41% took a photo, which defeats the purpose of a physical backup</li>
+                <li>23% saved it in phone notes, which defeats the purpose entirely</li>
                 <li>19% wrote it on loose paper that was later lost</li>
                 <li>17% stored it somewhere actually secure</li>
             </ul>
@@ -464,7 +464,7 @@ slug: "seed-phrase-ux"
 
             <div class="insight-box">
                 <h4>The Safe Metaphor</h4>
-                <p>"Think of your Bitcoin wallet like a safe. The seed phrase is the combination. If you lose the combination, nobody — not even us — can open it for you. Your Bitcoin will be locked inside forever."</p>
+                <p>"Think of your Bitcoin wallet like a safe. The seed phrase is the combination. If you lose the combination, nobody, not even us, can open it for you. Your Bitcoin will be locked inside forever."</p>
             </div>
 
             <h3>Step 2: Prepare the Environment First</h3>
@@ -527,7 +527,7 @@ slug: "seed-phrase-ux"
 
             <h2>The Simple Version</h2>
 
-            <p>A 73% failure rate at seed phrase backup isn't a user problem. Every one of those failures has a design explanation. The users who failed Chioma's way — confused, rushing, no paper, no context — would have succeeded with a different screen.</p>
+            <p>A 73% failure rate at seed phrase backup isn't a user problem. Every one of those failures has a design explanation. The users who failed Chioma's way: confused, rushing, no paper, no context. They would have succeeded with a different screen.</p>
 
             <p>Our complete seed phrase onboarding framework, including screen designs, copy templates in 20+ African languages, and user testing scripts, is available open-source for wallet developers. If you're building a wallet and want to implement it, get in touch.</p>
 
