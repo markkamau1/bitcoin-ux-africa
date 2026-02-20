@@ -40,6 +40,7 @@ slug: "bitcoin-wallet-patterns"
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/blog-styles.css">
+    <link rel="stylesheet" href="../../blog/you-may-also-like.css">
 
     <style>
         body { margin: 0; padding: 0; }
@@ -337,6 +338,11 @@ slug: "bitcoin-wallet-patterns"
             </div>
         </div>
     </footer>
+    <script>
+        const CURRENT_POST_ID = "bitcoin-wallet-patterns";
+    </script>
+    <script src="../../blog/blog-posts-data.js"></script>
+    <script src="../../blog/you-may-also-like.js"></script>
 
 </body>
 </html>
