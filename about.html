@@ -73,7 +73,9 @@
 
         /* NAV */
         .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(10,13,11,0.88),transparent);backdrop-filter:blur(2px);}
-        .site-nav img{height:36px;}
+        .site-nav img{width:150px;height:auto;}
+        @media(max-width:768px){.site-nav img{width:110px;}}
+        @media(max-width:480px){.site-nav img{width:90px;}}
         .nav-links{display:flex;gap:32px;align-items:center;}
         .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
         .nav-links a:hover{color:white;}
@@ -729,8 +731,8 @@
     <h2 id="cta-heading">Read the research.<br>Use the findings.</h2>
     <p>Everything we've found is published and free to use. If you're building a Bitcoin wallet for African users, start here.</p>
     <div class="cta-buttons">
-        <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html" class="btn btn-white">2026 State of Bitcoin UX →</a>
-        <a href="uxsupport.html" class="btn btn-outline">Work With Us</a>
+        <a href="mailto:mark@foundation.africa" class="btn btn-white">Get in Touch</a>
+        <a href="uxsupport.html" class="btn btn-outline">Need UX Support?</a>
     </div>
 </section>
 
