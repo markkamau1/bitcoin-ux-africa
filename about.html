@@ -208,6 +208,122 @@
         .footer-links a:hover{color:var(--orange);}
         .footer-domain{font-family:'DM Mono',monospace;font-size:12px;color:rgba(249,115,22,0.5);letter-spacing:0.08em;}
 
+        /* COMMUNITY */
+        .community{background:var(--black);}
+        .community .section-title{color:white;}
+        .community .section-label{color:var(--orange);}
+        .community .prose p{color:rgba(255,255,255,0.55);}
+
+        .community-slider-wrap{position:relative;}
+        .community-slider-viewport{overflow:hidden;border-radius:16px;}
+        .community-slider-track{display:flex;transition:transform .5s cubic-bezier(0.25,0.46,0.45,0.94);will-change:transform;}
+
+        .community-slide{
+            flex:0 0 100%;
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.07);
+            border-radius:16px;
+            padding:56px 64px;
+            display:grid;
+            grid-template-columns:auto 1fr;
+            grid-template-rows:auto auto 1fr auto;
+            column-gap:32px;
+        }
+        .community-slide-num{
+            font-family:'Bebas Neue',sans-serif;
+            font-size:5rem;
+            color:rgba(249,115,22,0.15);
+            line-height:1;
+            grid-row:1/3;
+            padding-top:4px;
+            letter-spacing:-2px;
+            user-select:none;
+        }
+        .community-slide-icon{grid-column:2;color:var(--orange);margin-bottom:20px;}
+        .community-slide-title{
+            grid-column:2;
+            font-family:'Bebas Neue',sans-serif;
+            font-size:clamp(1.8rem,3vw,2.6rem);
+            color:white;
+            letter-spacing:-0.5px;
+            line-height:1;
+            margin-bottom:20px;
+        }
+        .community-slide-body{
+            grid-column:1/-1;
+            font-size:1.05rem;
+            line-height:1.8;
+            color:rgba(255,255,255,0.55);
+            margin-bottom:32px;
+        }
+        .community-slide-tag{
+            grid-column:1/-1;
+            display:inline-flex;
+            align-self:end;
+            font-family:'DM Mono',monospace;
+            font-size:0.7rem;
+            font-weight:700;
+            letter-spacing:0.2em;
+            text-transform:uppercase;
+            color:var(--orange);
+            background:rgba(249,115,22,0.1);
+            border:1px solid rgba(249,115,22,0.2);
+            padding:6px 14px;
+            border-radius:4px;
+            width:fit-content;
+        }
+
+        .community-controls{display:flex;justify-content:space-between;align-items:center;margin-top:28px;}
+        .community-dots{display:flex;gap:8px;}
+        .community-dot{
+            width:32px;height:3px;border-radius:2px;
+            background:rgba(255,255,255,0.12);
+            border:none;cursor:pointer;padding:0;
+            transition:all .25s;
+        }
+        .community-dot.active{background:var(--orange);width:48px;}
+        .community-arrows{display:flex;gap:10px;}
+        .community-arrow{
+            width:42px;height:42px;border-radius:50%;
+            border:1px solid rgba(255,255,255,0.12);
+            background:transparent;color:rgba(255,255,255,0.5);
+            cursor:pointer;display:flex;align-items:center;justify-content:center;
+            transition:all .2s;
+        }
+        .community-arrow:hover:not(:disabled){border-color:var(--orange);color:var(--orange);}
+        .community-arrow:disabled{opacity:0.25;cursor:not-allowed;}
+
+        .community-cta{
+            display:flex;justify-content:space-between;align-items:center;
+            margin-top:56px;
+            background:rgba(249,115,22,0.07);
+            border:1px solid rgba(249,115,22,0.15);
+            border-radius:12px;
+            padding:32px 40px;
+            gap:32px;
+            flex-wrap:wrap;
+        }
+        .community-cta-label{
+            font-family:'DM Mono',monospace;
+            font-size:0.7rem;font-weight:700;
+            letter-spacing:0.2em;text-transform:uppercase;
+            color:var(--orange);margin-bottom:8px;
+        }
+        .community-cta-sub{font-size:0.975rem;color:rgba(255,255,255,0.45);line-height:1.55;}
+        .btn-dark{background:white;color:var(--black);white-space:nowrap;flex-shrink:0;}
+        .btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+
+        @media(max-width:900px){
+            .community-slide{padding:36px 28px;column-gap:20px;}
+            .community-slide-num{font-size:3.5rem;}
+        }
+        @media(max-width:600px){
+            .community-slide{grid-template-columns:1fr;padding:32px 24px;}
+            .community-slide-num{display:none;}
+            .community-slide-icon,.community-slide-title{grid-column:1;}
+            .community-cta{padding:24px;}
+        }
+
         /* ANIMATIONS */
         .fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
         .fade-up.visible{opacity:1;transform:none;}
@@ -413,6 +529,105 @@
     </div>
 </section>
 
+<!-- COMMUNITY -->
+<section class="section community" aria-labelledby="community-heading">
+    <div class="section-inner-wide">
+        <div class="section-label" id="community-heading">Bitcoin Design Community</div>
+        <h2 class="section-title">Training the next<br>generation of <em>African</em><br>Bitcoin designers.</h2>
+        <div class="prose fade-up" style="max-width:640px;margin-bottom:64px;">
+            <p>Research fixes wallets that already exist. But Africa needs Bitcoin designers who can build the next generation of them. We are building a training programme and professional community for African designers who want to work in Bitcoin, and a platform to showcase their work to the world.</p>
+        </div>
+
+        <!-- Slider -->
+        <div class="community-slider-wrap fade-up">
+            <div class="community-slider-viewport">
+                <div class="community-slider-track" id="community-track">
+
+                    <div class="community-slide">
+                        <div class="community-slide-num">01</div>
+                        <div class="community-slide-icon" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3 class="community-slide-title">Bitcoin Design Training</h3>
+                        <p class="community-slide-body">A structured curriculum built around real Bitcoin products and real African users. Participants move from design fundamentals through Bitcoin-specific UX challenges (seed phrases, transaction flows, onboarding) using our own research as the case study material. Practical from day one.</p>
+                        <div class="community-slide-tag">Curriculum</div>
+                    </div>
+
+                    <div class="community-slide">
+                        <div class="community-slide-num">02</div>
+                        <div class="community-slide-icon" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </div>
+                        <h3 class="community-slide-title">Alumni Profiles</h3>
+                        <p class="community-slide-body">Every designer who completes the programme gets a public profile on this platform: their work, their country, their specialisms. A living directory of African Bitcoin design talent that hiring teams, wallet companies, and collaborators can search and contact directly.</p>
+                        <div class="community-slide-tag">Coming Soon</div>
+                    </div>
+
+                    <div class="community-slide">
+                        <div class="community-slide-num">03</div>
+                        <div class="community-slide-icon" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <h3 class="community-slide-title">Work Showcase</h3>
+                        <p class="community-slide-body">A curated showcase of Bitcoin design work produced by African designers: case studies, redesigns, research projects, open-source contributions. Proof that world-class Bitcoin UX talent exists on this continent and is ready to build the products the next billion users need.</p>
+                        <div class="community-slide-tag">Coming Soon</div>
+                    </div>
+
+                    <div class="community-slide">
+                        <div class="community-slide-num">04</div>
+                        <div class="community-slide-icon" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 class="community-slide-title">A Professional Community</h3>
+                        <p class="community-slide-body">Design is learned faster in community than in isolation. We are building the infrastructure for African Bitcoin designers to find each other: peer review, shared critique, collaborative projects, and a network that spans every country we work in. The goal is a self-sustaining ecosystem, not a programme people graduate out of.</p>
+                        <div class="community-slide-tag">Community</div>
+                    </div>
+
+                    <div class="community-slide">
+                        <div class="community-slide-num">05</div>
+                        <div class="community-slide-icon" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h3 class="community-slide-title">Research Into Practice</h3>
+                        <p class="community-slide-body">Community members get direct access to our unpublished research as it is produced. The training is not theoretical: participants work with real failure data, real user quotes, and real design problems drawn from our ongoing field sessions. The community and the research feed each other.</p>
+                        <div class="community-slide-tag">Research</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="community-controls">
+                <div class="community-dots" id="community-dots" role="tablist" aria-label="Community slides">
+                    <button class="community-dot active" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
+                    <button class="community-dot"        role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                    <button class="community-dot"        role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                    <button class="community-dot"        role="tab" aria-selected="false" aria-label="Slide 4"></button>
+                    <button class="community-dot"        role="tab" aria-selected="false" aria-label="Slide 5"></button>
+                </div>
+                <div class="community-arrows">
+                    <button class="community-arrow" id="community-prev" aria-label="Previous slide" disabled>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="community-arrow" id="community-next" aria-label="Next slide">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA strip -->
+        <div class="community-cta fade-up">
+            <div class="community-cta-text">
+                <div class="community-cta-label">Interested in joining or partnering?</div>
+                <div class="community-cta-sub">The programme is in development. Get in touch to be part of the first cohort or to discuss partnership.</div>
+            </div>
+            <a href="uxsupport.html" class="btn btn-dark">Get in Touch</a>
+        </div>
+
+    </div>
+</section>
+
 <!-- PRINCIPLES -->
 <section class="section principles" aria-labelledby="principles-heading">
     <div class="section-inner">
@@ -537,6 +752,40 @@
 </footer>
 
 <script>
+    // Community slider
+    (function(){
+        const track  = document.getElementById('community-track');
+        const dots   = document.querySelectorAll('#community-dots .community-dot');
+        const prev   = document.getElementById('community-prev');
+        const next   = document.getElementById('community-next');
+        const total  = dots.length;
+        let current  = 0;
+        let startX   = 0;
+
+        function goTo(n){
+            current = Math.max(0, Math.min(n, total - 1));
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach(function(d,i){
+                d.classList.toggle('active', i === current);
+                d.setAttribute('aria-selected', i === current);
+            });
+            prev.disabled = current === 0;
+            next.disabled = current === total - 1;
+        }
+
+        prev.addEventListener('click', function(){ goTo(current - 1); });
+        next.addEventListener('click', function(){ goTo(current + 1); });
+        dots.forEach(function(d, i){ d.addEventListener('click', function(){ goTo(i); }); });
+
+        track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+        track.addEventListener('touchend',   function(e){
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 48) goTo(dx < 0 ? current + 1 : current - 1);
+        }, {passive:true});
+
+        goTo(0);
+    })();
+
     const observer = new IntersectionObserver(
         entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
         { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
