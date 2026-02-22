@@ -103,9 +103,7 @@
         /* ── NAV ── */
         .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:background .3s;}
         .site-nav.scrolled{background:rgba(10,13,11,0.95);backdrop-filter:blur(8px);}
-        .site-nav img{width:150px;height:auto;}
-        @media(max-width:768px){.site-nav img{width:110px;}}
-        @media(max-width:480px){.site-nav img{width:90px;}}
+        .site-nav img{height:38px;}
         .nav-links{display:flex;gap:32px;align-items:center;}
         .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
         .nav-links a:hover{color:white;}
@@ -129,7 +127,7 @@
         .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
         .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;}
         .eyebrow-text{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
-        .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.15rem,8.1vw,7.65rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:32px;transition:opacity .4s,transform .4s;}
+        .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8.5rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:32px;transition:opacity .4s,transform .4s;}
         .hero h1 em{font-style:normal;color:var(--orange);}
         .hero-sub{font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.6;color:rgba(255,255,255,0.65);max-width:680px;margin-bottom:48px;font-style:italic;transition:opacity .4s,transform .4s;}
         .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px;}
@@ -309,7 +307,7 @@
             <div class="eyebrow-dot"></div>
             <span class="eyebrow-text" id="hero-eyebrow-text">Original field research · Africa</span>
         </div>
-        <h1 id="hero-title">Bitcoin UX<br><em>Infrastructure · Africa</em></h1>
+        <h1 id="hero-title">Bitcoin UX<br><em>Infrastructure</em><br>for Africa</h1>
         <p class="hero-sub" id="hero-sub">Building the foundational layer that makes Bitcoin work for 1 billion Africans.</p>
         <div class="hero-actions">
             <a href="#bitcoin-ux-insights" class="btn-hero-primary">Read the Research</a>
@@ -578,8 +576,8 @@
     <h2 id="cta-heading">Building a Bitcoin wallet<br>for African users?</h2>
     <p>We're building the shared UX infrastructure the ecosystem needs. Start with our research, or work with us directly.</p>
     <div class="cta-buttons">
-        <a href="/cdn-cgi/l/email-protection#711c10031a31171e041f151005181e1f5f101703181210" class="btn-white">Get in Touch</a>
-        <a href="uxsupport.html" class="btn-outline">Need UX Support?</a>
+        <a href="uxsupport.html" class="btn-white">Get in Touch</a>
+        <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html" class="btn-outline">Read the 2026 Research →</a>
     </div>
 </section>
 
@@ -609,7 +607,7 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── NAV scroll behavior ──────────────────────────────────────
 const nav = document.getElementById('site-nav');
 window.addEventListener('scroll', () => {
@@ -631,8 +629,8 @@ navLinks.querySelectorAll('a').forEach(a => {
 const slides  = document.querySelectorAll('.hero-slide');
 const dots    = document.querySelectorAll('.hero-dot');
 const slideData = [
-    { eyebrow:'Original field research · Africa',          title:'Bitcoin UX<br><em>Infrastructure · Africa</em>',              sub:'Building the foundational layer that makes Bitcoin work for 1 billion Africans.' },
-    { eyebrow:'340+ moderated sessions',                   title:'Training<br><em>African Bitcoin Builders</em>',                   sub:'Training the next generation of Bitcoin UX designers across the continent.' },
+    { eyebrow:'Original field research · Africa',          title:'Bitcoin UX<br><em>Infrastructure</em><br>for Africa',              sub:'Building the foundational layer that makes Bitcoin work for 1 billion Africans.' },
+    { eyebrow:'340+ moderated sessions',                   title:'Training<br><em>African Bitcoin</em><br>Builders',               sub:'Training the next generation of Bitcoin UX designers across the continent.' },
     { eyebrow:'Data, not assumptions',                     title:'Research-Driven<br><em>Bitcoin Design</em>',                       sub:'Real users. Observed sessions. Published findings. Not guesses.' },
     { eyebrow:'Open research · Free to use',               title:'Open Source<br><em>for Everyone</em>',                             sub:'Shared infrastructure that lifts every wallet and accelerates African Bitcoin adoption.' }
 ];
@@ -732,4 +730,10 @@ setInterval(() => showSlide((currentSlide + 1) % slides.length), 5500);
 // ── Scroll animations ────────────────────────────────────────
 const observer = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { thr
+    { threshold: 0.07, rootMargin: '0px 0px -48px 0px' }
+);
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
