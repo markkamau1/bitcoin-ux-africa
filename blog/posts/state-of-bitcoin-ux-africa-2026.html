@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of Bitcoin UX in Africa 2026: Research Report | Bitcoin UX Africa</title>
+    <meta name="description" content="Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia. What's broken, what's working, and what Bitcoin builders must fix in 2026.">
+    <link rel="canonical" href="https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html">
+    <meta name="author" content="Bitcoin UX Africa">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="The State of Bitcoin UX in Africa 2026: Research Report">
+    <meta property="og:description" content="Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia. What's broken, what's working, and what builders must fix in 2026.">
+    <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Bitcoin UX Africa">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bitcoin_ux">
+    <meta name="twitter:title" content="The State of Bitcoin UX in Africa 2026: Research Report">
+    <meta name="twitter:description" content="Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia.">
+    <meta name="twitter:image" content="https://bitcoinux.africa/images/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The State of Bitcoin UX in Africa 2026: Research Report",
+      "description": "Original research from 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia.",
+      "author": { "@type": "Organization", "name": "Bitcoin UX Africa", "url": "https://bitcoinux.africa" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bitcoin UX Africa",
+        "logo": { "@type": "ImageObject", "url": "https://bitcoinux.africa/images/bitcoinUX_Logo.svg" }
+      },
+      "datePublished": "2026-02-17",
+      "dateModified": "2026-02-17",
+      "image": "https://bitcoinux.africa/images/blog/state-of-bitcoin-ux-2026.jpg",
+      "mainEntityOfPage": "https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html",
+      "keywords": ["bitcoin ux africa", "bitcoin ux research", "bitcoin wallet ux", "african bitcoin users", "bitcoin usability testing"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitcoinux.africa/" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://bitcoinux.africa/#bitcoin-ux-insights" },
+        { "@type": "ListItem", "position": 3, "name": "State of Bitcoin UX Africa 2026" }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="../../images/bitcoinUX_Favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <style>
+        :root {
+            --black:    #0a0d0b;
+            --dark:     #111827;
+            --mid:      #1f2937;
+            --orange:   #f97316;
+            --orange-l: #fb923c;
+            --cream:    #fafaf7;
+            --text:     #374151;
+            --muted:    #6b7280;
+            --border:   #e5e7eb;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+
+        /* ── NAV ── */
+        .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; transition: background .3s; }
+        .site-nav.scrolled { background: rgba(10,13,11,0.95); backdrop-filter: blur(8px); }
+        .site-nav img { width: 150px; height: auto; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color .2s; }
+        .nav-links a:hover { color: white; }
+        .nav-cta { background: var(--orange) !important; color: white !important; padding: 9px 22px; border-radius: 6px; opacity: 1 !important; }
+        .nav-cta:hover { background: var(--orange-l) !important; }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: white; padding: 4px; }
+
+        /* ── ARTICLE HERO ── */
+        .article-hero {
+            min-height: 100vh;
+            background: var(--black);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 48px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('../../images/blog/state-of-bitcoin-ux-2026.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .article-hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10,13,11,0.3) 0%, rgba(10,13,11,0.55) 50%, rgba(10,13,11,0.92) 100%);
+        }
+        .article-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .article-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+        .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+        .eyebrow-text { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+        .article-hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 7.65rem);
+            line-height: 0.92;
+            color: white;
+            letter-spacing: -1px;
+            margin-bottom: 28px;
+        }
+        .article-hero h1 em { font-style: normal; color: var(--orange); }
+        .article-lede {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.65;
+            color: rgba(255,255,255,0.65);
+            font-style: italic;
+            max-width: 680px;
+            margin-bottom: 48px;
+        }
+        .article-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 28px;
+            flex-wrap: wrap;
+        }
+        .meta-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
+        .meta-tag.category { background: rgba(249,115,22,0.15); color: var(--orange-l); padding: 5px 12px; border-radius: 4px; }
+        .meta-tag.date, .meta-tag.readtime { color: rgba(255,255,255,0.35); }
+
+        /* ── ARTICLE BODY ── */
+        .blog-article { max-width: 800px; margin: 0 auto; padding: 80px 24px 64px; }
+        .article-content { font-size: 1.1rem; line-height: 1.85; color: var(--text); }
+        .article-content p { margin-bottom: 24px; }
+        .article-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--dark);
+            margin: 72px 0 20px;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+        .article-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            color: var(--dark);
+            margin: 48px 0 14px;
+            letter-spacing: -0.25px;
+            line-height: 1;
+        }
+        .article-content strong { color: var(--dark); font-weight: 700; }
+        .article-content a { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .article-content a:hover { text-decoration: underline; }
+
+        /* ── STAT GRID ── */
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: rgba(17,24,39,0.08); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin: 40px 0; }
+        .stat-card { background: white; padding: 36px 20px; text-align: center; }
+        .stat-card .number { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--orange); line-height: 1; letter-spacing: -1px; margin-bottom: 10px; }
+        .stat-card .label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); line-height: 1.5; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* ── DATA BOX ── */
+        .data-box { background: var(--dark); border-left: 4px solid var(--orange); padding: 24px 28px; margin: 36px 0; border-radius: 0 8px 8px 0; }
+        .data-box h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--orange); margin-bottom: 12px; letter-spacing: 0.5px; }
+        .data-box p { margin-bottom: 0; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .data-box p strong { color: white; }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote { margin: 48px 0; padding: 28px 36px; background: var(--dark); border-radius: 12px; }
+        .pull-quote p { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,0.85); margin-bottom: 16px; line-height: 1.65; }
+        .pull-quote cite { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--orange); font-style: normal; letter-spacing: 0.08em; text-transform: uppercase; }
+
+        /* ── COUNTRY TABLE ── */
+        .country-table { width: 100%; border-collapse: collapse; margin: 36px 0; font-size: 0.975rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+        .country-table th { background: var(--dark); color: white; padding: 14px 16px; text-align: left; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.5px; }
+        .country-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--text); background: white; }
+        .country-table tr:last-child td { border-bottom: none; }
+        .country-table tr:nth-child(even) td { background: #f9fafb; }
+        .country-table td:first-child { font-weight: 600; color: var(--dark); }
+        .country-table tfoot td { background: var(--mid); color: white; font-weight: 700; border-bottom: none; }
+
+        /* ── RECOMMENDATION ── */
+        .recommendation { background: white; border: 1px solid var(--border); border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+        .recommendation h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 10px; letter-spacing: 0.25px; }
+        .recommendation p { margin-bottom: 0; color: var(--text); line-height: 1.7; }
+
+        /* ── CITE BOX ── */
+        .cite-box { background: var(--mid); border-radius: 10px; padding: 24px 28px; margin: 40px 0; }
+        .cite-box h4 { font-family: 'DM Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); margin-bottom: 12px; }
+        .cite-box p { margin: 0; color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.65; }
+        .cite-box em { color: rgba(255,255,255,0.85); font-style: italic; }
+
+        /* ── BACK LINK ── */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 64px; color: var(--orange); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: transform .2s; }
+        .back-link:hover { transform: translateX(-4px); color: var(--orange-l); }
+
+        /* ── CTA SECTION ── */
+        .cta-section { background: var(--orange); padding: 112px 48px; text-align: center; }
+        .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); color: white; line-height: 0.95; letter-spacing: -1px; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.15rem; color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 44px; line-height: 1.65; font-family: 'DM Serif Display', serif; font-style: italic; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white { background: white; color: var(--orange); padding: 15px 36px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all .25s; display: inline-block; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+        .btn-outline { background: transparent; color: white; padding: 15px 36px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.45); transition: all .25s; display: inline-block; }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+        /* ── FOOTER ── */
+        footer { background: var(--black); padding: 48px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+        .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.85rem; transition: color .2s; }
+        .footer-links a:hover { color: var(--orange); }
+        .footer-social { display: flex; gap: 16px; align-items: center; margin-top: 16px; }
+        .footer-social a { color: rgba(255,255,255,0.3); transition: color .2s; }
+        .footer-social a:hover { color: var(--orange); }
+        .footer-right { text-align: right; }
+        .footer-domain { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(249,115,22,0.5); letter-spacing: 0.08em; }
+        .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.2); margin-top: 6px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .site-nav { padding: 16px 24px; }
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 0; background: rgba(10,13,11,0.97); align-items: center; justify-content: center; gap: 40px; z-index: 200; }
+            .nav-links.open a { font-size: 1.4rem; }
+            .nav-hamburger { display: block; }
+            .site-nav img { width: 110px; }
+            .article-hero { padding: 0 24px 64px; }
+            .blog-article { padding: 56px 16px 48px; }
+            .article-content { font-size: 1rem; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .country-table { font-size: 0.85rem; }
+            .country-table th, .country-table td { padding: 10px 12px; }
+            .cta-section { padding: 80px 24px; }
+            footer { padding: 40px 24px; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+            .footer-right { text-align: left; }
+            .pull-quote { padding: 20px 22px; }
+        }
+        @media (max-width: 480px) {
+            .site-nav img { width: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="../../index.html" aria-label="Bitcoin UX Africa, Home">
+        <img src="../../images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa">
+    </a>
+    <div class="nav-links" id="nav-links">
+        <a href="../../index.html#bitcoin-ux-insights">Research</a>
+        <a href="../../about.html">About</a>
+        <a href="../../uxsupport.html" class="nav-cta">Get UX Support</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+    </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="article-hero">
+    <div class="article-hero-bg"></div>
+    <div class="article-hero-content">
+        <div class="article-eyebrow">
+            <div class="eyebrow-dot"></div>
+            <span class="eyebrow-text">Original field research · Africa · 340+ sessions</span>
+        </div>
+        <h1>The State of<br>Bitcoin UX<br><em>in Africa 2026</em></h1>
+        <p class="article-lede">We ran 340 usability tests across Kenya, Nigeria, Ghana, South Africa, and Ethiopia. What's broken, what actually works, and what every Bitcoin builder must fix this year.</p>
+        <div class="article-meta-row">
+            <span class="meta-tag category">Research Report</span>
+            <span class="meta-tag date">17 February 2026</span>
+            <span class="meta-tag readtime">10 min read</span>
+        </div>
+    </div>
+</section>
+
+<!-- ── BODY ── -->
+<div class="blog-article">
+    <div class="article-content">
+
+        <p>Africa has more unbanked people than any other continent and the fastest-growing Bitcoin adoption rate in the world. Yet almost every wallet people here are using was designed by someone who has never sat across a table from an African Bitcoin user and watched them struggle.</p>
+
+        <p>That's the gap this report is about. We spent ten months running usability tests in five countries to map exactly where that gap is and how much it's costing Bitcoin adoption on this continent.</p>
+
+        <div class="data-box">
+            <h4>About This Research</h4>
+            <p><strong>340 moderated usability tests</strong> conducted between March 2025 and January 2026 across Kenya (89 participants), Nigeria (94), Ghana (67), South Africa (52), and Ethiopia (38). Participants ranged from first-time users to experienced traders. Sessions were conducted in local languages wherever possible.</p>
+        </div>
+
+        <h2>The Headlines</h2>
+
+        <p>Across all five countries, 73% of first-time users couldn't complete a self-custody onboarding flow without help. 89% hit at least one moment of confusion serious enough that they considered quitting entirely.</p>
+
+        <p>That's not a fringe result. Those are the majority of people Bitcoin needs to reach.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">89%</div>
+                <div class="label">Hit critical confusion in their first session</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">73%</div>
+                <div class="label">Failed self-custody onboarding without help</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">67%</div>
+                <div class="label">Reduction in abandonment after targeted UX fixes</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">340+</div>
+                <div class="label">User tests across 5 countries</div>
+            </div>
+        </div>
+
+        <p>The good news: our case study work with a Kenya-based wallet shows these numbers move quickly with the right fixes. None of the changes required touching the Bitcoin protocol or rebuilding the product from scratch.</p>
+
+        <h2>What We Found, Country by Country</h2>
+
+        <p>Bitcoin UX isn't one problem. The barriers shift depending on where you are, the infrastructure people use, the languages they think in, the financial tools they already trust. Here's the breakdown.</p>
+
+        <table class="country-table">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Participants</th>
+                    <th>Top UX Barrier</th>
+                    <th>Abandonment</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🇰🇪 Kenya</td>
+                    <td>89</td>
+                    <td>Seed phrase backup anxiety</td>
+                    <td>71%</td>
+                    <td>4G widely available, M-Pesa dominant mental model</td>
+                </tr>
+                <tr>
+                    <td>🇳🇬 Nigeria</td>
+                    <td>94</td>
+                    <td>Fee confusion at checkout</td>
+                    <td>84%</td>
+                    <td>Mixed 3G/4G, high mobile data costs</td>
+                </tr>
+                <tr>
+                    <td>🇬🇭 Ghana</td>
+                    <td>67</td>
+                    <td>Address format distrust</td>
+                    <td>76%</td>
+                    <td>Improving 4G, Mobile Money (MoMo) dominant</td>
+                </tr>
+                <tr>
+                    <td>🇿🇦 South Africa</td>
+                    <td>52</td>
+                    <td>KYC friction at onboarding</td>
+                    <td>58%</td>
+                    <td>Good urban 4G, significant rural gap</td>
+                </tr>
+                <tr>
+                    <td>🇪🇹 Ethiopia</td>
+                    <td>38</td>
+                    <td>English-only interfaces</td>
+                    <td>91%</td>
+                    <td>2G/3G common, Amharic primary language</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Kenya: The M-Pesa Problem</h3>
+
+        <p>Kenya has high Bitcoin adoption rates and a relatively open regulatory environment. But our research kept running into the same wall: M-Pesa has trained Kenyan users to expect money to move in a very specific way.</p>
+
+        <p>They expect to send using a phone number. They expect transactions to be reversible. They expect confirmation in seconds. When a Bitcoin wallet shows a 32-character address instead of a phone number, or takes 10 minutes to confirm, users don't think "Bitcoin works differently." They think something has gone wrong.</p>
+
+        <div class="pull-quote">
+            <p>"I typed the address three times. Each time I thought, this cannot be right. Who sends money to something that looks like this?"</p>
+            <cite>Participant, Nairobi, Kenya (first-time Bitcoin user)</cite>
+        </div>
+
+        <p>The highest-impact fix in this market is address humanisation: showing a recognisable name alongside the Bitcoin address. In our Kenya case study, that single change reduced address-related abandonment by 34%.</p>
+
+        <h3>Nigeria: The Fee Shock Problem</h3>
+
+        <p>Nigeria had our highest participant count (94 people) and the second-highest abandonment rate (84%). The failure wasn't happening at onboarding. It was happening at checkout.</p>
+
+        <p>We call it the "final screen shock." Users enter an amount, enter an address, get through the whole flow, and then discover on the confirmation screen that the total cost, including network fees, is significantly higher than expected. In 67% of Nigerian test sessions, participants either abandoned or cut their transaction amount after seeing the fee for the first time at that final step.</p>
+
+        <div class="data-box">
+            <h4>Key Finding: Fees Are Hidden Until It's Too Late</h4>
+            <p>Not a single wallet we tested showed fee estimates before the confirmation screen. Users only discovered the true cost of a transaction after they'd already entered all their details. Showing an estimated fee range at the amount entry step, before users commit, reduced abandonment by 41% in our tests. Users don't object to fees. They object to surprises.</p>
+        </div>
+
+        <h3>Ghana: Address Distrust</h3>
+
+        <p>Ghana's Mobile Money ecosystem has trained users to recognise what a valid payment string looks like. When someone used to MoMo sees a Bitcoin address for the first time, 26 to 62 characters of mixed case, the instinct isn't curiosity. It's suspicion.</p>
+
+        <p>In 61% of Ghanaian sessions, participants asked the facilitator whether the address was actually correct before sending. In real-world use without a facilitator present, most would have stopped there.</p>
+
+        <h3>South Africa: KYC Friction</h3>
+
+        <p>South Africa had the lowest abandonment rate in our study (58%) and the most financially literate participants on average. The dominant failure point was KYC: identity verification requirements that participants found intrusive, confusing, or simply too slow. Several described abandoning wallets mid-onboarding because the verification process felt more like a bank application than a financial tool.</p>
+
+        <h3>Ethiopia: 91% Abandonment. One Root Cause.</h3>
+
+        <p>Of the 38 Ethiopian participants, only 4 completed a basic send transaction without language-related assistance. The others couldn't, not because Bitcoin is too complex, but because nobody had translated the interface into the language they think in.</p>
+
+        <div class="pull-quote">
+            <p>"My son translates for me. But he is not always there. So I wait. Sometimes I just don't do it."</p>
+            <cite>Participant, Addis Ababa, Ethiopia (age 54, market trader)</cite>
+        </div>
+
+        <p>A 91% abandonment rate driven almost entirely by a missing Amharic translation is not a Bitcoin problem. It's a product decision that hasn't been made yet.</p>
+
+        <h2>Four Failure Points That Cross Every Border</h2>
+
+        <p>Nationality, age, and financial background didn't predict failure as reliably as four specific design problems that kept showing up everywhere.</p>
+
+        <h3>1. Seed Phrase Backup</h3>
+
+        <p>The 12 or 24-word seed phrase is the most important concept in self-custody Bitcoin. In our research, it's also the single best predictor of user abandonment. Across all five countries, 73% of first-time users either skipped the backup step entirely (when the wallet allowed it), made errors, or showed enough distress that they couldn't continue.</p>
+
+        <div class="data-box">
+            <h4>What Actually Happened at the Seed Phrase Screen</h4>
+            <p>
+                <strong>Skipped entirely (wallet allowed it):</strong> 41% of participants<br>
+                <strong>Completed but with errors:</strong> 19% of participants<br>
+                <strong>Completed correctly but visibly distressed:</strong> 28% of participants<br>
+                <strong>Completed correctly and confidently:</strong> 12% of participants
+            </p>
+        </div>
+
+        <p>Wallets present seed phrase backup as a technical ritual without explaining what it is, why it matters, or what happens if it's lost. Users told us they felt like they were doing something irreversible and dangerous, which they were, with no real understanding of the stakes. High stakes and zero context reliably produce abandonment.</p>
+
+        <h3>2. Transaction Fees</h3>
+
+        <p>Fee confusion isn't a Nigerian problem. It's everywhere. Across all five countries, 79% of participants were surprised by the fee shown at the confirmation screen. In 34% of sessions, that surprise caused abandonment or a significant change to the transaction.</p>
+
+        <p>No wallet we tested showed fee estimates before the confirmation screen. That's not a Bitcoin limitation. It's a design choice that predictably loses users.</p>
+
+        <h3>3. Bitcoin Addresses</h3>
+
+        <p>A Bitcoin address looks like nothing people have sent money to before. Phone numbers, bank accounts, Mobile Money IDs: all have familiar patterns and predictable lengths. A Bitcoin address doesn't. Across our research, 68% of participants expressed verbal uncertainty about whether they had the right address before sending. Given that a wrong address means permanent, unrecoverable loss, that uncertainty isn't irrational. But wallets do almost nothing to address it.</p>
+
+        <h3>4. English-Only Everything</h3>
+
+        <p>Even participants who rated their English proficiency as "good" consistently performed worse on English-only interfaces when the task involved financial decisions. Thinking about money and reading English are different cognitive activities. Financial decisions require confidence, and confidence requires your first language. Until Bitcoin wallets are available in Swahili, Hausa, Amharic, Twi, Yoruba, and Zulu at minimum, the language barrier will keep most of Africa's potential users out.</p>
+
+        <h2>What's Actually Working</h2>
+
+        <p>Not everything in our research was failure. A few patterns delivered genuinely strong results.</p>
+
+        <h3>QR Codes</h3>
+
+        <p>Despite all the anxiety around Bitcoin addresses, QR code scanning performed remarkably well. When participants scanned a QR code instead of typing an address manually, task completion jumped from 31% to 78%. QR codes work because they take address verification off the user entirely. The camera handles it. That's the same pattern already dominant in M-Pesa, MoMo, and bank transfers across Africa. Wallets that lean into QR are working with existing habits instead of fighting them.</p>
+
+        <h3>Sats Over BTC</h3>
+
+        <p>When participants saw amounts in BTC (e.g., 0.00023 BTC), 71% expressed confusion about the value. The same amount in sats (23,000 sats) and 64% assessed it quickly. Whole numbers beat decimals every time, across all five countries. For a continent where many common transactions are under $10, this matters.</p>
+
+        <h3>Progress Indicators</h3>
+
+        <p>Wallets that showed "Step 2 of 4" during multi-step flows had 38% lower abandonment compared to wallets with no progress indication. Knowing how long something takes changes the experience of doing it. People don't quit because processes are long. They quit when they don't know how long is left.</p>
+
+        <h2>The Kenya Case Study: What Happens When You Fix Things</h2>
+
+        <p>The clearest data from our 2025-2026 work comes from a six-month engagement with a Kenya-based wallet provider. We identified seven priority UX problems and worked with their product team to implement five fixes. Here's what happened:</p>
+
+        <table class="country-table">
+            <thead>
+                <tr>
+                    <th>UX Change</th>
+                    <th>Before</th>
+                    <th>After</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fee shown at amount entry</td>
+                    <td>61%</td>
+                    <td>36%</td>
+                    <td>-41%</td>
+                </tr>
+                <tr>
+                    <td>Address humanisation</td>
+                    <td>58%</td>
+                    <td>38%</td>
+                    <td>-34%</td>
+                </tr>
+                <tr>
+                    <td>Seed phrase: plain language explanation added</td>
+                    <td>74%</td>
+                    <td>52%</td>
+                    <td>-30%</td>
+                </tr>
+                <tr>
+                    <td>Progress indicator added to send flow</td>
+                    <td>43%</td>
+                    <td>27%</td>
+                    <td>-37%</td>
+                </tr>
+                <tr>
+                    <td>Sats display as default</td>
+                    <td>39%</td>
+                    <td>28%</td>
+                    <td>-28%</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Overall transaction abandonment</td>
+                    <td>67%</td>
+                    <td>22%</td>
+                    <td>-67%</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <p>Five targeted changes. No protocol modifications, no core architecture rebuild. Overall transaction abandonment dropped from 67% to 22%.</p>
+
+        <h2>The Gap Underneath Everything</h2>
+
+        <p>The Bitcoin ecosystem has extraordinary technical infrastructure: open protocols, robust node software, decades of accumulated engineering knowledge. What it doesn't have, especially for African markets, is shared UX infrastructure.</p>
+
+        <p>Every wallet team that wants to serve African users has to run their own research, develop their own design patterns, and learn the same hard lessons independently. The Kenya findings above aren't proprietary secrets. Any competent UX team would reach them with enough testing. But most teams don't have the time or budget for that research, so the same failures keep shipping.</p>
+
+        <div class="pull-quote">
+            <p>"We knew our onboarding had problems. We didn't know where. We didn't have the research capacity to find out. We were guessing."</p>
+            <cite>Product lead, West African Bitcoin wallet (interview, November 2025)</cite>
+        </div>
+
+        <p>That's what Bitcoin UX Africa is building: not another wallet, but the shared research, patterns, and knowledge that every African Bitcoin wallet needs and no single team can afford to build alone.</p>
+
+        <h2>Five Things Builders Should Do This Year</h2>
+
+        <div class="recommendation">
+            <h4>1. Show Fees Before the Confirmation Screen</h4>
+            <p>Display an estimated fee range at the amount entry step. This single change reduces abandonment by 35-41% across every African market we've tested. It costs one sprint to ship.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>2. Make Seed Phrase Backup Human</h4>
+            <p>Replace technical seed phrase screens with plain-language explanations. What is it? Why does it matter? What happens if it's lost? Use local analogies like a key or a PIN, not cryptographic terminology. Then test the explanation with non-technical users before shipping.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>3. Default to Sats</h4>
+            <p>Display amounts in satoshis, not BTC decimals. Especially critical for markets where sub-$10 transactions are the norm. Whole numbers are easier to understand, compare, and remember.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>4. Commit to One Local Language, Fully</h4>
+            <p>Pick the most spoken language in your primary market and translate your core flows completely. A half-translated wallet is often worse than an English-only one because the inconsistency erodes trust. Start with one language, do it properly, then expand.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>5. Test With Real Users</h4>
+            <p>Most of the failures in this report would have surfaced in a single day of moderated testing with five representative users. A two-day research sprint in Lagos, Nairobi, or Accra will tell you more about your product's real failure points than six months of analytics. The problem isn't that builders don't care. It's that most have never watched a real user try their product.</p>
+        </div>
+
+        <h2>What We're Watching in 2026</h2>
+
+        <p>Lightning Network adoption is growing across African markets. Instant settlement and near-zero fees directly address two of the biggest pain points in this report: confirmation anxiety and fee shock. But Lightning brings its own UX complexity, things like channel management, liquidity, and invoice expiry, that can be just as disorienting for new users as on-chain transactions. The opportunity is real and the execution has to be careful.</p>
+
+        <p>Local language wallet projects are starting to emerge, particularly in Swahili and Hausa-speaking communities. We're actively seeking to support these efforts with research and design resources.</p>
+
+        <p>Progressive web apps are increasingly viable for African markets. Lower data requirements, no app store friction, works on more device types. Several wallet teams are exploring PWA-first approaches, and our research suggests they could meaningfully reduce onboarding abandonment driven by data costs and storage limitations.</p>
+
+        <h2>Where This Leaves Us</h2>
+
+        <p>Bitcoin has a UX problem in Africa. It's measurable, it's significant, and as the Kenya data shows, it's fixable.</p>
+
+        <p>The 340 people in this research aren't abstractions. They're traders, teachers, mothers, and farmers who came to a testing session because they wanted to understand Bitcoin. Most left having failed to complete basic tasks, not because they couldn't, but because the tools were built without them in mind.</p>
+
+        <p>If you build Bitcoin products for African markets, we want to hear from you. If you fund Bitcoin development and care about adoption, we want to talk. And if you're an African designer or researcher who wants to contribute, we have a place for you.</p>
+
+        <div class="cite-box">
+            <h4>Cite This Report</h4>
+            <p>Bitcoin UX Africa. (2026). <em>The State of Bitcoin UX in Africa 2026: Research Report.</em> Bitcoin UX Infrastructure for Africa. Retrieved from https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html</p>
+        </div>
+
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+
+    </div>
+</div>
+
+<!-- YOU MAY ALSO LIKE -->
+<style>
+    .ymal-section{background:var(--dark);padding:96px 48px;}
+    .ymal-inner{max-width:1200px;margin:0 auto;}
+    .ymal-header{margin-bottom:48px;}
+    .ymal-section .section-label{color:var(--orange);}
+    .ymal-section .section-label::after{background:linear-gradient(to right,var(--orange),transparent);}
+    .ymal-section .section-title{color:white;}
+    .ymal-section .section-title em{font-style:normal;color:var(--orange);}
+    .ymal-section .blog-card{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);}
+    .ymal-section .blog-card:hover{border-color:var(--orange);background:rgba(255,255,255,0.06);}
+    .ymal-section .blog-content h3{color:white;}
+    .ymal-section .blog-content p{color:rgba(255,255,255,0.45);}
+    .ymal-section .blog-slider-btn{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);}
+    .ymal-section .blog-slider-btn:hover:not(:disabled){border-color:var(--orange);color:var(--orange);}
+    .ymal-section .blog-image{background:linear-gradient(135deg,var(--mid),var(--dark));}
+    .ymal-section .blog-card:nth-child(1) .blog-image{background:linear-gradient(135deg,#1e3a5f,var(--mid));}
+    .ymal-section .blog-card:nth-child(2) .blog-image{background:linear-gradient(135deg,#3b1f0a,var(--mid));}
+    .ymal-section .blog-card:nth-child(3) .blog-image{background:linear-gradient(135deg,#1a3320,var(--mid));}
+    .ymal-section .blog-card:nth-child(4) .blog-image{background:linear-gradient(135deg,#2d1a3b,var(--mid));}
+    .ymal-section .blog-card:nth-child(5) .blog-image{background:linear-gradient(135deg,#1f2d1a,var(--mid));}
+    .ymal-section .blog-dot{background:rgba(255,255,255,0.15);}
+    .ymal-section .blog-dot.active{background:var(--orange);}
+    @media(max-width:768px){.ymal-section{padding:72px 24px;}}
+</style>
+<section class="ymal-section">
+    <div class="ymal-inner">
+        <div class="ymal-header">
+            <div class="section-label">Keep Reading</div>
+            <h2 class="section-title">You May Also <em>Like</em></h2>
+        </div>
+        <div class="blog-slider-wrapper">
+            <button class="blog-slider-btn ymal-prev" aria-label="Previous posts" disabled>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="blog-slider-viewport">
+                <div class="blog-container" id="ymal-track">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../../images/blog/first-transaction-failure.jpg" alt="Why 89% of African Bitcoin Users Fail Their First Transaction" loading="lazy" onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">UX Research</span>
+                                <span class="blog-date">Feb 2026</span>
+                            </div>
+                            <h3>Why 89% of African Bitcoin Users Fail Their First Transaction</h3>
+                            <p>The exact failure points from 340+ user tests and the design changes that cut failure rates by two-thirds.</p>
+                            <a href="why-89-percent-fail-first-transaction.html" class="blog-link">Read more →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../../images/blog/seed-phrase-ux.jpg" alt="Why 73% of Users Fail at Seed Phrase Backup" loading="lazy" onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">User Research</span>
+                                <span class="blog-date">Jan 2026</span>
+                            </div>
+                            <h3>Why 73% of Users Fail at Seed Phrase Backup</h3>
+                            <p>Seed phrase failure is a design problem, not a user problem. Here is what goes wrong and how to fix it.</p>
+                            <a href="seed-phrase-ux.html" class="blog-link">Read more →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../../images/blog/bitcoin-wallet-patterns.jpg" alt="5 Bitcoin Wallet UX Patterns That Increase Retention by 40%" loading="lazy" onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Design Patterns</span>
+                                <span class="blog-date">Feb 2026</span>
+                            </div>
+                            <h3>5 Bitcoin Wallet UX Patterns That Increase Retention by 40%</h3>
+                            <p>Five proven patterns from 340+ African user sessions. Implement these and your retention numbers move.</p>
+                            <a href="bitcoin-wallet-patterns.html" class="blog-link">Read more →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../../images/blog/mobile-bitcoin-africa.jpg" alt="Mobile-First Bitcoin Design: Lessons from Africa" loading="lazy" onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Market Insights</span>
+                                <span class="blog-date">Jan 2026</span>
+                            </div>
+                            <h3>Mobile-First Bitcoin Design: Lessons from Africa</h3>
+                            <p>Africa does not need mobile-friendly Bitcoin. It needs mobile-native Bitcoin. Here is what that means.</p>
+                            <a href="mobile-bitcoin-africa.html" class="blog-link">Read more →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../../images/blog/bitcoin-ux-infrastructure.jpg" alt="Why Bitcoin UX Infrastructure Matters for Africa" loading="lazy" onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">White Paper</span>
+                                <span class="blog-date">Feb 2026</span>
+                            </div>
+                            <h3>Why Bitcoin UX Infrastructure Matters for Africa</h3>
+                            <p>Every wallet team makes the same mistakes independently. That is an infrastructure problem.</p>
+                            <a href="why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="blog-slider-btn ymal-next" aria-label="Next posts">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+        <div class="blog-slider-dots" id="ymal-dots"></div>
+    </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" aria-labelledby="post-cta-heading">
+    <h2 id="post-cta-heading">Building a Bitcoin wallet<br>for African users?</h2>
+    <p>We're building the shared UX infrastructure the ecosystem needs. Start with our research, or work with us directly.</p>
+    <div class="cta-buttons">
+        <a href="/cdn-cgi/l/email-protection#5d303c2f361d3b322833393c29343233733c3b2f343e3c" class="btn-white">Get in Touch</a>
+        <a href="../../uxsupport.html" class="btn-outline">Need UX Support?</a>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../index.html#bitcoin-ux-insights">Research</a>
+                <a href="../../about.html">About</a>
+                <a href="../../uxsupport.html">UX Support</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://x.com/bitcoin_ux" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://primal.net/p/nprofile1qqsfy4zqpj34sls53sk36h98g7tcpmt8pp53fkaxe24knxnvapz8jtgjdu0u6" target="_blank" rel="noopener noreferrer" aria-label="Nostr / Primal">
+                    <svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M155.506 253.036C146.645 254.976 137.44 255.999 127.997 255.999C102.077 255.999 77.9567 248.295 57.8008 235.051C52.7974 227.894 50.5525 223.955 48.915 221.081C48.1036 219.657 47.4413 218.495 46.6664 217.332C39.0311 205.053 35.0362 189.28 34.1651 170.748C31.4666 113.326 66.3642 76.6573 102.015 70.6387C124.613 66.8235 142.572 70.6872 156.347 78.0534C144.169 74.666 129.652 74.4622 113.102 79.2C72.9831 92.1309 59.6091 131.451 65.3414 174.994C75.3453 229.555 128.842 249.111 155.506 253.036Z"/><path d="M41.2387 222.111C33.7762 208.86 27.0184 189.088 26.1739 171.123C23.3092 110.164 60.5628 69.5235 100.683 62.7503C155.371 53.5175 185.775 85.8934 196.256 109.923C196.695 109.628 196.873 109.043 196.641 108.539C179.408 71.0662 143.765 45.3331 102.592 45.3331C55.8419 45.3331 14.127 78.8691 0 128.71C0.200633 165.642 16.0426 198.871 41.2387 222.111Z"/><path d="M199.997 233.844C190.764 240.137 180.665 245.253 169.916 248.977C164.755 248.078 159.037 246.959 155.011 246.171C153.103 245.797 151.574 245.498 150.666 245.332C126.318 240.885 82.7834 225.195 73.246 173.749C70.5513 153.063 72.4812 134.02 79.3156 118.916C86.0487 104.035 97.6686 92.6275 115.39 86.8682C135.987 81.2567 153.055 84.0378 165.732 90.8469C162.612 90.1887 159.386 89.8437 156.085 89.8437C128.652 89.8437 106.414 113.671 106.414 143.063C106.414 154.799 109.959 165.648 115.966 174.447C115.966 174.447 133.16 206.926 179.966 204.023C221.7 201.434 243.373 163.999 245.956 150.172C247.298 142.986 248 135.575 248 127.999C248 61.7256 194.274 7.99997 128.001 7.99997C77.851 7.99997 34.8866 38.7631 16.9488 82.4478C10.8898 90.3409 5.6727 99.0914 1.46875 108.554C10.8367 47.0899 63.9194 0 128.001 0C198.693 0 256 57.3073 256 127.999C256 171.996 233.803 210.805 199.997 233.844Z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-domain">bitcoinux.africa</div>
+            <div class="footer-copy">&copy; 2026 Bitcoin UX Infrastructure for Africa</div>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Nav scroll
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, {passive:true});
+
+    // Mobile hamburger
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+        });
+    });
+
+    // You May Also Like slider
+    (function(){
+        const track   = document.getElementById('ymal-track');
+        const dotsBox = document.getElementById('ymal-dots');
+        const prev    = document.querySelector('.ymal-prev');
+        const next    = document.querySelector('.ymal-next');
+        if(!track) return;
+        function cpv(){ if(window.innerWidth<=640) return 1; if(window.innerWidth<=1024) return 2; return 3; }
+        let current=0, cardsPerView=cpv();
+        const cards=track.querySelectorAll('.blog-card'), total=cards.length;
+        function setup(){
+            cardsPerView=cpv();
+            const gap=28;
+            const vw=track.parentElement.offsetWidth;
+            const cardW=(vw-(cardsPerView-1)*gap)/cardsPerView;
+            cards.forEach(c=>{ c.style.flex='0 0 '+cardW+'px'; c.style.minWidth='unset'; });
+            buildDots(); goTo(0);
+        }
+        function maxPage(){ return Math.max(0,total-cardsPerView); }
+        function buildDots(){
+            dotsBox.innerHTML='';
+            for(let i=0;i<=maxPage();i++){
+                const d=document.createElement('button');
+                d.className='blog-dot'+(i===0?' active':'');
+                d.setAttribute('aria-label','Page '+(i+1));
+                d.addEventListener('click',()=>goTo(i));
+                dotsBox.appendChild(d);
+            }
+        }
+        function goTo(n){
+            current=Math.max(0,Math.min(n,maxPage()));
+            const gap=28;
+            const vw=track.parentElement.offsetWidth;
+            const cardW=(vw-(cardsPerView-1)*gap)/cardsPerView;
+            track.style.transform='translateX(-'+( current*(cardW+gap) )+'px)';
+            dotsBox.querySelectorAll('.blog-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+            prev.disabled=current===0; next.disabled=current>=maxPage();
+        }
+        prev.addEventListener('click',()=>goTo(current-1));
+        next.addEventListener('click',()=>goTo(current+1));
+        let startX=0;
+        track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+        track.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-startX; if(Math.abs(dx)>48) goTo(dx<0?current+1:current-1); },{passive:true});
+        setup();
+        window.addEventListener('resize',()=>setup(),{passive:true});
+    })();
+</script>
+
+</body>
+</html>

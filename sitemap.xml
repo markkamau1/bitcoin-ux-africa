@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://bitcoinux.africa/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/why-89-percent-fail-first-transaction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-15</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/why-bitcoin-ux-infrastructure-matters.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/bitcoin-wallet-patterns.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/seed-phrase-ux.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-01-28</lastmod>
+  </url>
+  <url>
+    <loc>https://bitcoinux.africa/blog/posts/mobile-bitcoin-africa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-01-25</lastmod>
+  </url>
+
+</urlset>

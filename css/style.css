@@ -1018,7 +1018,7 @@ footer p {
 
 /* ── mobile-bitcoin-africa.html ─────────────────────────── */
 .data-box {
-    background: #fffbeb;
+    background: var(--dark);
     border-left: 4px solid var(--orange);
     padding: 24px 28px;
     margin: 32px 0;
@@ -1028,13 +1028,14 @@ footer p {
 .data-box h4 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.15rem;
-    color: #92400e;
+    color: var(--orange);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.data-box p { margin-bottom: 0; }
+.data-box p { margin-bottom: 0; color: rgba(255,255,255,0.7); }
+.data-box p strong { color: white; }
 
 .principle-label {
     display: inline-block;

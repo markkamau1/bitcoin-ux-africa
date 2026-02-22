@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bitcoin UX Africa | Bitcoin Wallet UX Research & Design for African Users</title>
-    <meta name="description" content="Bitcoin UX Africa provides original UX research, usability testing, and design recommendations for Bitcoin wallets. Reduce transaction abandonment by 67% through user-centered design for Kenya, Nigeria, Ghana and African markets.">
+    <meta name="description" content="340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia reveal why 89% of African Bitcoin users fail their first transaction — and the design fixes that cut abandonment by 67%.">
     <meta name="keywords" content="Bitcoin UX, Bitcoin UX Africa, Bitcoin wallet UX, Bitcoin usability testing, cryptocurrency UX research, African Bitcoin users">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Bitcoin UX Africa">
@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://bitcoinux.africa/">
 
     <meta property="og:title" content="Bitcoin UX Africa | Bitcoin Wallet UX Research & Design">
-    <meta property="og:description" content="340+ moderated user sessions across 5 African countries. Original Bitcoin UX research that reduces wallet abandonment by 67%.">
+    <meta property="og:description" content="89% of African Bitcoin users fail their first transaction. Original research from 340+ sessions across 5 countries reveals what breaks Bitcoin UX in Africa — and what fixes it.">
     <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -32,53 +32,29 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Bitcoin UX Africa",
+      "alternateName": "Bitcoin UX Infrastructure for Africa",
       "url": "https://bitcoinux.africa",
       "logo": "https://bitcoinux.africa/images/bitcoinUX_Logo.svg",
-      "description": "Original Bitcoin UX research, design patterns, and usability infrastructure for African markets. 340+ moderated user testing sessions across Kenya, Nigeria, Ghana, South Africa and Ethiopia.",
-      "areaServed": ["Kenya","Nigeria","Ghana","South Africa","Ethiopia"],
-      "knowsAbout": ["Bitcoin UX","Bitcoin wallet design","African user research","Bitcoin usability testing"],
+      "description": "Original Bitcoin UX research, design patterns, and usability infrastructure for African markets. Field research from 340+ user testing sessions across Kenya, Nigeria, Ghana, South Africa, and Ethiopia.",
+      "foundingDate": "2025",
+      "areaServed": ["Kenya", "Nigeria", "Ghana", "South Africa", "Ethiopia", "Africa"],
+      "knowsAbout": [
+        "Bitcoin User Experience",
+        "Bitcoin Wallet Design",
+        "Bitcoin UX Research",
+        "Bitcoin Usability Testing",
+        "African Bitcoin Adoption",
+        "Bitcoin Design Patterns",
+        "Self-Custody UX"
+      ],
       "sameAs": [
         "https://x.com/bitcoin_ux",
         "https://primal.net/p/nprofile1qqsfy4zqpj34sls53sk36h98g7tcpmt8pp53fkaxe24knxnvapz8jtgjdu0u6"
       ]
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Bitcoin UX Africa",
-      "url": "https://bitcoinux.africa"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://bitcoinux.africa/"},
-        {"@type":"ListItem","position":2,"name":"Research & Insights","item":"https://bitcoinux.africa/#bitcoin-ux-insights"},
-        {"@type":"ListItem","position":3,"name":"About","item":"https://bitcoinux.africa/about.html"}
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Bitcoin UX Africa Research Posts",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Why Bitcoin UX Infrastructure Matters: The Case for Africa","url":"https://bitcoinux.africa/blog/posts/why-bitcoin-ux-infrastructure-matters.html"},
-        {"@type":"ListItem","position":2,"name":"The State of Bitcoin UX in Africa 2026","url":"https://bitcoinux.africa/blog/posts/state-of-bitcoin-ux-africa-2026.html"},
-        {"@type":"ListItem","position":3,"name":"Why 89% of African Bitcoin Users Fail Their First Transaction","url":"https://bitcoinux.africa/blog/posts/why-89-percent-fail-first-transaction.html"},
-        {"@type":"ListItem","position":4,"name":"5 Bitcoin Wallet UX Patterns That Increase Retention by 40%","url":"https://bitcoinux.africa/blog/posts/bitcoin-wallet-patterns.html"},
-        {"@type":"ListItem","position":5,"name":"Why 73% of Users Fail at Seed Phrase Backup","url":"https://bitcoinux.africa/blog/posts/seed-phrase-ux.html"},
-        {"@type":"ListItem","position":6,"name":"Mobile-First Bitcoin Design: Lessons from 100,000 African Transactions","url":"https://bitcoinux.africa/blog/posts/mobile-bitcoin-africa.html"}
-      ]
-    }
-    </script>
 
-    <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
+        <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
@@ -103,7 +79,9 @@
         /* ── NAV ── */
         .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:background .3s;}
         .site-nav.scrolled{background:rgba(10,13,11,0.95);backdrop-filter:blur(8px);}
-        .site-nav img{height:38px;}
+        .site-nav img{width:150px;height:auto;}
+        @media(max-width:768px){.site-nav img{width:110px;}}
+        @media(max-width:480px){.site-nav img{width:90px;}}
         .nav-links{display:flex;gap:32px;align-items:center;}
         .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
         .nav-links a:hover{color:white;}
@@ -127,7 +105,7 @@
         .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
         .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;}
         .eyebrow-text{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
-        .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8.5rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:32px;transition:opacity .4s,transform .4s;}
+        .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.15rem,8.1vw,7.65rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:32px;transition:opacity .4s,transform .4s;}
         .hero h1 em{font-style:normal;color:var(--orange);}
         .hero-sub{font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.6;color:rgba(255,255,255,0.65);max-width:680px;margin-bottom:48px;font-style:italic;transition:opacity .4s,transform .4s;}
         .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px;}
@@ -307,7 +285,7 @@
             <div class="eyebrow-dot"></div>
             <span class="eyebrow-text" id="hero-eyebrow-text">Original field research · Africa</span>
         </div>
-        <h1 id="hero-title">Bitcoin UX<br><em>Infrastructure</em><br>for Africa</h1>
+        <h1 id="hero-title">Bitcoin UX<br><em>Infrastructure · Africa</em></h1>
         <p class="hero-sub" id="hero-sub">Building the foundational layer that makes Bitcoin work for 1 billion Africans.</p>
         <div class="hero-actions">
             <a href="#bitcoin-ux-insights" class="btn-hero-primary">Read the Research</a>
@@ -576,8 +554,8 @@
     <h2 id="cta-heading">Building a Bitcoin wallet<br>for African users?</h2>
     <p>We're building the shared UX infrastructure the ecosystem needs. Start with our research, or work with us directly.</p>
     <div class="cta-buttons">
-        <a href="uxsupport.html" class="btn-white">Get in Touch</a>
-        <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html" class="btn-outline">Read the 2026 Research →</a>
+        <a href="/cdn-cgi/l/email-protection#5f323e2d341f39302a313b3e2b363031713e392d363c3e" class="btn-white">Get in Touch</a>
+        <a href="uxsupport.html" class="btn-outline">Need UX Support?</a>
     </div>
 </section>
 
@@ -607,7 +585,7 @@
     </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV scroll behavior ──────────────────────────────────────
 const nav = document.getElementById('site-nav');
 window.addEventListener('scroll', () => {
@@ -629,8 +607,8 @@ navLinks.querySelectorAll('a').forEach(a => {
 const slides  = document.querySelectorAll('.hero-slide');
 const dots    = document.querySelectorAll('.hero-dot');
 const slideData = [
-    { eyebrow:'Original field research · Africa',          title:'Bitcoin UX<br><em>Infrastructure</em><br>for Africa',              sub:'Building the foundational layer that makes Bitcoin work for 1 billion Africans.' },
-    { eyebrow:'340+ moderated sessions',                   title:'Training<br><em>African Bitcoin</em><br>Builders',               sub:'Training the next generation of Bitcoin UX designers across the continent.' },
+    { eyebrow:'Original field research · Africa',          title:'Bitcoin UX<br><em>Infrastructure · Africa</em>',              sub:'Building the foundational layer that makes Bitcoin work for 1 billion Africans.' },
+    { eyebrow:'340+ moderated sessions',                   title:'Training<br><em>African Bitcoin Builders</em>',                   sub:'Training the next generation of Bitcoin UX designers across the continent.' },
     { eyebrow:'Data, not assumptions',                     title:'Research-Driven<br><em>Bitcoin Design</em>',                       sub:'Real users. Observed sessions. Published findings. Not guesses.' },
     { eyebrow:'Open research · Free to use',               title:'Open Source<br><em>for Everyone</em>',                             sub:'Shared infrastructure that lifts every wallet and accelerates African Bitcoin adoption.' }
 ];
@@ -730,10 +708,4 @@ setInterval(() => showSlide((currentSlide + 1) % slides.length), 5500);
 // ── Scroll animations ────────────────────────────────────────
 const observer = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.07, rootMargin: '0px 0px -48px 0px' }
-);
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
+    { thr
