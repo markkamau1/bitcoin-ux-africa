@@ -1080,7 +1080,7 @@ footer p {
     border-left: 4px solid var(--orange);
     margin: 40px 0;
     padding: 20px 28px;
-    background: #fffbeb;
+    background: rgba(249,115,22,0.06);
     border-radius: 0 8px 8px 0;
 }
 
