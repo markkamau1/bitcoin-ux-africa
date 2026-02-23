@@ -41,104 +41,27 @@
       "keywords": ["bitcoin wallet africa", "bitcoin ux africa", "bitcoin user experience", "african bitcoin users"]
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitcoinux.africa/"},
-        {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://bitcoinux.africa/blog/"},
-        {"@type": "ListItem", "position": 3, "name": "Mobile-First Bitcoin Design for Africa"}
-      ]
-    }
-    </script>
-    <style>
-        /* NAV — matches about.html/index.html */
-        .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(10,13,11,0.88),transparent);backdrop-filter:blur(2px);transition:background .3s;}
-        .site-nav.scrolled{background:rgba(10,13,11,0.95);backdrop-filter:blur(8px);}
-        .site-nav img{width:150px;height:auto;}
-        .nav-links{display:flex;gap:32px;align-items:center;}
-        .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
-        .nav-links a:hover{color:white;}
-        .nav-cta{background:var(--orange);color:white !important;padding:9px 22px;border-radius:6px;}
-        .nav-cta:hover{background:var(--orange-l) !important;}
-        .nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:white;padding:4px;}
-
-        /* ARTICLE HERO — matches about.html hero pattern */
-        .article-hero{min-height:100vh;background:var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;}
-        .article-hero-bg{position:absolute;inset:0;background-image:url('../../images/blog/mobile-bitcoin.jpg');background-size:cover;background-position:center;}
-        .article-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,11,0.3) 0%,rgba(10,13,11,0.5) 40%,rgba(10,13,11,0.92) 100%);}
-        .article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(249,115,22,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,0.04) 1px,transparent 1px);background-size:72px 72px;animation:gridDrift 24s linear infinite;}
-        @keyframes gridDrift{0%{background-position:0 0;}100%{background-position:72px 72px;}}
-        .article-hero-content{position:relative;z-index:2;max-width:960px;}
-        .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
-        .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;}
-        .article-category-tag{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
-        .article-meta-tag{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.15em;text-transform:uppercase;}
-        .article-meta-sep{color:rgba(255,255,255,0.15);font-size:11px;}
-        .article-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:28px;}
-        .article-hero h1 em{font-style:normal;color:var(--orange);}
-        .article-lede{font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.65;color:rgba(255,255,255,0.65);max-width:680px;font-style:italic;}
-
-        /* CTA — matches about.html */
-        .cta-section{background:var(--orange);padding:120px 48px;text-align:center;}
-        .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);color:white;line-height:0.95;letter-spacing:-1px;margin-bottom:24px;}
-        .cta-section p{font-size:1.2rem;color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 48px;line-height:1.65;font-family:'DM Serif Display',serif;font-style:italic;}
-        .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-        .btn{padding:16px 36px;font-size:1rem;font-weight:700;border-radius:8px;text-decoration:none;transition:all .25s;display:inline-block;}
-        .btn-white{background:white;color:var(--orange);}
-        .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
-        .btn-outline{background:transparent;color:white;border:2px solid rgba(255,255,255,0.5);}
-        .btn-outline:hover{border-color:white;background:rgba(255,255,255,0.1);}
-
-        /* FOOTER — matches about.html exactly */
-        footer{background:var(--black);color:rgba(255,255,255,0.4);padding:48px;}
-        .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
-        .footer-links{display:flex;gap:28px;flex-wrap:wrap;}
-        .footer-links a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.85rem;transition:color .2s;}
-        .footer-links a:hover{color:var(--orange);}
-        .footer-social{display:flex;gap:16px;align-items:center;margin-top:16px;}
-        .footer-social a{color:rgba(255,255,255,0.3);transition:color .2s;display:flex;}
-        .footer-social a:hover{color:var(--orange);}
-        .footer-domain{font-family:'DM Mono',monospace;font-size:12px;color:rgba(249,115,22,0.5);letter-spacing:0.08em;}
-        .footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.2);margin-top:6px;}
-
-        /* RESPONSIVE */
-        @media(max-width:900px){
-            .site-nav{padding:16px 24px;}
-            .nav-links{display:none;}
-            .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(10,13,11,0.97);align-items:center;justify-content:center;gap:40px;z-index:200;}
-            .nav-links.open a{font-size:1.4rem;}
-            .nav-hamburger{display:block;}
-            .article-hero{padding:0 24px 64px;}
-            .cta-section{padding:80px 24px;}
-            footer{padding:40px 24px;}
-            .footer-inner{flex-direction:column;align-items:flex-start;}
-            .site-nav img{width:110px;}
-        }
-        @media(max-width:480px){.site-nav img{width:90px;}}
-        /* YOU MAY ALSO LIKE */
-        .ymal-section{background:var(--cream);padding:96px 48px;}
-        .ymal-inner{max-width:1200px;margin:0 auto;}
-        .ymal-header{margin-bottom:48px;}
-        @media(max-width:768px){.ymal-section{padding:72px 24px;}}
-
-    </style>
+    <link rel="icon" type="image/svg+xml" href="../../images/bitcoinUX_Favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
-    <a href="../../index.html" aria-label="Bitcoin UX Africa Home">
-        <img src="../../images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa">
+    <a href="../../index.html" aria-label="Bitcoin UX Africa home">
+        <img src="../../images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa" width="150" height="auto">
     </a>
     <div class="nav-links" id="nav-links">
+        <a href="../../index.html">Home</a>
         <a href="../../index.html#bitcoin-ux-insights">Research</a>
         <a href="../../about.html">About</a>
-        <a href="../../uxsupport.html" class="nav-cta">Get UX Support</a>
+        <a href="../../uxsupport.html" class="nav-cta">UX Support</a>
     </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
     </button>
@@ -146,23 +69,22 @@
 
 <!-- HERO -->
 <div class="article-hero">
-    <div class="article-hero-bg"></div>
+    <div class="article-hero-bg" style="background-image:url('../../images/blog/mobile-bitcoin-africa.jpg')"></div>
     <div class="article-hero-grid" aria-hidden="true"></div>
     <div class="article-hero-content">
         <div class="article-eyebrow">
-            <div class="eyebrow-dot"></div>
-            <span class="article-category-tag">Market Insights</span>
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span class="article-category-tag">Mobile UX</span>
             <span class="article-meta-sep">·</span>
-            <span class="article-meta-tag">25 January 2026</span>
+            <span class="article-meta-tag">2026-01-25</span>
             <span class="article-meta-sep">·</span>
-            <span class="article-meta-tag">6 min read</span>
+            <span class="article-meta-tag">8 min read</span>
         </div>
-        <h1>Mobile-First Bitcoin Design:<br><em>Lessons from Africa</em></h1>
-        <p class="article-lede">Africa does not need mobile-friendly Bitcoin. It needs mobile-native Bitcoin. The distinction is not semantic.</p>
+        <h1>Mobile-First Bitcoin Design: <em>Lessons from Africa</em></h1>
+        <p class="article-lede">Africa is a mobile-first continent. Bitcoin wallets weren't built for it. Here's what 100,000 transactions taught us.</p>
     </div>
 </div>
 
-<!-- ARTICLE BODY -->
 <div class="blog-article">
         <div class="article-content">
 
@@ -321,91 +243,81 @@
     <div class="ymal-inner">
         <div class="ymal-header">
             <div class="section-label">Keep Reading</div>
-            <h2 class="section-title">You May Also<br><em>Like</em></h2>
+            <h2 class="section-title">You May Also <em>Like</em></h2>
         </div>
-        <div class="blog-slider-wrapper">
-            <button class="blog-slider-btn ymal-prev" aria-label="Previous posts" disabled>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="ymal-slider-wrap">
+            <button class="blog-slider-btn blog-slider-prev" id="ymal-prev" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
             </button>
-            <div class="blog-slider-viewport">
-                <div class="blog-container" id="ymal-track">
-                    <div class="blog-card">
-                        <div class="blog-image img-fallback">
-                            <img src="../../images/blog/state-of-bitcoin-ux-2026.jpg" alt="The State of Bitcoin UX in Africa 2026" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.style.display='none'">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Research Report</span>
-                                <span class="blog-date">Feb 2026</span>
-                            </div>
-                            <h3>The State of Bitcoin UX in Africa 2026</h3>
-                            <p>We ran 340 usability tests across 5 African countries. What's broken, what works, and what builders must fix.</p>
-                            <a href="state-of-bitcoin-ux-africa-2026.html" class="blog-link">Read more →</a>
-                        </div>
+            <div class="ymal-slider-viewport" id="ymal-viewport">
+                <div class="ymal-track" id="ymal-track">
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#1e3a5f,#0f2027)">
+                        <img src="../../images/blog/first-transaction-failure.jpg" alt="Why 89% Fail Their First Bitcoin Transaction" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
                     </div>
-                    <div class="blog-card">
-                        <div class="blog-image img-fallback">
-                            <img src="../../images/blog/first-transaction-failure.jpg" alt="Why 89% of African Bitcoin Users Fail Their First Transaction" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.style.display='none'">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">UX Research</span>
-                                <span class="blog-date">Feb 2026</span>
-                            </div>
-                            <h3>Why 89% of African Bitcoin Users Fail Their First Transaction</h3>
-                            <p>The exact failure points from 340+ user tests and the design changes that cut failure rates by two-thirds.</p>
-                            <a href="why-89-percent-fail-first-transaction.html" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image img-fallback">
-                            <img src="../../images/blog/seed-phrase.jpg" alt="Why 73% of Users Fail at Seed Phrase Backup" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.style.display='none'">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">User Research</span>
-                                <span class="blog-date">Jan 2026</span>
-                            </div>
-                            <h3>Why 73% of Users Fail at Seed Phrase Backup</h3>
-                            <p>Seed phrase failure is a design problem, not a user problem. Here is what goes wrong and how to fix it.</p>
-                            <a href="seed-phrase-ux.html" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image img-fallback">
-                            <img src="../../images/blog/wallet-patterns.jpg" alt="5 Bitcoin Wallet UX Patterns That Increase Retention by 40%" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.style.display='none'">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Design Patterns</span>
-                                <span class="blog-date">Feb 2026</span>
-                            </div>
-                            <h3>5 Bitcoin Wallet UX Patterns That Increase Retention by 40%</h3>
-                            <p>Five proven patterns from 340+ African user sessions. Implement these and your retention numbers move.</p>
-                            <a href="bitcoin-wallet-patterns.html" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image img-fallback">
-                            <img src="../../images/blog/ux-infrastructure.jpg" alt="Why Bitcoin UX Infrastructure Matters for Africa" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.style.display='none'">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">White Paper</span>
-                                <span class="blog-date">Feb 2026</span>
-                            </div>
-                            <h3>Why Bitcoin UX Infrastructure Matters for Africa</h3>
-                            <p>Every wallet team makes the same mistakes independently. That is an infrastructure problem. Here is the case for fixing it.</p>
-                            <a href="why-bitcoin-ux-infrastructure-matters.html" class="blog-link">Read more →</a>
-                        </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">User Research</div>
+                        <h3 class="blog-card-title">Why 89% Fail Their First Bitcoin Transaction</h3>
+                        <p class="blog-card-desc">340+ tests reveal the exact moment wallets lose first-time users.</p>
+                        <a href="why-89-percent-fail-first-transaction.html" class="blog-card-link">Read article →</a>
                     </div>
                 </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#7c3a00,#3d1a00)">
+                        <img src="../../images/blog/seed-phrase-ux.jpg" alt="Bitcoin Seed Phrase UX: Why 73% Fail" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">User Research</div>
+                        <h3 class="blog-card-title">Bitcoin Seed Phrase UX: Why 73% Fail</h3>
+                        <p class="blog-card-desc">The design problems causing seed phrase backup failure and the fixes that work.</p>
+                        <a href="seed-phrase-ux.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#064e3b,#022c22)">
+                        <img src="../../images/blog/bitcoin-wallet-patterns.jpg" alt="5 Bitcoin Wallet UX Patterns That Increase Retention by 40%" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">Design Patterns</div>
+                        <h3 class="blog-card-title">5 Bitcoin Wallet UX Patterns That Increase Retention by 40%</h3>
+                        <p class="blog-card-desc">Research-backed design patterns proven to increase retention across African markets.</p>
+                        <a href="bitcoin-wallet-patterns.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#312e81,#1e1b4b)">
+                        <img src="../../images/blog/state-of-bitcoin-ux-2026.jpg" alt="The State of Bitcoin UX in Africa 2026" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">Research Report</div>
+                        <h3 class="blog-card-title">The State of Bitcoin UX in Africa 2026</h3>
+                        <p class="blog-card-desc">340+ user tests across 5 countries. What's broken, what works, and what builders must fix.</p>
+                        <a href="state-of-bitcoin-ux-africa-2026.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#78350f,#451a03)">
+                        <img src="../../images/blog/bitcoin-ux-infrastructure.jpg" alt="Why Bitcoin UX Infrastructure Matters" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">Strategy</div>
+                        <h3 class="blog-card-title">Why Bitcoin UX Infrastructure Matters</h3>
+                        <p class="blog-card-desc">The case for shared UX infrastructure in Africa.</p>
+                        <a href="why-bitcoin-ux-infrastructure-matters.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                </div>
             </div>
-            <button class="blog-slider-btn ymal-next" aria-label="Next posts">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <button class="blog-slider-btn blog-slider-next" id="ymal-next" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
             </button>
         </div>
-        <div class="blog-slider-dots" id="ymal-dots"></div>
+        <div class="blog-dots" id="ymal-dots"></div>
     </div>
 </section>
 
@@ -414,8 +326,8 @@
     <h2 id="post-cta-heading">Building a Bitcoin wallet<br>for African users?</h2>
     <p>We're building the shared UX infrastructure the ecosystem needs. Start with our research, or work with us directly.</p>
     <div class="cta-buttons">
-        <a href="/cdn-cgi/l/email-protection#6b060a19002b0d041e050f0a1f020405450a0d1902080a" class="btn btn-white">Get in Touch</a>
-        <a href="../../uxsupport.html" class="btn btn-outline">Need UX Support?</a>
+        <a href="mailto:mark@foundation.africa" class="btn-white">Get in Touch</a>
+        <a href="../../uxsupport.html" class="btn-outline">Need UX Support?</a>
     </div>
 </section>
 
@@ -429,7 +341,7 @@
                 <a href="../../about.html">About</a>
                 <a href="../../uxsupport.html">UX Support</a>
             </div>
-            <div class="footer-social">
+            <div class="footer-social" style="margin-top:16px;">
                 <a href="https://x.com/bitcoin_ux" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
@@ -438,14 +350,14 @@
                 </a>
             </div>
         </div>
-        <div>
+        <div class="footer-right">
             <div class="footer-domain">bitcoinux.africa</div>
             <div class="footer-copy">&copy; 2026 Bitcoin UX Infrastructure for Africa</div>
         </div>
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     const nav = document.getElementById('site-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
     const hamburger = document.getElementById('nav-hamburger');
@@ -454,4 +366,87 @@
         const open = navLinks.classList.toggle('open');
         hamburger.setAttribute('aria-expanded', open);
     });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListen
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }));
+</script>
+<script>
+(function() {
+    const track    = document.getElementById('ymal-track');
+    const viewport = document.getElementById('ymal-viewport');
+    const prevBtn  = document.getElementById('ymal-prev');
+    const nextBtn  = document.getElementById('ymal-next');
+    const dotsWrap = document.getElementById('ymal-dots');
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.blog-card');
+    let current = 0;
+
+    function cardsPerView() {
+        const vw = viewport.offsetWidth;
+        if (vw >= 960) return 3;
+        if (vw >= 600) return 2;
+        return 1;
+    }
+
+    function cardWidth() {
+        const cpv = cardsPerView();
+        const gap = 24;
+        return (viewport.offsetWidth - gap * (cpv - 1)) / cpv;
+    }
+
+    function totalSlides() {
+        return Math.ceil(cards.length / cardsPerView());
+    }
+
+    function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < totalSlides(); i++) {
+            const d = document.createElement('button');
+            d.className = 'blog-dot' + (i === current ? ' active' : '');
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(d);
+        }
+    }
+
+    function goTo(idx) {
+        current = Math.max(0, Math.min(idx, totalSlides() - 1));
+        const cw = cardWidth();
+        const gap = 24;
+        const offset = current * cardsPerView() * (cw + gap);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        dotsWrap.querySelectorAll('.blog-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current >= totalSlides() - 1;
+    }
+
+    function init() {
+        const cw = cardWidth();
+        const gap = 24;
+        cards.forEach(c => { c.style.minWidth = cw + 'px'; c.style.maxWidth = cw + 'px'; });
+        track.style.gap = gap + 'px';
+        track.style.display = 'flex';
+        track.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
+        buildDots();
+        goTo(0);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Touch swipe
+    let touchStartX = 0;
+    viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    viewport.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 48) goTo(diff > 0 ? current + 1 : current - 1);
+    }, {passive:true});
+
+    init();
+    window.addEventListener('resize', init, {passive:true});
+})();
+</script>
+</body>
+</html>
