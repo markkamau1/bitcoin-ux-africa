@@ -1102,9 +1102,9 @@ footer p {
 }
 
 .recommendation {
-    background: #d4a017;
-    border: none;
-    border-left: 4px solid rgba(0,0,0,0.15);
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
     border-radius: 0 8px 8px 0;
     padding: 24px 28px;
     margin: 28px 0;
@@ -1113,12 +1113,12 @@ footer p {
 .recommendation h4 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.15rem;
-    color: rgba(0,0,0,0.8);
+    color: var(--dark);
     margin-bottom: 10px;
     letter-spacing: 0.25px;
 }
 
-.recommendation p { margin-bottom: 0; color: rgba(0,0,0,0.75); }
+.recommendation p { margin-bottom: 0; color: var(--text); }
 
 
 /* ═══════════════════════════════════════════════════════════════
