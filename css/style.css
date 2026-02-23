@@ -849,7 +849,7 @@ footer p {
 
 /* ── bitcoin-wallet-patterns.html ───────────────────────── */
 .pattern-box {
-    background: #fffbeb;
+    background: #f5efe6;
     border-left: 4px solid var(--orange);
     padding: 24px 28px;
     margin: 32px 0;
