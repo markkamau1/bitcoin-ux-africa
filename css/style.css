@@ -1366,4 +1366,131 @@ footer p {
     gap: 8px;
     margin-top: 24px;
 }
+
+/* ── FOOTER: BLOG POST LAYOUT ──────────────────────────────── */
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0 48px;
+}
+.footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+.footer-right {
+    text-align: right;
+}
+.footer-domain {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+/* ── BLOG SLIDER BUTTONS (prev/next modifier classes) ───────── */
+.blog-slider-prev,
+.blog-slider-next {
+    flex-shrink: 0;
+}
+
+/* ── BLOG POST STAT CARD ────────────────────────────────────── */
+/* (also used on homepage — defined here as single source of truth) */
+.stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.stat-card .number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+.stat-card .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ── BACK LINK ──────────────────────────────────────────────── */
+.back-link {
+    display: inline-block;
+    margin-top: 56px;
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s ease;
+}
+.back-link:hover {
+    transform: translateX(-4px);
+    color: var(--orange-l);
+}
+
+/* ── BLOG: ADDITIONAL TABLE VARIANTS ───────────────────────── */
+.results-table,
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.results-table th,
+.comparison-table th {
+    background: var(--dark);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.results-table td,
+.comparison-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+.results-table tr:nth-child(even) td,
+.comparison-table tr:nth-child(even) td {
+    background: #f9fafb;
+}
+
+/* ── BLOG: STAT HIGHLIGHT (INLINE) ──────────────────────────── */
+.stat-highlight {
+    background: rgba(249,115,22,0.1);
+    color: var(--orange);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
 /* ── RESPONSIVE ADDITIONS ──────────────────────────────────── */
