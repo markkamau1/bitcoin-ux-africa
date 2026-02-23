@@ -1102,9 +1102,10 @@ footer p {
 }
 
 .recommendation {
-    background: #ecfdf5;
-    border: 1px solid #6ee7b7;
-    border-radius: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 8px 8px 0;
     padding: 24px 28px;
     margin: 28px 0;
 }
@@ -1112,7 +1113,7 @@ footer p {
 .recommendation h4 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.15rem;
-    color: #065f46;
+    color: var(--dark);
     margin-bottom: 10px;
     letter-spacing: 0.25px;
 }
