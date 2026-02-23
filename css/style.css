@@ -1080,7 +1080,7 @@ footer p {
     border-left: 4px solid var(--orange);
     margin: 40px 0;
     padding: 20px 28px;
-    background: rgba(249,115,22,0.06);
+    background: #d94f3a;
     border-radius: 0 8px 8px 0;
 }
 
@@ -1088,7 +1088,7 @@ footer p {
     font-family: 'DM Serif Display', serif;
     font-size: 1.2rem;
     font-style: italic;
-    color: var(--dark);
+    color: white;
     margin-bottom: 10px;
     line-height: 1.6;
 }
@@ -1096,7 +1096,7 @@ footer p {
 .pull-quote cite {
     font-family: 'DM Mono', monospace;
     font-size: 0.8rem;
-    color: var(--muted);
+    color: rgba(255,255,255,0.7);
     font-style: normal;
     letter-spacing: 0.04em;
 }
