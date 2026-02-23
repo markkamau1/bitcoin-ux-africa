@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Community | Bitcoin UX Africa</title>
+    <meta name="description" content="Bitcoin UX Africa is building a community of African Bitcoin designers, researchers, and builders. Tell us about yourself and what a good community would look like for you.">
+
+    <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
+    <link rel="canonical" href="https://bitcoinux.africa/join-community.html">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Join the Community | Bitcoin UX Africa">
+    <meta property="og:description" content="Be part of the first cohort of African Bitcoin UX designers and researchers.">
+    <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://bitcoinux.africa/join-community.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bitcoin UX Africa">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bitcoin_ux">
+    <meta name="twitter:title" content="Join the Community | Bitcoin UX Africa">
+    <meta name="twitter:description" content="Be part of the first cohort of African Bitcoin UX designers and researchers.">
+    <meta name="twitter:image" content="https://bitcoinux.africa/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black:    #0a0d0b;
+            --dark:     #111827;
+            --mid:      #1f2937;
+            --orange:   #f97316;
+            --orange-l: #fb923c;
+            --cream:    #fafaf7;
+            --text:     #374151;
+            --muted:    #6b7280;
+            --border:   #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 48px 20px;
+        }
+
+        /* ── Page wrapper ── */
+        .form-container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 64px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+        }
+
+        /* ── Header ── */
+        .form-header { margin-bottom: 48px; }
+
+        .form-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+
+        .form-nav a {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        .form-nav a:hover { color: var(--orange); }
+        .form-nav a:first-child { color: var(--orange); }
+
+        .form-logo {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .form-logo img { width: 72px; height: 72px; }
+
+        .form-header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            color: var(--dark);
+            text-align: center;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .form-header-sub {
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--muted);
+            font-family: 'DM Serif Display', serif;
+            font-style: italic;
+        }
+
+        /* ── Value box ── */
+        .value-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .value-box h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 14px;
+            letter-spacing: -0.25px;
+        }
+
+        .value-box p {
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 14px;
+            font-size: 0.975rem;
+        }
+
+        .value-box p:last-of-type { margin-bottom: 0; }
+
+        /* ── Form sections ── */
+        .form-section { margin-bottom: 52px; }
+
+        .form-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--orange);
+            letter-spacing: -0.25px;
+        }
+
+        .form-section-description {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+
+        /* ── Form groups ── */
+        .form-group { margin-bottom: 28px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: var(--orange);
+            margin-left: 3px;
+        }
+
+        .form-group .label-description {
+            display: block;
+            font-weight: 400;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 2px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            background: white;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ── Checkboxes ── */
+        .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+
+        .checkbox-item { display: flex; align-items: flex-start; gap: 10px; }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-top: 3px;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            accent-color: var(--orange);
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            font-weight: 400;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* ── Submit ── */
+        .submit-section {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .submit-section p {
+            color: var(--muted);
+            margin-bottom: 24px;
+            font-size: 0.875rem;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-submit {
+            background: var(--orange);
+            color: white;
+            padding: 16px 64px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.25s;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-submit:hover {
+            background: var(--orange-l);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(249,115,22,0.35);
+        }
+
+        /* ── Footer ── */
+        .page-footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.4);
+            padding: 36px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 56px;
+            border-radius: 12px;
+        }
+
+        .page-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .page-footer-links a {
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            transition: color 0.2s;
+        }
+
+        .page-footer-links a:hover { color: var(--orange); }
+
+        .page-footer-domain {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .page-footer-domain a { color: var(--orange); text-decoration: none; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            body { padding: 16px 12px; }
+            .form-container { padding: 28px 20px; border-radius: 10px; }
+            .form-header h1 { font-size: 2rem; }
+            .two-column { grid-template-columns: 1fr; }
+            .btn-submit { width: 100%; padding: 14px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+
+        <!-- Header -->
+        <div class="form-header">
+            <div class="form-nav">
+                <a href="about.html">← Back to About</a>
+                <a href="index.html">bitcoinux.africa</a>
+            </div>
+            <div class="form-logo">
+                <img src="images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa">
+            </div>
+            <h1>Join the Community</h1>
+            <p class="form-header-sub">Tell us about yourself and what you're looking for.</p>
+        </div>
+
+        <!-- Value box -->
+        <div class="value-box">
+            <h2>Who This Is For</h2>
+            <p>We are building a community of African designers, researchers, and builders working on Bitcoin UX. The programme is in early development — this form puts you in the first cohort and helps us shape it around what members actually need.</p>
+            <p>There is no cost to join. We want people who care about building Bitcoin products that actually work for African users.</p>
+        </div>
+
+        <!-- Form -->
+        <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            id="community-form"
+        >
+
+            <!-- 1. About You -->
+            <div class="form-section">
+                <h2>1. About You</h2>
+                <p class="form-section-description">Basic contact details so we can follow up with you</p>
+
+                <div class="two-column">
+                    <div class="form-group">
+                        <label for="full-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Country / City <span class="required">*</span></label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Nairobi, Kenya" required>
+                </div>
+            </div>
+
+            <!-- 2. Your Background -->
+            <div class="form-section">
+                <h2>2. Your Background</h2>
+                <p class="form-section-description">Helps us understand who is joining and what the community should cover</p>
+
+                <div class="form-group">
+                    <label for="role">What do you do? <span class="required">*</span></label>
+                    <input type="text" id="role" name="role" placeholder="e.g. Product designer, Developer, Researcher, Founder" required>
+                </div>
+
+                <div class="form-group">
+                    <label>What areas are you working in? (select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-bitcoin" name="areas[]" value="bitcoin_wallets">
+                            <label for="area-bitcoin">Bitcoin wallets or applications</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-ux" name="areas[]" value="ux_research">
+                            <label for="area-ux">UX research or design</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-dev" name="areas[]" value="development">
+                            <label for="area-dev">Software development</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-fintech" name="areas[]" value="fintech">
+                            <label for="area-fintech">Fintech / financial services</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-education" name="areas[]" value="education">
+                            <label for="area-education">Bitcoin education or advocacy</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="area-other" name="areas[]" value="other">
+                            <label for="area-other">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bitcoin-experience">How long have you been working with or around Bitcoin?</label>
+                    <select id="bitcoin-experience" name="bitcoin_experience">
+                        <option value="">Select...</option>
+                        <option value="less_1">Less than 1 year</option>
+                        <option value="1_3">1–3 years</option>
+                        <option value="3_5">3–5 years</option>
+                        <option value="5_plus">5+ years</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 3. Your Vision -->
+            <div class="form-section">
+                <h2>3. Your Vision</h2>
+                <p class="form-section-description">This is the most important section — it shapes what we build</p>
+
+                <div class="form-group">
+                    <label for="community-vision">What would a good community look like for you? <span class="required">*</span>
+                        <span class="label-description">Be as specific as you like — what would you want to learn, share, or build with others?</span>
+                    </label>
+                    <textarea id="community-vision" name="community_vision" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contribution">What could you contribute to the community?
+                        <span class="label-description">Skills, knowledge, connections, time — anything counts</span>
+                    </label>
+                    <textarea id="contribution" name="contribution"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="how-heard">How did you hear about Bitcoin UX Africa?</label>
+                    <input type="text" id="how-heard" name="how_heard" placeholder="e.g. Twitter, referral, blog post">
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="submit-section">
+                <p>By submitting this form you agree to Bitcoin UX Africa using your details to follow up about the community programme. We do not share your information with third parties.</p>
+                <button type="submit" class="btn-submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="page-footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html">Research</a>
+            <a href="uxsupport.html">UX Support</a>
+            <a href="https://x.com/bitcoin_ux" target="_blank" rel="noopener noreferrer">@bitcoin_ux</a>
+        </div>
+        <p class="page-footer-domain">
+            <a href="https://bitcoinux.africa/">bitcoinux.africa</a>
+            &nbsp;&nbsp;&copy; 2026 Bitcoin UX Africa
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('community-form').addEventListener('submit', function(e) {
+            const areasChecked = document.querySelectorAll('input[name="areas[]"]:checked').length;
+            if (areasChecked === 0) {
+                e.preventDefault();
+                alert('Please select at least one area you are working in.');
+            }
+        });
+    </script>
+
+</body>
+</html>
