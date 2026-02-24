@@ -27,7 +27,7 @@
   const navCSS = `
     .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:background .3s;}
     .site-nav.scrolled{background:rgba(10,13,11,0.95);backdrop-filter:blur(8px);}
-    .site-nav img{height:40px;width:auto;}
+    .site-nav img{height:52px;width:auto;}
     .nav-links{display:flex;gap:32px;align-items:center;}
     .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
     .nav-links a:hover{color:white;}
