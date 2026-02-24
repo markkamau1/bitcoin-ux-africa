@@ -9,6 +9,7 @@
     <a href="/index.html">Home</a>
     <a href="/index.html#bitcoin-ux-insights">Research</a>
     <a href="/about.html">About</a>
+    <a href="/methodology.html">Methodology</a>
     <a href="/uxsupport.html" class="nav-cta">Get UX Support</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
