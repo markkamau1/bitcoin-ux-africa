@@ -273,7 +273,7 @@
             .nav-links.open a{font-size:1.4rem;}
             .nav-hamburger{display:block;}
             .nav-close{display:none;position:fixed;top:20px;right:20px;z-index:201;background:none;border:none;cursor:pointer;color:white;padding:8px;line-height:1;}
-            .nav-links.open ~ .nav-close{display:block;}
+            .nav-close.visible{display:block;}
             .hero{padding:110px 24px 64px;}
             .hero-dots{right:24px;}
             .section{padding:72px 24px;}
@@ -641,20 +641,24 @@ const navParent = navLinks.parentNode;
 
 function closeMenu() {
     navLinks.classList.remove('open');
+    navClose.classList.remove('visible');
     hamburger.setAttribute('aria-expanded', 'false');
-    // move back into nav
+    // move both back into nav
     if (navLinks.parentNode === document.body) {
         navParent.insertBefore(navLinks, hamburger);
+        navParent.insertBefore(navClose, hamburger);
     }
 }
 
 hamburger.addEventListener('click', () => {
     const willOpen = !navLinks.classList.contains('open');
     if (willOpen) {
-        // move to body so it's never clipped by the nav element
+        // move both to body so they're never clipped by the nav element
         document.body.appendChild(navLinks);
+        document.body.appendChild(navClose);
     }
     navLinks.classList.toggle('open');
+    navClose.classList.toggle('visible', willOpen);
     hamburger.setAttribute('aria-expanded', willOpen);
 });
 
