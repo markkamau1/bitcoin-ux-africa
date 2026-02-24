@@ -141,9 +141,9 @@
         .hero h1 em{font-style:normal;color:var(--orange);}
         .hero-sub{font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.6;color:rgba(255,255,255,0.65);max-width:680px;margin-bottom:48px;font-style:italic;transition:opacity .4s,transform .4s;}
         .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px;}
-        @media(max-width:480px){
-            .hero-actions{flex-direction:column;align-items:flex-start;}
-            .btn-hero-primary,.btn-hero-ghost{min-width:220px;text-align:center;}
+        @media(max-width:768px){
+            .hero-actions{flex-direction:column;align-items:flex-start;display:inline-flex;}
+            .btn-hero-primary,.btn-hero-ghost{width:100%;text-align:center;box-sizing:border-box;}
         }
         .btn-hero-primary{background:var(--orange);color:white;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block;min-width:200px;text-align:center;}
         .btn-hero-primary:hover{background:var(--orange-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,0.35);}
