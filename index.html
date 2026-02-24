@@ -637,25 +637,33 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('nav-hamburger');
 const navClose   = document.getElementById('nav-close');
 const navLinks  = document.getElementById('nav-links');
+const navParent = navLinks.parentNode;
 
 function closeMenu() {
     navLinks.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
+    // move back into nav
+    if (navLinks.parentNode === document.body) {
+        navParent.insertBefore(navLinks, hamburger);
+    }
 }
 
 hamburger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
+    const willOpen = !navLinks.classList.contains('open');
+    if (willOpen) {
+        // move to body so it's never clipped by the nav element
+        document.body.appendChild(navLinks);
+    }
+    navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', willOpen);
 });
 
 navClose.addEventListener('click', closeMenu);
 
-// Close when tapping a nav link
 navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu);
 });
 
-// Close on Escape key
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMenu();
 });
