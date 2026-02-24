@@ -7,7 +7,9 @@
         <a href="/index.html">Home</a>
         <a href="/index.html#bitcoin-ux-insights">Research</a>
         <a href="/about.html">About</a>
+        <a href="/methodology.html">Methodology</a>
         <a href="/uxsupport.html">UX Support</a>
+        <a href="/privacy-policy.html">Privacy</a>
       </div>
       <div class="footer-social" style="margin-top:16px;">
         <a href="https://x.com/bitcoin_ux" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
