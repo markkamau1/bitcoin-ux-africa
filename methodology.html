@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bitcoin UX Research Methodology | How We Test Bitcoin Wallets in Africa</title>
+    <meta name="description" content="340+ moderated Bitcoin wallet usability sessions across 5 African countries. Our methodology: recruitment, think-aloud protocol, task completion testing, and analysis framework.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Bitcoin UX Africa">
+    <link rel="canonical" href="https://bitcoinux.africa/methodology.html">
+
+    <meta property="og:title" content="Bitcoin UX Research Methodology | Bitcoin UX Africa">
+    <meta property="og:description" content="How we run 340+ moderated Bitcoin wallet usability sessions across Kenya, Nigeria, Ghana, South Africa and Ethiopia. Recruitment, protocols, analysis.">
+    <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://bitcoinux.africa/methodology.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bitcoin UX Africa">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bitcoin_ux">
+    <meta name="twitter:creator" content="@bitcoin_ux">
+    <meta name="twitter:title" content="How we test Bitcoin wallets with 340+ African users">
+    <meta name="twitter:description" content="Moderated sessions. Think-aloud protocol. Real African users. Here's exactly how our Bitcoin UX research works.">
+    <meta name="twitter:image" content="https://bitcoinux.africa/images/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Bitcoin UX Research Methodology",
+      "url": "https://bitcoinux.africa/methodology.html",
+      "description": "The research methodology behind 340+ moderated Bitcoin wallet usability sessions across Kenya, Nigeria, Ghana, South Africa, and Ethiopia.",
+      "about": {"@type": "Thing", "name": "Bitcoin UX Research Methodology"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bitcoin UX Africa",
+        "url": "https://bitcoinux.africa"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://bitcoinux.africa/"},
+        {"@type":"ListItem","position":2,"name":"Methodology","item":"https://bitcoinux.africa/methodology.html"}
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="images/bitcoinUX_Favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black:#0a0d0b; --dark:#111827; --mid:#1f2937; --olive:#5F6044;
+            --orange:#f97316; --orange-l:#fb923c; --cream:#fafaf7;
+            --text:#374151; --muted:#6b7280; --border:#e5e7eb;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden;}
+
+        .hero{min-height:52vh;background:var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:100px 48px 80px;position:relative;overflow:hidden;}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(249,115,22,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,0.05) 1px,transparent 1px);background-size:72px 72px;animation:gridDrift 20s linear infinite;}
+        @keyframes gridDrift{0%{background-position:0 0;}100%{background-position:72px 72px;}}
+        .glow-1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.08),transparent 70%);}
+        .hero-content{position:relative;z-index:2;max-width:900px;}
+        .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+        .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);}
+        .eyebrow-text{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+        .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:0.92;color:white;letter-spacing:-1px;margin-bottom:28px;}
+        .hero h1 em{font-style:normal;color:var(--orange);display:block;}
+        .hero-lede{font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.6;color:rgba(255,255,255,0.65);max-width:680px;font-style:italic;}
+
+        .section{padding:96px 48px;}
+        .section-inner{max-width:900px;margin:0 auto;}
+        .section-label{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+        .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--orange),transparent);max-width:72px;}
+        h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);color:var(--dark);line-height:1;letter-spacing:-0.5px;margin-bottom:24px;}
+        h2.section-title em{font-style:normal;color:var(--orange);}
+
+        .prose p{font-size:1.05rem;line-height:1.85;color:var(--text);margin-bottom:20px;}
+        .prose p:last-child{margin-bottom:0;}
+        .prose strong{color:var(--dark);font-weight:600;}
+        .prose a{color:var(--orange);text-decoration:none;font-weight:600;}
+        .prose a:hover{text-decoration:underline;}
+        h3.prose-heading{font-family:'DM Sans',sans-serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin:40px 0 14px;}
+
+        .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:48px 0;}
+        .stat-cell{background:var(--dark);padding:36px 24px;text-align:center;}
+        .stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);color:var(--orange);line-height:1;letter-spacing:-1px;margin-bottom:8px;}
+        .stat-label{font-family:'DM Mono',monospace;font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:0.2em;text-transform:uppercase;line-height:1.5;}
+
+        .method-steps{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:40px 0;}
+        .method-step{display:grid;grid-template-columns:80px 1fr;border-bottom:1px solid var(--border);}
+        .method-step:last-child{border-bottom:none;}
+        .step-num{background:var(--dark);padding:32px 24px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(249,115,22,0.4);}
+        .step-body{padding:28px 32px;}
+        .step-title{font-weight:700;font-size:1rem;color:var(--dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;}
+        .step-desc{font-size:0.925rem;color:var(--muted);line-height:1.65;}
+
+        .country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:40px 0;}
+        .country-card{background:white;border:1px solid var(--border);border-radius:10px;padding:24px 16px;text-align:center;}
+        .country-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:6px;}
+        .country-detail{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;line-height:1.5;}
+
+        .ethics-box{background:var(--dark);border-radius:14px;padding:48px;margin:48px 0;border-left:4px solid var(--orange);}
+        .ethics-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:white;margin-bottom:16px;}
+        .ethics-box p{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:12px;}
+        .ethics-box p:last-child{margin-bottom:0;}
+
+        .cta-section{background:var(--orange);padding:96px 48px;text-align:center;}
+        .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);color:white;line-height:0.95;margin-bottom:16px;}
+        .cta-section p{font-size:1.1rem;color:rgba(255,255,255,0.88);max-width:520px;margin:0 auto 36px;font-family:'DM Serif Display',serif;font-style:italic;}
+        .btn-white{background:white;color:var(--orange);padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;transition:all .25s;}
+        .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+
+        .fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+        .fade-up.visible{opacity:1;transform:none;}
+
+        @media(max-width:768px){
+            .hero{padding:110px 24px 64px;}
+            .section{padding:64px 24px;}
+            .stat-row{grid-template-columns:repeat(2,1fr);}
+            .country-grid{grid-template-columns:repeat(2,1fr);}
+            .method-step{grid-template-columns:56px 1fr;}
+            .cta-section{padding:72px 24px;}
+        }
+    </style>
+</head>
+<body data-nav-solid>
+
+<script src="/nav.js"></script>
+
+<!-- HERO -->
+<section class="hero" aria-label="Page introduction">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="glow-1" aria-hidden="true"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <div class="eyebrow-dot"></div>
+            <span class="eyebrow-text">Research Methodology · Bitcoin UX Africa</span>
+        </div>
+        <h1>How We <em>Test & Research</em></h1>
+        <p class="hero-lede">Every number we publish comes from a real session, with a real African user, in front of a real Bitcoin wallet. Here is exactly how we work.</p>
+    </div>
+</section>
+
+<main>
+
+<!-- STATS -->
+<section class="section" style="background:var(--dark);">
+    <div class="section-inner">
+        <div class="stat-row fade-up">
+            <div class="stat-cell">
+                <div class="stat-num">340+</div>
+                <div class="stat-label">Moderated<br>sessions run</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">5</div>
+                <div class="stat-label">African<br>countries</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">12+</div>
+                <div class="stat-label">Bitcoin wallets<br>tested</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Open &amp;<br>published free</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-label fade-up">The Approach</div>
+        <h2 class="section-title fade-up">Research Built on <em>Real Sessions</em></h2>
+        <div class="prose fade-up">
+            <p>Bitcoin UX Africa conducts <strong>moderated usability testing</strong> — the gold standard of UX research. Unlike surveys or analytics, moderated sessions let us observe exactly where users hesitate, fail, and abandon tasks in real time. We see what they see. We hear what confuses them. We record what breaks.</p>
+            <p>Our research is independent. We are not funded by wallet teams, exchanges, or payment processors. No sponsor influences which findings we publish or how we frame them. This independence is what makes our data citable.</p>
+            <p>All findings are published openly and free to use. Wallet teams, designers, researchers, and developers can use our data without restriction.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SESSION PROTOCOL -->
+<section class="section" style="background:white;">
+    <div class="section-inner">
+        <div class="section-label fade-up">Session Protocol</div>
+        <h2 class="section-title fade-up">How a <em>Session Works</em></h2>
+        <p class="prose fade-up" style="margin-bottom:0;">Every moderated session follows the same structured protocol to ensure data is comparable across participants, countries, and wallet versions.</p>
+
+        <div class="method-steps fade-up">
+            <div class="method-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <div class="step-title">Recruitment &amp; Screening</div>
+                    <div class="step-desc">Participants are recruited locally in each country through community networks, not online panels. Screening criteria: smartphone owner, limited or no prior Bitcoin experience, comfortable being observed. We exclude crypto-native users to capture the real onboarding experience.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <div class="step-title">Consent &amp; Briefing</div>
+                    <div class="step-desc">Participants receive a plain-language briefing explaining the session purpose, that we are testing the wallet not them, and how their data will be used. Informed consent is obtained before any recording begins. Sessions are recorded with explicit permission only.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <div class="step-title">Think-Aloud Protocol</div>
+                    <div class="step-desc">Participants are asked to verbalise their thoughts as they use the wallet — what they're looking for, what they expect to happen, what confuses them. The moderator does not help or lead. Silence and hesitation are recorded as data points.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <div class="step-title">Task Completion Testing</div>
+                    <div class="step-desc">Each participant attempts a defined set of core tasks: install wallet, create account, backup seed phrase, receive Bitcoin, send Bitcoin, read transaction history. Tasks are given as realistic scenarios, not instructions. Completion, failure point, and time-on-task are all recorded.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                    <div class="step-title">Post-Session Interview</div>
+                    <div class="step-desc">A structured 10-minute interview captures confidence level, likelihood to continue using the wallet, specific points of frustration recalled, and what would make the experience clearer. This qualitative data contextualises the quantitative task completion data.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">6</div>
+                <div class="step-body">
+                    <div class="step-title">Analysis &amp; Coding</div>
+                    <div class="step-desc">Session recordings are coded for failure points, hesitation moments, and error types. Findings are aggregated across sessions to produce completion rates, failure rates, and time-on-task benchmarks. Patterns that appear in 3+ independent sessions are reported as findings.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-label fade-up">Research Coverage</div>
+        <h2 class="section-title fade-up">Five Countries, <em>One Dataset</em></h2>
+        <div class="prose fade-up">
+            <p>Our sessions span five African countries chosen to represent the diversity of the continent's Bitcoin adoption landscape — different languages, different mobile networks, different economic contexts, and different levels of existing financial infrastructure.</p>
+        </div>
+        <div class="country-grid fade-up">
+            <div class="country-card">
+                <div class="country-name">Kenya</div>
+                <div class="country-detail">M-Pesa context<br>High mobile money literacy<br>Nairobi + rural sessions</div>
+            </div>
+            <div class="country-card">
+                <div class="country-name">Nigeria</div>
+                <div class="country-detail">Largest session volume<br>High Bitcoin awareness<br>Lagos + Abuja</div>
+            </div>
+            <div class="country-card">
+                <div class="country-name">Ghana</div>
+                <div class="country-detail">Mobile money users<br>Growing Bitcoin adoption<br>Accra sessions</div>
+            </div>
+            <div class="country-card">
+                <div class="country-name">South Africa</div>
+                <div class="country-detail">Banked population mix<br>Diverse device range<br>Johannesburg + Cape Town</div>
+            </div>
+            <div class="country-card">
+                <div class="country-name">Ethiopia</div>
+                <div class="country-detail">Lower smartphone penetration<br>Amharic language context<br>Addis Ababa sessions</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WALLETS TESTED -->
+<section class="section" style="background:white;">
+    <div class="section-inner">
+        <div class="section-label fade-up">Scope</div>
+        <h2 class="section-title fade-up">What We <em>Test</em></h2>
+        <div class="prose fade-up">
+            <h3 class="prose-heading">Wallet selection criteria</h3>
+            <p>We test wallets that are available on Android, recommended to African users by community channels, or used in significant volume in our target markets. We do not accept payment to include or exclude any wallet from testing.</p>
+
+            <h3 class="prose-heading">Task set</h3>
+            <p>Our standard task battery covers the complete self-custody onboarding flow: <strong>installation, account creation, seed phrase backup, receiving Bitcoin, sending Bitcoin, and reading transaction history</strong>. Additional task sets cover Lightning Network payments and wallet recovery from seed phrase where relevant.</p>
+
+            <h3 class="prose-heading">Devices</h3>
+            <p>Sessions use the participant's own device where possible, or a representative mid-range Android device common in the relevant market. iOS is tested in markets with significant iPhone adoption. We do not test on high-end flagship devices — our goal is to reflect real user conditions, not ideal ones.</p>
+
+            <h3 class="prose-heading">Versions and dating</h3>
+            <p>Every published finding notes the wallet version tested and the date of testing. Wallet UX changes with updates. We retest wallets that ship significant UX changes and update findings accordingly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ETHICS -->
+<section class="section">
+    <div class="section-inner fade-up">
+        <div class="ethics-box">
+            <h3>Research Ethics</h3>
+            <p>All participants give informed consent before sessions begin. No participant is identified in published findings — quotes and observations are anonymised by country only, never by individual.</p>
+            <p>Participants are compensated fairly for their time at local market rates. We do not recruit through deception or misrepresent the nature of sessions.</p>
+            <p>Session recordings are stored securely and are not shared with wallet developers or third parties. Aggregated findings are published; raw recordings are not.</p>
+            <p>Our research is designed to benefit African Bitcoin users first. We publish everything openly so the entire ecosystem can act on what we find.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CITING OUR RESEARCH -->
+<section class="section" style="background:white;">
+    <div class="section-inner">
+        <div class="section-label fade-up">For Researchers</div>
+        <h2 class="section-title fade-up">Citing Our <em>Work</em></h2>
+        <div class="prose fade-up">
+            <p>Our research is published openly and free to cite. When citing Bitcoin UX Africa research, please use the following format:</p>
+            <p style="background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:0.85rem;line-height:1.8;color:var(--dark);">Bitcoin UX Africa. (2026). <em>[Post title]</em>. Retrieved from https://bitcoinux.africa/blog/posts/[slug].html</p>
+            <p>If you are building on our data in academic or commercial research and would like to discuss the methodology in more detail, contact us at <a href="mailto:mark@foundation.africa">mark@foundation.africa</a>.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Want to apply<br>this research?</h2>
+    <p>We work with Bitcoin wallet teams to translate findings into shipped design improvements.</p>
+    <a href="/uxsupport.html" class="btn-white">Get UX Support →</a>
+</section>
+
+<script src="/footer.js"></script>
+
+<script>
+const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.07, rootMargin: '0px 0px -48px 0px' }
+);
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
