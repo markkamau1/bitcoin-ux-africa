@@ -367,8 +367,61 @@
 
 <script src="../../footer.js"></script>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    
+<script>
+(function() {
+    const track    = document.getElementById('ymal-track');
+    const viewport = document.getElementById('ymal-viewport');
+    const prevBtn  = document.getElementById('ymal-prev');
+    const nextBtn  = document.getElementById('ymal-next');
+    const dotsWrap = document.getElementById('ymal-dots');
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.blog-card');
+    let current = 0;
+
+    function cardsPerView() {
+        const vw = viewport.offsetWidth;
+        if (vw >= 960) return 3;
+        if (vw >= 600) return 2;
+        return 1;
+    }
+
+    function cardWidth() {
+        const cpv = cardsPerView();
+        const gap = 24;
+        return (viewport.offsetWidth - gap * (cpv - 1)) / cpv;
+    }
+
+    function totalSlides() {
+        return Math.ceil(cards.length / cardsPerView());
+    }
+
+    function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < totalSlides(); i++) {
+            const d = document.createElement('button');
+            d.className = 'blog-dot' + (i === current ? ' active' : '');
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(d);
+        }
+    }
+
+    function goTo(idx) {
+        current = Math.max(0, Math.min(idx, totalSlides() - 1));
+        const cw = cardWidth();
+        const gap = 24;
+        const offset = current * cardsPerView() * (cw + gap);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        dotsWrap.querySelectorAll('.blog-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current >= totalSlides() - 1;
+    }
+
+    function init() {
+        const cw = cardWidth();
+        const gap = 24;
+        cards.forEach(c => { c.style.minWidth = cw + 'px'; c.style.maxWidth = cw + 'px'; });
         track.style.gap = gap + 'px';
         track.style.display = 'flex';
         track.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
@@ -383,4 +436,12 @@
     viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
     viewport.addEventListener('touchend', e => {
         const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 48) goTo(diff > 0 ? curre
+        if (Math.abs(diff) > 48) goTo(diff > 0 ? current + 1 : current - 1);
+    }, {passive:true});
+
+    init();
+    window.addEventListener('resize', init, {passive:true});
+})();
+</script>
+</body>
+</html>
