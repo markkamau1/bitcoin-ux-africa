@@ -141,7 +141,7 @@
         .country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px;}
         .country-card{border:1px solid var(--border);border-radius:10px;padding:28px 16px;text-align:center;background:var(--cream);transition:all .25s;}
         .country-card:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:0 8px 24px rgba(249,115,22,0.1);}
-        .country-flag{font-size:2.2rem;margin-bottom:10px;display:block;}
+        .country-flag-svg{width:60px;height:40px;margin:0 auto 12px;display:block;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.15);}
         .country-name{font-weight:700;font-size:0.95rem;color:var(--dark);margin-bottom:4px;}
         .country-note{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;line-height:1.5;}
 
@@ -477,27 +477,72 @@
         </div>
         <div class="country-grid fade-up">
             <div class="country-card">
-                <span class="country-flag">🇰🇪</span>
+                <!-- Kenya flag: black/red/green horizontal stripes with white borders and Maasai shield -->
+                <svg class="country-flag-svg" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="60" height="40" fill="#006600"/>
+                    <rect width="60" height="26.6" fill="#000000"/>
+                    <rect width="60" height="13.3" fill="#BB0000"/>
+                    <rect y="12.35" width="60" height="2.6" fill="#FFFFFF"/>
+                    <rect y="25.05" width="60" height="2.6" fill="#FFFFFF"/>
+                    <!-- Maasai shield and spears -->
+                    <ellipse cx="30" cy="20" rx="5" ry="9" fill="#FFFFFF"/>
+                    <ellipse cx="30" cy="20" rx="3.5" ry="7" fill="#BB0000"/>
+                    <rect x="29.3" y="11" width="1.4" height="18" fill="#000000"/>
+                    <rect x="26" y="19.3" width="8" height="1.4" fill="#000000"/>
+                    <line x1="24" y1="10" x2="36" y2="30" stroke="#FFFFFF" stroke-width="1"/>
+                    <line x1="36" y1="10" x2="24" y2="30" stroke="#FFFFFF" stroke-width="1"/>
+                </svg>
                 <div class="country-name">Kenya</div>
                 <div class="country-note">M-Pesa mental models · Mobile-first · 96% mobile transactions</div>
             </div>
             <div class="country-card">
-                <span class="country-flag">🇳🇬</span>
+                <!-- Nigeria flag: green/white/green vertical stripes -->
+                <svg class="country-flag-svg" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="60" height="40" fill="#FFFFFF"/>
+                    <rect width="20" height="40" fill="#008751"/>
+                    <rect x="40" width="20" height="40" fill="#008751"/>
+                </svg>
                 <div class="country-name">Nigeria</div>
                 <div class="country-note">Largest Bitcoin volume · Peer-to-peer dominant</div>
             </div>
             <div class="country-card">
-                <span class="country-flag">🇬🇭</span>
+                <!-- Ghana flag: red/gold/green stripes with black star -->
+                <svg class="country-flag-svg" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="60" height="40" fill="#006B3F"/>
+                    <rect width="60" height="26.6" fill="#FCD116"/>
+                    <rect width="60" height="13.3" fill="#CE1126"/>
+                    <!-- Black star -->
+                    <polygon points="30,14 31.8,19.5 37.5,19.5 32.9,22.8 34.7,28.3 30,25 25.3,28.3 27.1,22.8 22.5,19.5 28.2,19.5" fill="#000000"/>
+                </svg>
                 <div class="country-name">Ghana</div>
                 <div class="country-note">Mobile money · Remittance-driven adoption</div>
             </div>
             <div class="country-card">
-                <span class="country-flag">🇿🇦</span>
+                <!-- South Africa flag -->
+                <svg class="country-flag-svg" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="60" height="13.3" fill="#DE3831"/>
+                    <rect y="13.3" width="60" height="13.4" fill="#FFFFFF"/>
+                    <rect y="26.7" width="60" height="13.3" fill="#002395"/>
+                    <polygon points="0,0 27,20 0,40" fill="#FFB612"/>
+                    <polygon points="0,3.5 22,20 0,36.5" fill="#000000"/>
+                    <polygon points="0,7 17,20 0,33" fill="#007A4D"/>
+                    <polygon points="0,0 0,13.3 15,13.3" fill="#DE3831"/>
+                    <polygon points="0,26.7 0,40 15,26.7" fill="#002395"/>
+                </svg>
                 <div class="country-name">South Africa</div>
                 <div class="country-note">Most banked · Diverse user base</div>
             </div>
             <div class="country-card">
-                <span class="country-flag">🇪🇹</span>
+                <!-- Ethiopia flag: green/yellow/red stripes with blue circle and star -->
+                <svg class="country-flag-svg" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="60" height="40" fill="#EF2118"/>
+                    <rect width="60" height="26.6" fill="#FCDD09"/>
+                    <rect width="60" height="13.3" fill="#078930"/>
+                    <!-- Blue circle -->
+                    <circle cx="30" cy="20" r="9" fill="#0F47AF"/>
+                    <!-- Star -->
+                    <polygon points="30,12 31.8,17.5 37.5,17.5 32.9,20.8 34.7,26.3 30,23 25.3,26.3 27.1,20.8 22.5,17.5 28.2,17.5" fill="#FCDD09"/>
+                </svg>
                 <div class="country-name">Ethiopia</div>
                 <div class="country-note">Fastest-growing · New entrant market</div>
             </div>
@@ -705,7 +750,7 @@
     <h2 id="cta-heading">Read the research.<br>Use the findings.</h2>
     <p>Everything we've found is published and free to use. If you're building a Bitcoin wallet for African users, start here.</p>
     <div class="cta-buttons">
-        <a href="blog/posts/state-of-bitcoin-ux-africa-2026.html" class="btn btn-white">2026 State of Bitcoin UX →</a>
+        <a href="mailto:mark@bitcoinux.com" class="btn btn-white">Get in Touch</a>
         <a href="uxsupport.html" class="btn btn-outline">Work With Us</a>
     </div>
 </section>
