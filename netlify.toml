@@ -1,6 +1,15 @@
 [build]
   publish = "."
 
+# Form submission email notifications
+[[plugins]]
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Netlify Forms - email notifications are configured in the Netlify dashboard:
+# Dashboard → Forms → [form name] → Settings → Email Notifications → mark@designing.africa
+
 # Force HTTPS
 [[redirects]]
   from = "http://bitcoinux.africa/*"
