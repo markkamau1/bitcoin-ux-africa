@@ -1,16 +1,7 @@
 [build]
   publish = "."
 
-# Form submission email notifications
-[[plugins]]
-
-[build.environment]
-  NODE_VERSION = "18"
-
-# Netlify Forms - email notifications are configured in the Netlify dashboard:
-# Dashboard → Forms → [form name] → Settings → Email Notifications → mark@designing.africa
-
-# Force HTTPS
+# Force HTTPS and www redirect
 [[redirects]]
   from = "http://bitcoinux.africa/*"
   to = "https://bitcoinux.africa/:splat"
@@ -29,7 +20,7 @@
   status = 301
   force = true
 
-# Security + SEO headers for all pages
+# Security and SEO headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
@@ -38,19 +29,19 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Cache HTML pages for 1 hour
+# Cache HTML for 1 hour
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
 
-# Cache images for 1 year (immutable)
+# Cache images for 1 year
 [[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache JS files for 1 year
+# Cache JS for 1 year
 [[headers]]
   for = "/*.js"
   [headers.values]
