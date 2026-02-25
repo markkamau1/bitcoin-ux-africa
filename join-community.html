@@ -320,6 +320,7 @@
     </style>
 </head>
 <body>
+<script src="/nav.js"></script>
 
     <div class="form-container">
 
@@ -345,10 +346,15 @@
 
         <!-- Form -->
         <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            name="join-community"
             method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             id="community-form"
         >
+            <!-- Netlify hidden fields -->
+            <input type="hidden" name="form-name" value="join-community">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
             <!-- 1. About You -->
             <div class="form-section">
@@ -488,5 +494,6 @@
         });
     </script>
 
+<script src="/footer.js"></script>
 </body>
 </html>
