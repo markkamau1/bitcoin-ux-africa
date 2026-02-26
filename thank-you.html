@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Bitcoin UX Africa</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #f97316;
+      --dark: #111827;
+      --black: #0a0d0b;
+      --cream: #fafaf7;
+      --muted: rgba(255,255,255,0.45);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--black);
+      color: white;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    /* Subtle background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(249,115,22,0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(249,115,22,0.06), transparent);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .logo {
+      margin-bottom: 48px;
+    }
+    .logo img {
+      width: 72px;
+      height: 72px;
+    }
+
+    .check {
+      width: 64px;
+      height: 64px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .check svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .message {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-bottom: 48px;
+    }
+    .btn:hover {
+      background: #ea6c0a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249,115,22,0.35);
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 0 auto 32px;
+    }
+
+    .footer-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="logo">
+      <img src="/images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa">
+    </div>
+
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>We got<br>your <em>message.</em></h1>
+
+    <p class="message">
+      Thanks for reaching out. We read every submission personally and will be in touch soon.
+    </p>
+
+    <a href="/" class="btn">Back to Bitcoin UX Africa</a>
+
+    <div class="divider"></div>
+
+    <p class="footer-note">Bitcoin UX Africa &mdash; Research for African users</p>
+
+  </div>
+</body>
+</html>
