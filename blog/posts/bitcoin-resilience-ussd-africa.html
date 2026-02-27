@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Resilience: Designing for USSD, Low Literacy, and No Smartphone | Bitcoin UX Africa</title>
+    <meta name="description" content="800M Africans have a phone but no smartphone. The case for USSD, low-literacy, and offline-first Bitcoin design — for rural Africa, refugees, and activists.">
+    <meta name="author" content="Bitcoin UX Africa">
+    <link rel="canonical" href="https://bitcoinux.africa/blog/posts/bitcoin-resilience-ussd-africa.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Bitcoin Resilience: Designing for USSD, Low Literacy, and No Smartphone">
+    <meta property="og:description" content="800 million Africans have a phone but no smartphone. The case for designing Bitcoin that works over USSD, offline, and without literacy assumptions.">
+    <meta property="og:image" content="https://bitcoinux.africa/images/blog/bitcoin-resilience-ussd-africa.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://bitcoinux.africa/blog/posts/bitcoin-resilience-ussd-africa.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Bitcoin UX Africa">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bitcoin_ux">
+    <meta name="twitter:title" content="Bitcoin only works on smartphones. That excludes 800 million Africans.">
+    <meta name="twitter:description" content="The case for USSD Bitcoin, low-literacy design, and offline-first transactions — for rural Africa, refugees, and activists in hostile environments.">
+    <meta name="twitter:image" content="https://bitcoinux.africa/images/blog/bitcoin-resilience-ussd-africa.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bitcoin Resilience: Designing for USSD, Low Literacy, and No Smartphone",
+      "description": "800 million Africans have a phone but no smartphone. Bitcoin designed only for apps excludes them entirely. The case for USSD, low-literacy, and offline-first Bitcoin UX design.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://bitcoinux.africa/images/blog/bitcoin-resilience-ussd-africa.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-02-27",
+      "dateModified": "2026-02-27",
+      "author": {"@type": "Organization", "name": "Bitcoin UX Africa", "url": "https://bitcoinux.africa"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bitcoin UX Africa",
+        "logo": {"@type": "ImageObject", "url": "https://bitcoinux.africa/images/bitcoinUX_Logo.svg", "width": 300, "height": 60}
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitcoinux.africa/blog/posts/bitcoin-resilience-ussd-africa.html"
+      },
+      "about": {"@type": "Thing", "name": "Bitcoin UX Research in Africa"},
+      "keywords": "bitcoin ussd, bitcoin low literacy, bitcoin offline, bitcoin resilience africa, bitcoin feature phone, bitcoin rural africa, bitcoin refugees, bitcoin human rights, ussd bitcoin design, bitcoin inclusivity africa"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://bitcoinux.africa/"},
+        {"@type":"ListItem","position":2,"name":"Research","item":"https://bitcoinux.africa/#bitcoin-ux-insights"},
+        {"@type":"ListItem","position":3,"name":"Bitcoin Resilience: Designing for USSD, Low Literacy, and No Smartphone","item":"https://bitcoinux.africa/blog/posts/bitcoin-resilience-ussd-africa.html"}
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../../images/bitcoinUX_Favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<script src="../../nav.js"></script>
+
+<!-- HERO -->
+<div class="article-hero">
+    <div class="article-hero-bg" style="background-image:url('../../images/blog/bitcoin-resilience-ussd-africa.jpg');background-position:center center;"></div>
+    <div class="article-hero-grid" aria-hidden="true"></div>
+    <div class="article-hero-content">
+        <div class="article-eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span class="article-category-tag">Resilience & Inclusion</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-tag">2026-02-27</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-tag">10 min read</span>
+        </div>
+        <h1>Bitcoin for <em>Everyone.</em><br>Not Just Smartphone Users.</h1>
+        <p class="article-lede">800 million Africans have a mobile phone but no smartphone. Bitcoin designed only for apps excludes every one of them. This is what designing for the other half looks like.</p>
+    </div>
+</div>
+
+<div class="blog-article">
+    <div class="article-content">
+
+        <p>There is a photograph that captures everything wrong with how Bitcoin is currently designed for Africa. It shows a person holding a feature phone — the kind with a physical keypad, the kind that runs on USSD menus, the kind that costs $10 and works on a 2G network — next to an open notebook written in Swahili. This is the technology available to hundreds of millions of people on this continent. And every Bitcoin wallet in mainstream circulation is completely unusable on it.</p>
+
+        <p>The Bitcoin design community has made real progress on smartphone UX. Our own research across 340+ moderated sessions documents where African smartphone users fail and what fixes those failures. But there is an entire population that smartphone-first Bitcoin design doesn't just fail — it doesn't even see. When the interface requires an app store, a data plan, a touchscreen, and the ability to read a 12-word seed phrase in English, the implicit message is: this tool is not for you.</p>
+
+        <div class="pull-quote">
+            <p>"Financial sovereignty is a human right. But rights that require a smartphone, reliable internet, and English literacy are not rights for most of Africa. They are privileges for a minority of it."</p>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">800M</div>
+                <div class="label">Africans with a phone but no smartphone</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">57%</div>
+                <div class="label">Of Africans unbanked or underbanked</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">$95B</div>
+                <div class="label">In annual remittances flowing into Africa</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">8.5%</div>
+                <div class="label">Average fee on those remittances. Bitcoin eliminates this.</div>
+            </div>
+        </div>
+
+        <h2>Who We're Actually Talking About</h2>
+
+        <p>The people this article is about are not abstractions. They are specific, real, and numerous. They are the rural Kenyan farmer receiving a remittance from a sibling in London, navigating the transfer through an M-Pesa agent because there is no bank within 40 kilometres. They are the Congolese refugee in a camp with intermittent UNHCR WiFi, trying to receive support payments from family in the diaspora. They are the Ethiopian journalist using a device that law enforcement cannot easily monitor, in a country where the wrong bank transaction can trigger the wrong kind of attention. They are the Zimbabwean vendor who has watched multiple currencies collapse in her lifetime and wants something no government can devalue — but whose only phone is a Nokia with T9 text input.</p>
+
+        <p>These are not edge cases. Across sub-Saharan Africa, feature phones still represent the majority of devices in use. USSD — the Unstructured Supplementary Service Data protocol that powers mobile banking menus — processes hundreds of millions of transactions daily on this continent. M-Pesa was built on USSD. So was most of mobile banking in East Africa. The infrastructure for text-based, low-bandwidth, offline-capable financial transactions already exists. Bitcoin does not use it.</p>
+
+        <h2>What USSD Actually Is — and Why It Matters</h2>
+
+        <p>USSD is the technology that activates when you dial a code like <strong>*147#</strong> on a basic phone. A menu appears. You press a number. Another menu appears. Through a sequence of numbered choices and text inputs, you can check a balance, send money, buy airtime, or pay a bill — all without a data connection, all on a device from 2005, all in under two minutes.</p>
+
+        <div class="data-box">
+            <h4>Why USSD Works Where Apps Don't</h4>
+            <p><strong>No internet required:</strong> USSD runs over the voice channel, not data. A 2G signal is sufficient.<br>
+            <strong>Works on any phone:</strong> No app installation, no operating system version requirements, no storage constraints.<br>
+            <strong>Instant session:</strong> No loading time, no updates, no crashes. A USSD session opens in under a second.<br>
+            <strong>Familiar to hundreds of millions:</strong> Most African mobile money users already know how to navigate USSD menus — it is how they bank.</p>
+        </div>
+
+        <p>The design challenge is not small. Bitcoin's architecture involves concepts — addresses, seed phrases, private keys, transaction fees denominated in satoshis — that are genuinely complex to communicate through a numbered menu on a 2-inch screen. But the same was said of mobile banking before M-Pesa proved otherwise. The constraint is not the technology. It is the absence of designers willing to work within it.</p>
+
+        <h2>The Diaspora Remittance Problem</h2>
+
+        <p>Africa receives approximately $95 billion in annual remittances. The average cost to send that money is 8.5% — more than $8 billion lost to transfer fees every year, extracted from some of the world's most economically precarious households.</p>
+
+        <p>Bitcoin eliminates that fee almost entirely. A Bitcoin transaction from London to Nairobi costs the same as one from Nairobi to Nairobi — network fees measured in cents, not percentages. For a family receiving $200 a month from abroad, this is the difference between $17 staying with the transfer company and $17 staying in the household. Over a year, that is more than $200. For families at the edge of food security, that margin is not trivial.</p>
+
+        <div class="pull-quote">
+            <p>"The economics of Bitcoin remittances are transformative. The UX is not. A diaspora sender using a smartphone app means nothing if the recipient in rural Nigeria has a feature phone and no data plan."</p>
+        </div>
+
+        <p>The last-mile problem is the UX problem. A mother in Lagos can receive a Bitcoin transaction from her daughter in Manchester — but only if she can access a wallet, understand what she has received, and convert it to something spendable. If the receiving interface requires a smartphone she doesn't have, a data plan she can't afford, and an English seed phrase she cannot read, the transaction fails at the final step. The diaspora sender has done everything right. The design has done nothing right for the recipient.</p>
+
+        <p>Solving this requires USSD-accessible receiving flows: a way for a person with a feature phone to receive Bitcoin, check a balance, and initiate a conversion or withdrawal — through a numbered menu, with no data, in their local language. The Lightning Network makes near-instant, low-fee transactions possible at the protocol level. USSD design makes them accessible at the human level.</p>
+
+        <h2>Refugees, Activists, and Hostile Environments</h2>
+
+        <p>There is a dimension to Bitcoin resilience that extends beyond economic inclusion into something harder and more urgent: the use of money as a tool of political control, and Bitcoin as the instrument of resistance to it.</p>
+
+        <p>For an activist in a country with a hostile government, the conventional financial system is a surveillance network. Bank accounts can be frozen. Mobile money can be tracked and blocked. International transfers can be halted by a phone call from the right ministry. The ability to receive and spend money outside the reach of those systems is not a financial preference. It is a survival mechanism.</p>
+
+        <div class="data-box">
+            <h4>Scenarios Where Bitcoin Resilience Is Not Optional</h4>
+            <p><strong>Refugee contexts:</strong> Over 26 million registered refugees in Africa. Many have no documentation, no bank account, and no access to formal financial services. Receiving remittances or humanitarian support through Bitcoin requires infrastructure that works without identity verification or smartphone ownership.<br><br>
+            <strong>Activists and journalists:</strong> In countries with surveillance capitalism and politically motivated financial blocking, Bitcoin wallets must work without an internet footprint — offline transaction signing, air-gapped devices, USSD-accessible wallets that leave no app download trail.<br><br>
+            <strong>Currency collapse:</strong> Zimbabwe, Sudan, and Ethiopia have all experienced severe currency crises in recent years. Residents who can hold Bitcoin hold something stable. But stability means nothing if the interface for holding it requires infrastructure that collapses in the same crisis.</p>
+        </div>
+
+        <p>These scenarios share a design requirement: Bitcoin must work when the infrastructure around it doesn't. Offline transaction signing. Air-gapped key generation. USSD-accessible wallets with no app dependency. SMS-based balance checks. Paper-based key backup systems designed for low-literacy users.</p>
+
+        <p>None of this is speculative. All of it is technically possible. None of it is prioritised in mainstream Bitcoin wallet design — because the designers building those wallets have never needed it.</p>
+
+        <h2>The Low-Literacy Design Problem</h2>
+
+        <p>Adult literacy rates in sub-Saharan Africa vary dramatically by country, gender, and urban/rural location. In several of our target research countries — particularly in rural areas — functional literacy in any written language cannot be assumed for a significant portion of the adult population. Designing for low literacy is not about making things simpler. It is about making things work through icons, audio, confirmation patterns, and local-language interfaces rather than text-first assumptions.</p>
+
+        <p>Current Bitcoin UX fails low-literacy users at every critical moment:</p>
+
+        <div class="data-box">
+            <h4>Where Text-First Bitcoin UX Breaks for Low-Literacy Users</h4>
+            <p><strong>Seed phrase backup:</strong> 12–24 English words. No wallet we tested offered a non-text alternative — no pictographic backup, no audio recording, no physical metal plate guidance in local language.<br><br>
+            <strong>Transaction confirmation:</strong> "Confirm sending 0.00024 BTC to bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" — a confirmation screen that requires both English literacy and the ability to parse a meaningless string under time pressure and financial anxiety.<br><br>
+            <strong>Error messages:</strong> "Insufficient funds for fee" or "Invalid address format" — messages written for developers, not users, in a language many users do not read fluently.<br><br>
+            <strong>Onboarding:</strong> Almost every Bitcoin wallet onboarding flow is text-heavy, English-first, and assumes the ability to read and comprehend multi-step instructions without audio or visual support.</p>
+        </div>
+
+        <p>Redesigning for low literacy means: icon-first confirmation screens where the action is visually unambiguous. Audio support for critical steps in local languages. Pictographic seed phrase alternatives — or at minimum, a localised explanation of what the words represent and why they matter. Error messages that describe what happened and what to do, not what went wrong in technical terms.</p>
+
+        <h2>What Resilient Bitcoin Design Looks Like</h2>
+
+        <p>Resilience is not a feature to bolt onto an existing smartphone app. It is a design philosophy that starts from different assumptions: that connectivity is intermittent, that devices are basic, that literacy cannot be assumed, and that the stakes of getting it wrong are not user frustration but financial exclusion or personal danger.</p>
+
+        <div class="recommendation">
+            <h4>1. USSD-Accessible Receiving and Balance Checking</h4>
+            <p>A person with a feature phone should be able to check a Bitcoin balance and receive a payment through a USSD menu — no app, no data connection, no touchscreen required. Lightning Network integration makes the payment layer fast enough for USSD's synchronous session model. The design work is building the menu flows.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>2. Offline Transaction Signing</h4>
+            <p>In low-connectivity environments and hostile political contexts, the ability to create and sign a transaction without an internet connection is essential. Transactions can be constructed offline, passed via QR code or Bluetooth to a connected device for broadcast, and confirmed without the signing device ever touching the internet. This pattern exists. It needs to be designed for non-technical users.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>3. Local-Language Interfaces for Tier-2 Languages</h4>
+            <p>Swahili, Hausa, Amharic, Yoruba, Zulu, Twi. Not just the national language — the language the user thinks in. Localisation means more than translation: it means redesigning metaphors, analogies, and mental models for the local context. A seed phrase explanation written for a Swahili-speaking Tanzanian is a different document than one written for a Yoruba-speaking Nigerian, even if both are "translations."</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>4. Pictographic and Audio-Supported Backup</h4>
+            <p>The 12-word seed phrase must have non-text alternatives. Numbered pictograms that can be drawn rather than written. Audio recording support. Physical backup cards with local-language instructions. The goal is preserving the security of the backup while removing the literacy barrier to completing it.</p>
+        </div>
+
+        <div class="recommendation">
+            <h4>5. Low-Bandwidth-First Interface Architecture</h4>
+            <p>Design the interface to function on 2G. No large image assets. No auto-playing content. No web-socket-dependent features that break on unreliable connections. Progressive enhancement means the core transaction flow works at 2G; better connectivity adds features, not functionality.</p>
+        </div>
+
+        <h2>Why the Bitcoin Community Must Prioritise This</h2>
+
+        <p>Bitcoin's core proposition is a monetary system outside the control of any government, bank, or corporation — available to anyone with access to the network. That proposition is only as strong as its weakest access point. If Bitcoin is accessible only to people with smartphones, reliable internet, English literacy, and the technical confidence to manage a seed phrase, then it is not a tool for the world's financially excluded. It is a tool for the world's financially included who want an alternative.</p>
+
+        <p>The Bitcoin community talks frequently about financial sovereignty and human rights. But sovereignty that requires a $300 smartphone is not sovereignty for a refugee in a camp. Financial freedom that requires a reliable broadband connection is not freedom for a rural farmer in the Sahel. Human rights that depend on English literacy are not rights for the hundreds of millions of Africans who read and think in other languages.</p>
+
+        <p>The technical barriers to USSD Bitcoin, offline transactions, and low-literacy design are real but not insurmountable. They have been surmounted before — by M-Pesa, by mobile banking across Africa, by every system that took the constraint seriously rather than treating it as someone else's problem. The barrier is not engineering. It is prioritisation. And prioritisation is a design choice.</p>
+
+        <div class="pull-quote">
+            <p>"We do not need to wait for Africa to get better smartphones. We need to build Bitcoin that works with the phones Africa already has."</p>
+        </div>
+
+        <h2>What This Initiative Is Building</h2>
+
+        <p>The Pan-African Bitcoin UX & Resilience Initiative exists precisely because these problems will not solve themselves. We are conducting research into USSD-accessible Bitcoin flows, low-literacy onboarding patterns, offline transaction signing for non-technical users, and the specific design requirements of high-risk contexts — refugees, activists, communities experiencing currency collapse.</p>
+
+        <p>This research will be published openly, as everything we produce is. The patterns we document will be available to any wallet team willing to design for the users being excluded by current standards. The community we are building includes designers, researchers, and product managers who understand these contexts — not because they studied them from abroad, but because they live and work in them.</p>
+
+        <p>If you are building a Bitcoin wallet and want to understand what it takes to serve the users currently being left behind, our <a href="/uxsupport.html">UX support programme</a> is designed to help you get there. If you are a designer, researcher, or builder who wants to work on these problems, <a href="/join-community.html">join the community</a>. And if you are working in a humanitarian, human rights, or refugee context and want to explore what Bitcoin infrastructure for your users could look like, <a href="mailto:mark@foundation.africa">get in touch directly</a>.</p>
+
+        <p>The feature phone in that photograph is not a symbol of limitation. It is a symbol of a billion people waiting for tools worthy of them.</p>
+
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+
+    </div>
+</div>
+
+<!-- YOU MAY ALSO LIKE -->
+<section class="ymal-section">
+    <div class="ymal-inner">
+        <div class="ymal-header">
+            <div class="section-label">Keep Reading</div>
+            <h2 class="section-title">You May Also <em>Like</em></h2>
+        </div>
+        <div class="ymal-slider-wrap">
+            <button class="blog-slider-btn blog-slider-prev" id="ymal-prev" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+            </button>
+            <div class="ymal-slider-viewport" id="ymal-viewport">
+                <div class="ymal-track" id="ymal-track">
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#1e3a5f,#0f2027)">
+                        <img src="../../images/blog/first-transaction-failure.jpg" alt="Why 89% of African Bitcoin Users Fail Their First Transaction" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">User Research</div>
+                        <h3 class="blog-card-title">Why 89% Fail Their First Bitcoin Transaction</h3>
+                        <p class="blog-card-desc">340 sessions. 5 countries. The exact failure points and the fixes that cut abandonment by 67%.</p>
+                        <a href="why-89-percent-fail-first-transaction.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#3b1f00,#1a0e00)">
+                        <img src="../../images/blog/mobile-bitcoin-africa.jpg" alt="Mobile-First Bitcoin Design for Africa" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">Mobile UX</div>
+                        <h3 class="blog-card-title">Mobile-First Bitcoin Design for Africa</h3>
+                        <p class="blog-card-desc">Lessons from 100,000 African transactions on 2G constraints and real-world mobile UX failures.</p>
+                        <a href="mobile-bitcoin-africa.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#064e3b,#022c22)">
+                        <img src="../../images/blog/seed-phrase-ux.jpg" alt="Bitcoin Seed Phrase UX: Why 73% Fail" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">User Research</div>
+                        <h3 class="blog-card-title">Bitcoin Seed Phrase UX: Why 73% Fail</h3>
+                        <p class="blog-card-desc">The design problems causing seed phrase backup failure — and the fixes that cut abandonment by 47%.</p>
+                        <a href="seed-phrase-ux.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background:linear-gradient(135deg,#78350f,#451a03)">
+                        <img src="../../images/blog/bitcoin-ux-infrastructure.jpg" alt="Why Bitcoin UX Infrastructure Matters" loading="lazy" width="400" height="240"
+                             onerror="this.onerror=null;this.src='';this.closest('.blog-image').classList.add('img-fallback');this.style.display='none';">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-cat">Strategy</div>
+                        <h3 class="blog-card-title">Why Bitcoin UX Infrastructure Matters</h3>
+                        <p class="blog-card-desc">The case for shared UX infrastructure — and why rebuilding it independently costs adoption.</p>
+                        <a href="why-bitcoin-ux-infrastructure-matters.html" class="blog-card-link">Read article →</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <button class="blog-slider-btn blog-slider-next" id="ymal-next" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+            </button>
+        </div>
+        <div class="blog-dots" id="ymal-dots"></div>
+    </div>
+</section>
+
+<script src="../../cta.js"></script>
+<script src="../../footer.js"></script>
+
+<script>
+(function() {
+    const track    = document.getElementById('ymal-track');
+    const viewport = document.getElementById('ymal-viewport');
+    const prevBtn  = document.getElementById('ymal-prev');
+    const nextBtn  = document.getElementById('ymal-next');
+    const dotsWrap = document.getElementById('ymal-dots');
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.blog-card');
+    let current = 0;
+
+    function cardsPerView() {
+        const vw = viewport.offsetWidth;
+        if (vw >= 960) return 3;
+        if (vw >= 600) return 2;
+        return 1;
+    }
+
+    function cardWidth() {
+        const cpv = cardsPerView();
+        const gap = 24;
+        return (viewport.offsetWidth - gap * (cpv - 1)) / cpv;
+    }
+
+    function totalSlides() {
+        return Math.ceil(cards.length / cardsPerView());
+    }
+
+    function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < totalSlides(); i++) {
+            const d = document.createElement('button');
+            d.className = 'blog-dot' + (i === current ? ' active' : '');
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(d);
+        }
+    }
+
+    function goTo(idx) {
+        current = Math.max(0, Math.min(idx, totalSlides() - 1));
+        const cw = cardWidth();
+        const gap = 24;
+        const offset = current * cardsPerView() * (cw + gap);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        dotsWrap.querySelectorAll('.blog-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current >= totalSlides() - 1;
+    }
+
+    function init() {
+        const cw = cardWidth();
+        const gap = 24;
+        cards.forEach(c => { c.style.minWidth = cw + 'px'; c.style.maxWidth = cw + 'px'; });
+        track.style.gap = gap + 'px';
+        track.style.display = 'flex';
+        track.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
+        buildDots();
+        goTo(0);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    let touchStartX = 0;
+    viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    viewport.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 48) goTo(diff > 0 ? current + 1 : current - 1);
+    }, {passive:true});
+
+    init();
+    window.addEventListener('resize', init, {passive:true});
+})();
+</script>
+</body>
+</html>
