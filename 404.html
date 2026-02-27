@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Bitcoin UX Africa</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --orange:#f97316; --black:#0a0d0b; --muted:rgba(255,255,255,0.45); --border:rgba(255,255,255,0.08); }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{height:100%;font-family:'DM Sans',system-ui,sans-serif;background:var(--black);color:white;}
+    body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center;}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(249,115,22,0.1),transparent),radial-gradient(ellipse 50% 40% at 90% 110%,rgba(249,115,22,0.05),transparent);pointer-events:none;}
+    .card{position:relative;max-width:560px;width:100%;}
+    .logo{margin-bottom:48px;}
+    .logo img{width:72px;height:72px;}
+    .error-code{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,20vw,12rem);line-height:0.85;color:transparent;-webkit-text-stroke:2px rgba(249,115,22,0.3);letter-spacing:-2px;margin-bottom:8px;user-select:none;}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3.5rem);line-height:1;letter-spacing:-0.5px;margin-bottom:16px;}
+    h1 em{font-style:normal;color:var(--orange);}
+    .message{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:40px;max-width:400px;margin-left:auto;margin-right:auto;}
+    .buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;}
+    .btn-primary{display:inline-block;background:var(--orange);color:white;font-weight:700;font-size:0.95rem;padding:14px 32px;border-radius:8px;text-decoration:none;transition:all .2s;}
+    .btn-primary:hover{background:#ea6c0a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,0.35);}
+    .btn-secondary{display:inline-block;background:transparent;color:rgba(255,255,255,0.65);font-weight:600;font-size:0.95rem;padding:14px 32px;border-radius:8px;text-decoration:none;border:1px solid var(--border);transition:all .2s;}
+    .btn-secondary:hover{border-color:rgba(255,255,255,0.2);color:white;}
+    .divider{width:48px;height:1px;background:rgba(255,255,255,0.08);margin:0 auto 32px;}
+    .links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+    .links a{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s;}
+    .links a:hover{color:var(--orange);}
+    .footer-note{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.15);letter-spacing:0.1em;text-transform:uppercase;}
+    @media(max-width:480px){.buttons{flex-direction:column;}.btn-primary,.btn-secondary{text-align:center;}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/images/bitcoinUX_Logo.svg" alt="Bitcoin UX Africa">
+    </div>
+    <div class="error-code">404</div>
+    <h1>Page not<br><em>found.</em></h1>
+    <p class="message">This page doesn't exist or may have moved. The research is still here though.</p>
+    <div class="buttons">
+      <a href="/" class="btn-primary">Back to Home</a>
+      <a href="/about.html" class="btn-secondary">About Us</a>
+    </div>
+    <div class="divider"></div>
+    <div class="links">
+      <a href="/#bitcoin-ux-insights">Research</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/uxsupport.html">UX Support</a>
+      <a href="/join-community.html">Community</a>
+    </div>
+    <p class="footer-note">Bitcoin UX Africa &mdash; Research for African users</p>
+  </div>
+</body>
+</html>
