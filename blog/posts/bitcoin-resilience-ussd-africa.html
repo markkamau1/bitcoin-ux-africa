@@ -91,12 +91,12 @@
 <div class="blog-article">
     <div class="article-content">
 
-        <p>There is a photograph that captures everything wrong with how Bitcoin is currently designed for Africa. It shows a person holding a feature phone — the kind with a physical keypad, the kind that runs on USSD menus, the kind that costs $10 and works on a 2G network — next to an open notebook written in Swahili. This is the technology available to hundreds of millions of people on this continent. And every Bitcoin wallet in mainstream circulation is completely unusable on it.</p>
+        <p>Look at the photograph above. A feature phone with a physical keypad. An open notebook written in Swahili. This is the technology that hundreds of millions of people on this continent actually use every day. Every Bitcoin wallet in mainstream circulation is completely unusable on it.</p>
 
-        <p>The Bitcoin design community has made real progress on smartphone UX. Our own research across 340+ moderated sessions documents where African smartphone users fail and what fixes those failures. But there is an entire population that smartphone-first Bitcoin design doesn't just fail — it doesn't even see. When the interface requires an app store, a data plan, a touchscreen, and the ability to read a 12-word seed phrase in English, the implicit message is: this tool is not for you.</p>
+        <p>Our research across 340+ moderated sessions tracks where African smartphone users fail and what fixes those failures. But there is a larger population that smartphone-first Bitcoin design does not fail so much as ignore entirely. When using a wallet requires an app store, a data plan, a touchscreen, and the ability to read a 12-word seed phrase in English, the product has made a choice about who it is for. That choice excludes most of Africa.</p>
 
         <div class="pull-quote">
-            <p>"Financial sovereignty is a human right. But rights that require a smartphone, reliable internet, and English literacy are not rights for most of Africa. They are privileges for a minority of it."</p>
+            <p>"Financial sovereignty is supposed to be a human right. Rights that require a smartphone, reliable internet, and English literacy are privileges. Most of Africa has none of the three."</p>
         </div>
 
         <div class="stat-grid">
@@ -118,123 +118,119 @@
             </div>
         </div>
 
-        <h2>Who We're Actually Talking About</h2>
+        <h2>Who We're Talking About</h2>
 
-        <p>The people this article is about are not abstractions. They are specific, real, and numerous. They are the rural Kenyan farmer receiving a remittance from a sibling in London, navigating the transfer through an M-Pesa agent because there is no bank within 40 kilometres. They are the Congolese refugee in a camp with intermittent UNHCR WiFi, trying to receive support payments from family in the diaspora. They are the Ethiopian journalist using a device that law enforcement cannot easily monitor, in a country where the wrong bank transaction can trigger the wrong kind of attention. They are the Zimbabwean vendor who has watched multiple currencies collapse in her lifetime and wants something no government can devalue — but whose only phone is a Nokia with T9 text input.</p>
+        <p>A Kenyan farmer receiving money from a sibling in London, navigating the transfer through an M-Pesa agent because the nearest bank is 40 kilometres away. A Congolese refugee in a camp with intermittent WiFi, trying to receive support payments from family abroad. An Ethiopian journalist carrying a device that law enforcement cannot easily monitor, in a country where the wrong bank transaction attracts the wrong kind of attention. A Zimbabwean vendor who has watched multiple currencies collapse and wants something no government can devalue, but whose only phone has a T9 keypad.</p>
 
-        <p>These are not edge cases. Across sub-Saharan Africa, feature phones still represent the majority of devices in use. USSD — the Unstructured Supplementary Service Data protocol that powers mobile banking menus — processes hundreds of millions of transactions daily on this continent. M-Pesa was built on USSD. So was most of mobile banking in East Africa. The infrastructure for text-based, low-bandwidth, offline-capable financial transactions already exists. Bitcoin does not use it.</p>
+        <p>These are not edge cases. Feature phones still represent the majority of devices in use across sub-Saharan Africa. USSD, the text-menu protocol that powers mobile banking, processes hundreds of millions of transactions daily on this continent. M-Pesa was built on it. Most of mobile banking in East Africa was built on it. The infrastructure for low-bandwidth, offline-capable financial transactions already exists and already works at scale. Bitcoin does not use it.</p>
 
-        <h2>What USSD Actually Is — and Why It Matters</h2>
+        <h2>What USSD Is and Why It Matters</h2>
 
-        <p>USSD is the technology that activates when you dial a code like <strong>*147#</strong> on a basic phone. A menu appears. You press a number. Another menu appears. Through a sequence of numbered choices and text inputs, you can check a balance, send money, buy airtime, or pay a bill — all without a data connection, all on a device from 2005, all in under two minutes.</p>
+        <p>Dial <strong>*147#</strong> on a basic phone. A menu appears. Press a number, another menu appears. Through a sequence of numbered choices and short text inputs you can check a balance, send money, buy airtime, or pay a bill. No internet connection. Any phone made in the last 20 years. Under two minutes.</p>
 
         <div class="data-box">
             <h4>Why USSD Works Where Apps Don't</h4>
-            <p><strong>No internet required:</strong> USSD runs over the voice channel, not data. A 2G signal is sufficient.<br>
-            <strong>Works on any phone:</strong> No app installation, no operating system version requirements, no storage constraints.<br>
-            <strong>Instant session:</strong> No loading time, no updates, no crashes. A USSD session opens in under a second.<br>
-            <strong>Familiar to hundreds of millions:</strong> Most African mobile money users already know how to navigate USSD menus — it is how they bank.</p>
+            <p><strong>No internet required:</strong> USSD runs over the voice channel, not data. A 2G signal is enough.<br>
+            <strong>Works on any phone:</strong> No app to install, no OS version to check, no storage to clear.<br>
+            <strong>Opens instantly:</strong> No load time, no updates, no crashes. A USSD session is live in under a second.<br>
+            <strong>Already familiar:</strong> Most African mobile money users navigate USSD menus daily. It is how they bank.</p>
         </div>
 
-        <p>The design challenge is not small. Bitcoin's architecture involves concepts — addresses, seed phrases, private keys, transaction fees denominated in satoshis — that are genuinely complex to communicate through a numbered menu on a 2-inch screen. But the same was said of mobile banking before M-Pesa proved otherwise. The constraint is not the technology. It is the absence of designers willing to work within it.</p>
+        <p>Getting Bitcoin to work over USSD is a genuine design challenge. Addresses, seed phrases, private keys, fees in satoshis, these are hard concepts to compress into a numbered menu on a 2-inch screen. But people said the same about mobile banking before M-Pesa proved them wrong. The problem is not the technology. It is the shortage of designers willing to take the constraint seriously.</p>
 
-        <h2>The Diaspora Remittance Problem</h2>
+        <h2>The Remittance Last Mile</h2>
 
-        <p>Africa receives approximately $95 billion in annual remittances. The average cost to send that money is 8.5% — more than $8 billion lost to transfer fees every year, extracted from some of the world's most economically precarious households.</p>
+        <p>Africa receives around $95 billion in remittances each year. Sending that money costs an average of 8.5%, which means more than $8 billion a year in fees extracted from households that cannot afford them.</p>
 
-        <p>Bitcoin eliminates that fee almost entirely. A Bitcoin transaction from London to Nairobi costs the same as one from Nairobi to Nairobi — network fees measured in cents, not percentages. For a family receiving $200 a month from abroad, this is the difference between $17 staying with the transfer company and $17 staying in the household. Over a year, that is more than $200. For families at the edge of food security, that margin is not trivial.</p>
+        <p>Bitcoin cuts that to near zero. A transaction from London to Nairobi costs the same as one from Nairobi to Nairobi, network fees measured in cents. For a family receiving $200 a month from abroad, the difference between 8.5% and near-zero is $17 kept in the household every single month. Over a year that is $200. For families living close to the edge, that is not a small number.</p>
 
         <div class="pull-quote">
-            <p>"The economics of Bitcoin remittances are transformative. The UX is not. A diaspora sender using a smartphone app means nothing if the recipient in rural Nigeria has a feature phone and no data plan."</p>
+            <p>"The economics of Bitcoin remittances work. The UX does not. A sender in Manchester using a smartphone wallet means nothing if their mother in Lagos has a feature phone and no data plan."</p>
         </div>
 
-        <p>The last-mile problem is the UX problem. A mother in Lagos can receive a Bitcoin transaction from her daughter in Manchester — but only if she can access a wallet, understand what she has received, and convert it to something spendable. If the receiving interface requires a smartphone she doesn't have, a data plan she can't afford, and an English seed phrase she cannot read, the transaction fails at the final step. The diaspora sender has done everything right. The design has done nothing right for the recipient.</p>
+        <p>A mother in Lagos can receive a Bitcoin payment from her daughter in Manchester, but only if she can open a wallet, understand what arrived, and turn it into something she can spend. If doing that requires a smartphone she does not have, a data plan she cannot afford, and a seed phrase in English she cannot read, the transaction fails at the final step. The sender did everything right. The product failed the recipient.</p>
 
-        <p>Solving this requires USSD-accessible receiving flows: a way for a person with a feature phone to receive Bitcoin, check a balance, and initiate a conversion or withdrawal — through a numbered menu, with no data, in their local language. The Lightning Network makes near-instant, low-fee transactions possible at the protocol level. USSD design makes them accessible at the human level.</p>
+        <p>What fixes this is a USSD-accessible receiving flow: check a balance and receive a payment through a numbered menu, no app, no data, in Swahili or Hausa or Amharic. The Lightning Network makes the payment layer fast enough for USSD's session model. Building the menu flows is the design work that nobody has done yet.</p>
 
-        <h2>Refugees, Activists, and Hostile Environments</h2>
+        <h2>Refugees, Activists, and Places Where the System Is the Threat</h2>
 
-        <p>There is a dimension to Bitcoin resilience that extends beyond economic inclusion into something harder and more urgent: the use of money as a tool of political control, and Bitcoin as the instrument of resistance to it.</p>
-
-        <p>For an activist in a country with a hostile government, the conventional financial system is a surveillance network. Bank accounts can be frozen. Mobile money can be tracked and blocked. International transfers can be halted by a phone call from the right ministry. The ability to receive and spend money outside the reach of those systems is not a financial preference. It is a survival mechanism.</p>
+        <p>For an activist operating under a hostile government, the conventional financial system is part of the surveillance infrastructure. Bank accounts get frozen. Mobile money gets tracked and blocked. International transfers get stopped with a phone call from the right official. Bitcoin offers a way out of that, but only if it works without leaving a trail, without requiring an app download logged to an account, without depending on infrastructure the state controls.</p>
 
         <div class="data-box">
-            <h4>Scenarios Where Bitcoin Resilience Is Not Optional</h4>
-            <p><strong>Refugee contexts:</strong> Over 26 million registered refugees in Africa. Many have no documentation, no bank account, and no access to formal financial services. Receiving remittances or humanitarian support through Bitcoin requires infrastructure that works without identity verification or smartphone ownership.<br><br>
-            <strong>Activists and journalists:</strong> In countries with surveillance capitalism and politically motivated financial blocking, Bitcoin wallets must work without an internet footprint — offline transaction signing, air-gapped devices, USSD-accessible wallets that leave no app download trail.<br><br>
-            <strong>Currency collapse:</strong> Zimbabwe, Sudan, and Ethiopia have all experienced severe currency crises in recent years. Residents who can hold Bitcoin hold something stable. But stability means nothing if the interface for holding it requires infrastructure that collapses in the same crisis.</p>
+            <h4>Contexts Where Resilience Is Not Optional</h4>
+            <p><strong>Refugee situations:</strong> Africa has over 26 million registered refugees. Most have no documentation, no bank account, and no access to formal financial services. Receiving remittances or aid through Bitcoin requires a setup that works without identity verification or a smartphone.<br><br>
+            <strong>Activists and journalists:</strong> In countries where financial surveillance is a tool of political control, wallets need to work without an internet footprint. Offline transaction signing, air-gapped devices, USSD access that leaves no app download trail.<br><br>
+            <strong>Currency collapse:</strong> Zimbabwe, Sudan, Ethiopia. Residents who can hold Bitcoin hold something outside the crisis. But that only works if the interface for holding it does not require the same infrastructure that just collapsed.</p>
         </div>
 
-        <p>These scenarios share a design requirement: Bitcoin must work when the infrastructure around it doesn't. Offline transaction signing. Air-gapped key generation. USSD-accessible wallets with no app dependency. SMS-based balance checks. Paper-based key backup systems designed for low-literacy users.</p>
+        <p>All of this is technically possible. Offline transaction signing exists. Air-gapped key generation exists. SMS-based balance checking exists. None of it is a priority in mainstream Bitcoin wallet development, because the people building those wallets have never been in the situations that require it.</p>
 
-        <p>None of this is speculative. All of it is technically possible. None of it is prioritised in mainstream Bitcoin wallet design — because the designers building those wallets have never needed it.</p>
+        <h2>The Literacy Problem Nobody Talks About</h2>
 
-        <h2>The Low-Literacy Design Problem</h2>
+        <p>Functional literacy in any written language cannot be assumed across much of rural sub-Saharan Africa. Designing for this is not about dumbing things down. It is about building interfaces that work through icons, audio, and visual confirmation rather than assuming the user can read English under financial pressure.</p>
 
-        <p>Adult literacy rates in sub-Saharan Africa vary dramatically by country, gender, and urban/rural location. In several of our target research countries — particularly in rural areas — functional literacy in any written language cannot be assumed for a significant portion of the adult population. Designing for low literacy is not about making things simpler. It is about making things work through icons, audio, confirmation patterns, and local-language interfaces rather than text-first assumptions.</p>
-
-        <p>Current Bitcoin UX fails low-literacy users at every critical moment:</p>
+        <p>Bitcoin fails low-literacy users at every critical point in the flow:</p>
 
         <div class="data-box">
-            <h4>Where Text-First Bitcoin UX Breaks for Low-Literacy Users</h4>
-            <p><strong>Seed phrase backup:</strong> 12–24 English words. No wallet we tested offered a non-text alternative — no pictographic backup, no audio recording, no physical metal plate guidance in local language.<br><br>
-            <strong>Transaction confirmation:</strong> "Confirm sending 0.00024 BTC to bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" — a confirmation screen that requires both English literacy and the ability to parse a meaningless string under time pressure and financial anxiety.<br><br>
-            <strong>Error messages:</strong> "Insufficient funds for fee" or "Invalid address format" — messages written for developers, not users, in a language many users do not read fluently.<br><br>
-            <strong>Onboarding:</strong> Almost every Bitcoin wallet onboarding flow is text-heavy, English-first, and assumes the ability to read and comprehend multi-step instructions without audio or visual support.</p>
+            <h4>Where Text-First Bitcoin UX Breaks</h4>
+            <p><strong>Seed phrase backup:</strong> 12 to 24 English words. No wallet we have tested offers a non-text alternative, no pictographic system, no audio option, no local-language physical backup guide.<br><br>
+            <strong>Transaction confirmation:</strong> "Confirm sending 0.00024 BTC to bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" requires English literacy and the ability to verify a string of characters that means nothing to the human eye, under time pressure, with real money on the line.<br><br>
+            <strong>Error messages:</strong> "Insufficient funds for fee" and "Invalid address format" are written for developers. They tell a low-literacy user nothing about what happened or what to do.<br><br>
+            <strong>Onboarding:</strong> Almost every Bitcoin wallet onboarding flow is long, text-heavy, English-first, and assumes multi-step reading comprehension with no audio or visual support.</p>
         </div>
 
-        <p>Redesigning for low literacy means: icon-first confirmation screens where the action is visually unambiguous. Audio support for critical steps in local languages. Pictographic seed phrase alternatives — or at minimum, a localised explanation of what the words represent and why they matter. Error messages that describe what happened and what to do, not what went wrong in technical terms.</p>
+        <p>Icon-first confirmation screens. Audio in local languages for critical steps. Pictographic seed phrase backup, or at minimum a localised explanation of what those words represent and what happens if they are lost. Error messages written for the person holding the phone, not the engineer who wrote the code. These are not radical ideas. They are what designing for your actual user looks like.</p>
 
-        <h2>What Resilient Bitcoin Design Looks Like</h2>
+        <h2>What Resilient Bitcoin Design Requires</h2>
 
-        <p>Resilience is not a feature to bolt onto an existing smartphone app. It is a design philosophy that starts from different assumptions: that connectivity is intermittent, that devices are basic, that literacy cannot be assumed, and that the stakes of getting it wrong are not user frustration but financial exclusion or personal danger.</p>
+        <p>Resilience is not a mode you add to an app. It is a set of starting assumptions: connectivity is unreliable, devices are basic, literacy cannot be taken for granted, and the cost of getting it wrong is not a bad review but financial exclusion or physical danger.</p>
 
         <div class="recommendation">
-            <h4>1. USSD-Accessible Receiving and Balance Checking</h4>
-            <p>A person with a feature phone should be able to check a Bitcoin balance and receive a payment through a USSD menu — no app, no data connection, no touchscreen required. Lightning Network integration makes the payment layer fast enough for USSD's synchronous session model. The design work is building the menu flows.</p>
+            <h4>1. USSD Receiving and Balance Checking</h4>
+            <p>A person with a feature phone needs to be able to receive Bitcoin and check a balance through a USSD menu, no app, no data connection, no touchscreen. Lightning Network makes the payment fast enough for USSD's synchronous session. The remaining work is designing the menu flows.</p>
         </div>
 
         <div class="recommendation">
             <h4>2. Offline Transaction Signing</h4>
-            <p>In low-connectivity environments and hostile political contexts, the ability to create and sign a transaction without an internet connection is essential. Transactions can be constructed offline, passed via QR code or Bluetooth to a connected device for broadcast, and confirmed without the signing device ever touching the internet. This pattern exists. It needs to be designed for non-technical users.</p>
+            <p>In low-connectivity and politically hostile environments, signing a transaction without touching the internet is essential. A transaction can be constructed offline, moved via QR code or Bluetooth to a connected device for broadcast, and confirmed without the signing device ever being online. This pattern exists in the Bitcoin ecosystem. It has never been designed for non-technical users.</p>
         </div>
 
         <div class="recommendation">
-            <h4>3. Local-Language Interfaces for Tier-2 Languages</h4>
-            <p>Swahili, Hausa, Amharic, Yoruba, Zulu, Twi. Not just the national language — the language the user thinks in. Localisation means more than translation: it means redesigning metaphors, analogies, and mental models for the local context. A seed phrase explanation written for a Swahili-speaking Tanzanian is a different document than one written for a Yoruba-speaking Nigerian, even if both are "translations."</p>
+            <h4>3. The Language the User Thinks In</h4>
+            <p>Swahili, Hausa, Amharic, Yoruba, Zulu, Twi. Not a translation of an English interface, a redesign of the concepts for the local context. A seed phrase explanation that works for a Swahili speaker in rural Tanzania is a different document from one that works for a Yoruba speaker in Lagos, even if both are technically translations of the same English text.</p>
         </div>
 
         <div class="recommendation">
-            <h4>4. Pictographic and Audio-Supported Backup</h4>
-            <p>The 12-word seed phrase must have non-text alternatives. Numbered pictograms that can be drawn rather than written. Audio recording support. Physical backup cards with local-language instructions. The goal is preserving the security of the backup while removing the literacy barrier to completing it.</p>
+            <h4>4. Seed Backup Without Reading and Writing</h4>
+            <p>Alternatives to the 12-word written backup: numbered pictograms that can be drawn or copied without reading. Audio recording support. Physical backup cards printed in local language with clear visual instructions. The security of the backup should not depend on English literacy.</p>
         </div>
 
         <div class="recommendation">
-            <h4>5. Low-Bandwidth-First Interface Architecture</h4>
-            <p>Design the interface to function on 2G. No large image assets. No auto-playing content. No web-socket-dependent features that break on unreliable connections. Progressive enhancement means the core transaction flow works at 2G; better connectivity adds features, not functionality.</p>
+            <h4>5. Build for 2G First</h4>
+            <p>Design the core transaction flow to work on a 2G connection. No large images, no auto-loading content, no features that silently fail on an unstable connection. Better connectivity should add optional features, not enable basic functionality.</p>
         </div>
 
-        <h2>Why the Bitcoin Community Must Prioritise This</h2>
+        <h2>The Argument Bitcoin Makes About Itself</h2>
 
-        <p>Bitcoin's core proposition is a monetary system outside the control of any government, bank, or corporation — available to anyone with access to the network. That proposition is only as strong as its weakest access point. If Bitcoin is accessible only to people with smartphones, reliable internet, English literacy, and the technical confidence to manage a seed phrase, then it is not a tool for the world's financially excluded. It is a tool for the world's financially included who want an alternative.</p>
+        <p>Bitcoin says it is a monetary system outside the control of any government, bank, or corporation, available to anyone with access to the network. That claim is only credible if access to the network does not require a $300 smartphone, reliable broadband, and the ability to read a security phrase in English.</p>
 
-        <p>The Bitcoin community talks frequently about financial sovereignty and human rights. But sovereignty that requires a $300 smartphone is not sovereignty for a refugee in a camp. Financial freedom that requires a reliable broadband connection is not freedom for a rural farmer in the Sahel. Human rights that depend on English literacy are not rights for the hundreds of millions of Africans who read and think in other languages.</p>
+        <p>Sovereignty that requires a smartphone is not sovereignty for a refugee. Financial freedom that requires broadband is not freedom for a farmer in the Sahel. Human rights that depend on English literacy are not rights for the hundreds of millions of Africans who read and think in other languages.</p>
 
-        <p>The technical barriers to USSD Bitcoin, offline transactions, and low-literacy design are real but not insurmountable. They have been surmounted before — by M-Pesa, by mobile banking across Africa, by every system that took the constraint seriously rather than treating it as someone else's problem. The barrier is not engineering. It is prioritisation. And prioritisation is a design choice.</p>
+        <p>The technical barriers here are real but they are not unique. M-Pesa solved harder problems with less. Every mobile banking system that works at scale in Africa solved harder problems with less. What they had was designers who took the constraint seriously instead of designing around it. That is all this requires.</p>
 
         <div class="pull-quote">
-            <p>"We do not need to wait for Africa to get better smartphones. We need to build Bitcoin that works with the phones Africa already has."</p>
+            <p>"Africa does not need to wait for better phones. Bitcoin needs to work with the phones Africa already has."</p>
         </div>
 
-        <h2>What This Initiative Is Building</h2>
+        <h2>What We're Building</h2>
 
-        <p>The Pan-African Bitcoin UX & Resilience Initiative exists precisely because these problems will not solve themselves. We are conducting research into USSD-accessible Bitcoin flows, low-literacy onboarding patterns, offline transaction signing for non-technical users, and the specific design requirements of high-risk contexts — refugees, activists, communities experiencing currency collapse.</p>
+        <p>The Pan-African Bitcoin UX & Resilience Initiative is running research into USSD-accessible Bitcoin flows, low-literacy onboarding patterns, offline transaction signing for non-technical users, and the specific design requirements of high-risk contexts including refugee situations, activist use cases, and communities living through currency crises.</p>
 
-        <p>This research will be published openly, as everything we produce is. The patterns we document will be available to any wallet team willing to design for the users being excluded by current standards. The community we are building includes designers, researchers, and product managers who understand these contexts — not because they studied them from abroad, but because they live and work in them.</p>
+        <p>Everything we find gets published openly. The patterns get documented so any wallet team can use them. The community we are building is made up of designers and researchers who know these contexts from the inside, because they live and work in them.</p>
 
-        <p>If you are building a Bitcoin wallet and want to understand what it takes to serve the users currently being left behind, our <a href="/uxsupport.html">UX support programme</a> is designed to help you get there. If you are a designer, researcher, or builder who wants to work on these problems, <a href="/join-community.html">join the community</a>. And if you are working in a humanitarian, human rights, or refugee context and want to explore what Bitcoin infrastructure for your users could look like, <a href="mailto:mark@foundation.africa">get in touch directly</a>.</p>
+        <p>If you are building a Bitcoin wallet and want to understand what it takes to reach the users currently locked out, our <a href="/uxsupport.html">UX support programme</a> is a good place to start. If you want to work on these problems as a designer or researcher, <a href="/join-community.html">join the community</a>. And if you are working in a humanitarian, human rights, or refugee context and want to think through what Bitcoin infrastructure for your users could look like, <a href="mailto:mark@foundation.africa">write to us directly</a>.</p>
 
-        <p>The feature phone in that photograph is not a symbol of limitation. It is a symbol of a billion people waiting for tools worthy of them.</p>
+        <p>The feature phone in that photograph is not a symbol of what people lack. It is a symbol of what Bitcoin design has so far refused to address.</p>
 
         <a href="../../index.html" class="back-link">← Back to Home</a>
 
