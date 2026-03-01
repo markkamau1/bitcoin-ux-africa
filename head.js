@@ -1,7 +1,10 @@
 (function () {
   // ── Shared <head> injector ────────────────────────────────────────────────
   // Injects everything that is identical across every page:
-  //   charset, viewport, favicons, font preconnects, Google Fonts
+  //   charset, viewport, font preconnects, Google Fonts
+  //
+  // Favicons are hardcoded directly in each page's <head> — NOT injected here.
+  // Safari ignores dynamically injected favicons; hardcoding is required.
   //
   // Page-specific tags (title, description, canonical, OG, Twitter, schema)
   // stay hardcoded in each page's own <head>.
@@ -14,13 +17,6 @@
     // Character set & viewport
     '<meta charset="UTF-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-
-    // ── Favicons (generated via realfavicongenerator.net) ──────────────────
-    '<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">',
-    '<link rel="icon" type="image/svg+xml" href="/favicon.svg">',
-    '<link rel="shortcut icon" href="/favicon.ico">',
-    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">',
-    '<link rel="manifest" href="/site.webmanifest">',
 
     // ── Google Fonts ───────────────────────────────────────────────────────
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
