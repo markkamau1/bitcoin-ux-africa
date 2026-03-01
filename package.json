@@ -1,12 +1,11 @@
 {
-  "name": "bitcoin-ux-africa",
-  "version": "1.0.0",
-  "description": "Bitcoin UX Africa website",
-  "scripts": {
-    "generate-posts": "node scripts/generate-posts.js",
-    "build": "npm run generate-posts"
-  },
-  "dependencies": {
-    "gray-matter": "^4.0.3"
-  }
+  "name": "Bitcoin UX Africa",
+  "short_name": "Bitcoin UX",
+  "icons": [
+    { "src": "/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0a0d0b",
+  "background_color": "#0a0d0b",
+  "display": "standalone"
 }
