@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <script src="/head.js"></script>
-    <title>Bitcoin UX Research Methodology | How We Test Bitcoin Wallets in Africa</title>
-    <meta name="description" content="340+ moderated Bitcoin wallet usability sessions across 5 African countries. Recruitment, think-aloud protocol, task completion testing, and analysis explained.">
+    <title>Research Methodology &amp; AI Tools | Bitcoin UX Africa</title>
+    <meta name="description" content="340+ moderated sessions across 5 countries, AI-assisted transcript analysis, USSD simulation, and localisation drafting. How we research Bitcoin UX in Africa.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Bitcoin UX Africa">
     <link rel="canonical" href="https://bitcoinux.africa/methodology.html">
 
-    <meta property="og:title" content="Bitcoin UX Research Methodology | Bitcoin UX Africa">
-    <meta property="og:description" content="How we run 340+ moderated Bitcoin wallet usability sessions across Kenya, Nigeria, Ghana, South Africa and Ethiopia. Recruitment, protocols, analysis.">
+    <meta property="og:title" content="Research Methodology & AI Tools | Bitcoin UX Africa">
+    <meta property="og:description" content="340+ moderated sessions across Africa, plus AI-assisted analysis, USSD flow simulation, and localisation drafting. How we produce trustworthy Bitcoin UX research.">
     <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -20,8 +20,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@bitcoin_ux">
     <meta name="twitter:creator" content="@bitcoin_ux">
-    <meta name="twitter:title" content="How we test Bitcoin wallets with 340+ African users">
-    <meta name="twitter:description" content="Moderated sessions. Think-aloud protocol. Real African users. Here's exactly how our Bitcoin UX research works.">
+    <meta name="twitter:title" content="Research Methodology & AI Tools | Bitcoin UX Africa">
+    <meta name="twitter:description" content="Moderated sessions. Think-aloud protocol. AI-assisted transcript analysis. USSD simulation. Here is exactly how our Bitcoin UX research for Africa works.">
     <meta name="twitter:image" content="https://bitcoinux.africa/images/og-image.jpg">
 
     <script type="application/ld+json">
@@ -32,6 +32,14 @@
       "url": "https://bitcoinux.africa/methodology.html",
       "description": "The research methodology behind 340+ moderated Bitcoin wallet usability sessions across Kenya, Nigeria, Ghana, South Africa, and Ethiopia.",
       "about": {"@type": "Thing", "name": "Bitcoin UX Research Methodology"},
+      "keywords": "bitcoin ux research methodology, AI bitcoin research, USSD bitcoin testing, bitcoin wallet usability testing africa, ai-assisted ux research, moderated usability sessions africa",
+      "mentions": [
+        {"@type": "Thing", "name": "AI-Assisted UX Research"},
+        {"@type": "Thing", "name": "USSD Bitcoin Design"},
+        {"@type": "Thing", "name": "Moderated Usability Testing"},
+        {"@type": "Thing", "name": "Bitcoin Localisation Africa"},
+        {"@type": "Thing", "name": "Low Literacy UX Design"}
+      ],
       "publisher": {
         "@type": "Organization",
         "name": "Bitcoin UX Africa",
@@ -288,6 +296,62 @@
 
             <h3 class="prose-heading">Versions and dating</h3>
             <p>Every published finding notes the wallet version tested and the date of testing. Wallet UX changes with updates. We retest wallets that ship significant UX changes and update findings accordingly.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- AI IN OUR RESEARCH -->
+<section class="section" style="background:var(--dark);" id="ai-research">
+    <div class="section-inner">
+        <div class="section-label fade-up" style="color:var(--orange);">How We Use AI</div>
+        <h2 class="section-title fade-up" style="color:white;">AI Assists.<br><em>Humans Decide.</em></h2>
+        <div class="prose fade-up" style="margin-bottom:40px;">
+            <p style="color:rgba(255,255,255,0.65);">We use AI in specific, bounded parts of our research process. Not to replace observation — nothing replaces sitting across from a real user watching them fail. But to handle volume work that would otherwise limit the scale of what a small team can analyse and produce.</p>
+            <p style="color:rgba(255,255,255,0.65);">Every AI-assisted output in our process is reviewed, validated, and signed off by a human researcher before it influences any published finding. We do not use AI to generate insights. We use it to surface candidates for human review.</p>
+        </div>
+
+        <div class="method-steps fade-up">
+            <div class="method-step">
+                <div class="step-num" style="color:rgba(249,115,22,0.5);">1</div>
+                <div class="step-body" style="background:rgba(255,255,255,0.03);">
+                    <div class="step-title" style="color:white;">Transcript Analysis at Scale</div>
+                    <div class="step-desc" style="color:rgba(255,255,255,0.5);">340+ session transcripts. Manually coding all of them for failure patterns, hesitation moments, and emotional signals takes weeks. We use LLMs to process transcripts, cluster recurring failure moments, and flag observations that appear across multiple sessions and countries. A human researcher then validates every cluster before it becomes a finding. AI compresses weeks into hours. The researcher still makes the call.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num" style="color:rgba(249,115,22,0.5);">2</div>
+                <div class="step-body" style="background:rgba(255,255,255,0.03);">
+                    <div class="step-title" style="color:white;">USSD Flow Simulation</div>
+                    <div class="step-desc" style="color:rgba(255,255,255,0.5);">USSD interfaces are text menus. Before putting a real user in front of a USSD Bitcoin flow, we run an LLM through it as a synthetic first-pass — testing whether the menu logic is navigable, whether error paths lead anywhere useful, whether a user following only what's visible on screen could complete a task. This catches obvious structural failures before the first real session. It does not replace real sessions. It makes them more productive.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num" style="color:rgba(249,115,22,0.5);">3</div>
+                <div class="step-body" style="background:rgba(255,255,255,0.03);">
+                    <div class="step-title" style="color:white;">Localisation Drafting</div>
+                    <div class="step-desc" style="color:rgba(255,255,255,0.5);">The problem with Bitcoin wallet localisation in Swahili, Hausa, and Amharic is not translation — it is concept reconstruction. "Seed phrase" does not have a natural equivalent in most African languages. We use AI to generate multiple candidate phrasings for core Bitcoin concepts in target languages, which native-speaker reviewers then evaluate and rewrite. AI removes the blank-page problem. Native speakers determine what actually works.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num" style="color:rgba(249,115,22,0.5);">4</div>
+                <div class="step-body" style="background:rgba(255,255,255,0.03);">
+                    <div class="step-title" style="color:white;">Design Pattern Drafting</div>
+                    <div class="step-desc" style="color:rgba(255,255,255,0.5);">We are building a shared pattern library for African Bitcoin design — structured documentation of what works, what fails, and why. Turning a research observation into a usable pattern card requires consistent structure: problem statement, evidence, recommended approach, contraindications. We use AI to draft pattern cards from validated findings, then researchers edit them for accuracy and completeness. Consistent structure at scale would otherwise require a team we don't have.</div>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num" style="color:rgba(249,115,22,0.5);">5</div>
+                <div class="step-body" style="background:rgba(255,255,255,0.03);">
+                    <div class="step-title" style="color:white;">Between-Session Design Critique</div>
+                    <div class="step-desc" style="color:rgba(255,255,255,0.5);">Between research cycles, wallet teams sometimes need rapid feedback on a design change before the next real session. We can prompt an AI model with our full research corpus and a specific user profile — a rural Kenyan feature phone user, a Lagos trader with intermediate smartphone literacy — and get a structured critique of proposed design changes. This is explicitly not a substitute for real testing. It is a cheaper first filter that improves what gets tested in the next real session.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade-up" style="margin-top:40px;padding:32px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:12px;">
+            <p style="font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;">What AI Does Not Do in Our Research</p>
+            <p style="color:rgba(255,255,255,0.55);font-size:0.925rem;line-height:1.75;margin:0;">AI does not generate findings. It does not replace moderated sessions. It does not validate its own output. It does not interact with real users. Every number, every failure rate, every design recommendation we publish traces back to a real person in a real session. AI helps us process and communicate what we find. It does not find it.</p>
         </div>
     </div>
 </section>
