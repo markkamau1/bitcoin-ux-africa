@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="/head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#0a0d0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <title>Pan-African Bitcoin UX &amp; Resilience Initiative</title>
     <meta name="description" content="The Pan-African Bitcoin UX & Resilience Initiative. AI-assisted Bitcoin design research for Africa — USSD, low-literacy, offline-first. 340+ moderated sessions.">
     <meta name="robots" content="index, follow">
@@ -570,14 +574,14 @@
     <h2 id="cta-heading">Building a Bitcoin wallet<br>for African users?</h2>
     <p>We're building the shared UX infrastructure the ecosystem needs. Start with our research, or work with us directly.</p>
     <div class="cta-buttons">
-        <a href="mailto:mark@foundation.africa" class="btn-white">Get in Touch</a>
+        <a href="/cdn-cgi/l/email-protection#234e42514863454c564d4742574a4c4d0d4245514a4042" class="btn-white">Get in Touch</a>
         <a href="uxsupport.html" class="btn-outline">Need UX Support? →</a>
     </div>
 </section>
 
 </main>
 
-<script src="/footer.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/footer.js"></script>
 
 <script>
 // ── Hero slideshow ───────────────────────────────────────────
@@ -686,10 +690,4 @@ setInterval(() => showSlide((currentSlide + 1) % slides.length), 5500);
 // ── Scroll animations ────────────────────────────────────────
 const observer = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.07, rootMargin: '0px 0px -48px 0px' }
-);
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
+    { thr
