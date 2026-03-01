@@ -55,8 +55,9 @@
         .hero-slide.active{opacity:1;}
         .hero-slide-1{background-image:url('images/hero-resilience.jpg');background-position:center top;}
         .hero-slide-2{background-image:url('images/hero-2.jpg');}
-        .hero-slide-3{background-image:url('images/hero-3.jpg');}
+        .hero-slide-3{background-image:url('images/hero-ai.jpg');background-position:center center;}
         .hero-slide-4{background-image:url('images/hero-4.jpg');}
+        .hero-slide-5{background-image:url('images/hero-3.jpg');}
         .hero-content{position:relative;z-index:2;max-width:1100px;}
         .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
         .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;}
@@ -262,6 +263,7 @@
         <div class="hero-slide hero-slide-2"></div>
         <div class="hero-slide hero-slide-3"></div>
         <div class="hero-slide hero-slide-4"></div>
+        <div class="hero-slide hero-slide-5"></div>
     </div>
 
     <div class="hero-content">
@@ -299,6 +301,7 @@
         <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
         <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
         <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 4" data-slide="3"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 5" data-slide="4"></button>
     </div>
 </section>
 
@@ -569,6 +572,7 @@ const dots    = document.querySelectorAll('.hero-dot');
 const slideData = [
     { eyebrow:'Pan-African Initiative · Resilience by Design',  title:'The Pan-African<br><em>Bitcoin UX &amp;</em><br>Resilience Initiative',   sub:'Building Bitcoin that works for everyone — smartphones and USSD, urban and rural, literate and not.' },
     { eyebrow:'340+ moderated sessions',                        title:'Building Africa\'s<br><em>Bitcoin Design</em><br>Community',               sub:'Training and connecting the next generation of African Bitcoin UX designers.' },
+    { eyebrow:'AI-assisted research · Human-led insight',       title:'AI That Works<br>for African Bitcoin.<br><em>Not Against It.</em>',         sub:'We use AI to process research at scale and stress-test USSD flows. The field sessions stay human.' },
     { eyebrow:'Data, not assumptions',                          title:'Research-Driven<br><em>Bitcoin Design</em>',                               sub:'Real users. Observed sessions. Published findings. Not guesses.' },
     { eyebrow:'Open research · Free to use',                    title:'Open Source<br><em>for Everyone</em>',                                     sub:'Shared infrastructure that lifts every wallet and accelerates African Bitcoin adoption.' }
 ];
