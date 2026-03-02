@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="/head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Wallet UX Support for Africa | Bitcoin UX Africa</title>
+    <meta name="description" content="We've run 340+ user tests across Kenya, Nigeria, Ghana, South Africa and Ethiopia. Bitcoin wallet teams work with us to reduce abandonment, improve onboarding, and build for African users.">
+
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0a0d0b">    <title>Bitcoin Wallet UX Support for Africa | Bitcoin UX Africa</title>
-    <meta name="description" content="Bitcoin wallet UX support for African markets. 340+ user tests across 5 countries. We help wallet teams cut abandonment, fix onboarding, and design for Africa.">    <link rel="canonical" href="https://bitcoinux.africa/uxsupport.html">
+    <meta name="theme-color" content="#0a0d0b">
+    <link rel="canonical" href="https://bitcoinux.africa/uxsupport.html">
     <meta name="robots" content="index, follow">
-  <meta name="author" content="Bitcoin UX Africa">
 
     <meta property="og:title" content="Bitcoin Wallet UX Support for Africa | Bitcoin UX Africa">
-    <meta property="og:description" content="Bitcoin wallet UX support for African markets. 340+ user tests across 5 countries. We help wallet teams cut abandonment, fix onboarding, and design for Africa.">
+    <meta property="og:description" content="340+ user tests. 5 countries. We help Bitcoin wallet teams reduce abandonment and build for African users.">
     <meta property="og:image" content="https://bitcoinux.africa/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,6 +58,10 @@
       ]
     }
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         /* Design tokens */
         :root {
@@ -511,7 +518,6 @@
     </style>
 </head>
 <body>
-<script src="/nav.js"></script>
     <div class="form-container">
 
         <!-- Header -->
@@ -562,10 +568,7 @@
             <p>This form helps us understand your wallet's current UX state and whether we're the right fit. Takes about 10 minutes.</p>
         </div>
 
-        <form id="ux-assessment-form" name="ux-support" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
-                <!-- Netlify hidden fields -->
-                <input type="hidden" name="form-name" value="ux-support">
-                <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <form id="ux-assessment-form" action="https://formspree.io/f/xnjbqqay" method="POST">
 
             <!-- 1. Organization -->
             <div class="form-section">
@@ -996,6 +999,5 @@
             this.submit();
         });
     </script>
-<script src="/footer.js"></script>
 </body>
 </html>
