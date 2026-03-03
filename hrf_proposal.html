@@ -66,9 +66,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);
 .phase-bar{background:var(--dark);padding:28px 64px;}
 .phase-bar-inner{max-width:1100px;margin:0 auto;}
 .phase-bar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px;}
-.phases{display:flex;align-items:stretch;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
+.phases{display:flex;align-items:stretch;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);gap:0;}
 .phase-item{flex:1;padding:16px 18px;display:flex;flex-direction:column;gap:6px;position:relative;}
-.phase-item:not(:last-child)::after{content:'&#8250;';position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.2);font-size:1.2rem;z-index:1;}
+.phase-item:not(:last-child)::after{content:'›';position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.2);font-size:1.2rem;z-index:1;}
 .phase-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;line-height:1;opacity:0.4;}
 .phase-name{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
 .phase-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;opacity:0.5;}
