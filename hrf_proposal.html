@@ -109,7 +109,7 @@ h3.sub-light{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;c
 ul.bullets{list-style:none;padding:0;margin:12px 0;}
 ul.bullets li{font-size:0.9rem;line-height:1.65;color:var(--text);padding:5px 0 5px 20px;position:relative;border-bottom:1px solid var(--border);}
 ul.bullets li:last-child{border-bottom:none;}
-ul.bullets li::before{content:'&#8594;';position:absolute;left:0;color:var(--orange);font-size:0.75rem;}
+ul.bullets li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:0.75rem;}
 ul.bullets.light li{color:rgba(255,255,255,0.55);border-bottom-color:rgba(255,255,255,0.06);}
 
 /* ---- TABLES ---- */
@@ -322,7 +322,7 @@ td.bold{font-weight:700;}
 .ysr-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;opacity:0.35;}
 .ysr-bullets{list-style:none;padding:0;}
 .ysr-bullets li{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.38);padding:2px 0 2px 14px;position:relative;}
-.ysr-bullets li::before{content:'&#183;';position:absolute;left:0;color:var(--orange);}
+.ysr-bullets li::before{content:'·';position:absolute;left:0;color:var(--orange);}
 .ysr-amount{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;color:var(--orange);text-align:right;}
 .ysr-amount-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);text-align:right;margin-top:4px;}
 .yr1{color:var(--y1-l);}.yr2{color:var(--y2-l);}.yr3{color:var(--y3-l);}.yr4{color:var(--y4-l);}.yr5{color:var(--y5-l);}
@@ -337,6 +337,21 @@ td.bold{font-weight:700;}
 
 /* ---- FOOTER ---- */
 .doc-footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.06);padding:40px 64px;}
+
+@media print {
+  @page { margin: 0; size: A4; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .share-bar, .year-nav { display: none !important; }
+  body { margin: 0 !important; padding: 0 !important; }
+  section, div { orphans: 0; widows: 0; }
+  .year-body-wrap { padding-top: 0 !important; }
+  .hero, .stats-strip, .phase-bar, .toc-block { page-break-inside: avoid; }
+  .annex-header { page-break-after: avoid; }
+  .annex-header + .annex-body { page-break-before: avoid; }
+  .deliverables-grid, .milestone-list, .budget-card, .gate-box,
+  .wallet-grid, .risk-grid, .gov-grid, .table-wrap { page-break-inside: avoid; }
+  h2.section-title, h3.sub, .year-badge { page-break-after: avoid; }
+}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:1px;margin-bottom:6px;}
 .footer-brand em{color:var(--orange);font-style:normal;}
@@ -433,7 +448,7 @@ td.bold{font-weight:700;}
     <h2 class="exec-headline">Bitcoin is the most powerful tool for financial freedom ever built. <em>Africans cannot use it.</em> That is a design failure, and it is solvable.</h2>
     <p class="exec-body">Six hundred million people across Sub-Saharan Africa live under currency systems that fail them daily. Inflation devours savings overnight. Remittances lose 8% to corridors that move at the speed of bureaucracy. Formal bank accounts require documentation that millions will never possess. Bitcoin exists as a real alternative. But the wallets built to carry it were designed in San Francisco and Berlin, for English speakers with stable broadband and smartphones that cost three months' wages. The result is drop-off rates above 70% on the most basic transaction. This is not a technology problem. It is a design problem, and nobody has systematically studied it.</p>
     <p class="exec-body">This initiative exists to do that work, rigorously, openly, and permanently. Phase 0 (340+ moderated sessions, 2023&ndash;2025, self-funded) proved the methodology and revealed the scale of the failure. This proposal funds the next five years: a five-country research programme that produces the world's first open usability corpus for Bitcoin in Africa, derives design patterns from that evidence, trains local designers to apply them, and exits leaving an institution with the capacity to continue the work independently.</p>
-    <p class="exec-body">The urgency is concrete. Every year this research does not exist, wallet teams ship to African markets without evidence. Every year designers apply patterns built for Chicago to users in Nairobi. This proposal funds the evidence base that changes that, and it funds the people who will keep building on it long after HRF has exited.</p>
+    <p class="exec-body">The urgency is concrete. Most Bitcoin wallets are built for fast broadband, high-end smartphones, and users who have never had to think about data costs. In Africa, the majority of users are on 2G connections, low-memory Android devices, or USSD feature phones with no app capability at all. Every year wallet teams ship to these markets without a single session of research conducted on those devices, in those conditions, with those users. Every year the gap between what wallets assume and what African users actually have grows wider. This proposal funds the evidence base that closes that gap, and it funds the people who will keep closing it long after HRF has exited.</p>
     <div class="exec-pillars">
       <div class="exec-pillar">
         <div class="exec-pillar-num">01</div>
@@ -525,16 +540,40 @@ td.bold{font-weight:700;}
   <div class="vision-grid">
     <div class="vision-card">
       <div class="vision-num">01</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <rect x="5" y="4" width="16" height="20" rx="1.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <line x1="9" y1="10" x2="17" y2="10" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="9" y1="13.5" x2="17" y2="13.5" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="9" y1="17" x2="14" y2="17" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="5.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <path d="M19.8 22.1 L21.3 23.6 L24.2 20.5" stroke="#f97316" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <h3>Verified Open Research Corpus</h3>
       <p>The deepest field research dataset on Bitcoin usability across African markets, covering five countries, six wallet categories, and multiple languages. Published openly. Continuously updated.</p>
     </div>
     <div class="vision-card">
       <div class="vision-num">02</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <rect x="9" y="2" width="14" height="28" rx="2" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <rect x="12" y="5" width="8" height="5" rx="1" stroke="#f97316" stroke-width="1.2" fill="none"/>
+        <circle cx="13.5" cy="14" r="1" fill="#f97316"/><circle cx="16" cy="14" r="1" fill="#f97316"/><circle cx="18.5" cy="14" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="17.5" r="1" fill="#f97316"/><circle cx="16" cy="17.5" r="1" fill="#f97316"/><circle cx="18.5" cy="17.5" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="21" r="1" fill="#f97316"/><circle cx="16" cy="21" r="1" fill="#f97316"/><circle cx="18.5" cy="21" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="24.5" r="1" fill="#f97316"/><circle cx="16" cy="24.5" r="1" fill="#f97316"/><circle cx="18.5" cy="24.5" r="1" fill="#f97316"/>
+      </svg>
       <h3>USSD &amp; Resilience Design Standard</h3>
       <p>Tested, open design patterns for Bitcoin over USSD, low-literacy users, offline environments, and surveillance contexts, derived from real sessions rather than design studio assumptions.</p>
     </div>
     <div class="vision-card">
       <div class="vision-num">03</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <circle cx="10" cy="11" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <circle cx="22" cy="11" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <circle cx="16" cy="10" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <path d="M4 26c0-3.3 2.7-6 6-6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M28 26c0-3.3-2.7-6-6-6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M10 26c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
       <h3>Permanent Local Design Community</h3>
       <p>Trained Bitcoin UX designers and researchers in all five countries, recruited through cohorts, trained on the methodology, and contracted as country anchors. When HRF exits, the institution does not.</p>
     </div>
