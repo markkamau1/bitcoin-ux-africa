@@ -39,6 +39,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);
 .btn-share:hover{background:var(--orange-l);}
 .btn-print{background:transparent;color:rgba(255,255,255,0.5);padding:7px 16px;border-radius:6px;font-size:0.8rem;border:1px solid rgba(255,255,255,0.15);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .btn-print:hover{border-color:rgba(255,255,255,0.4);color:white;}
+.btn-gdoc{background:rgba(66,133,244,0.15);color:#93bbfd;padding:7px 16px;border-radius:6px;font-size:0.8rem;text-decoration:none;border:1px solid rgba(66,133,244,0.3);font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-gdoc:hover{background:rgba(66,133,244,0.25);color:white;border-color:rgba(66,133,244,0.6);}
 
 /* ---- HERO ---- */
 .hero{background:var(--black);padding:80px 64px 72px;position:relative;overflow:hidden;}
@@ -367,6 +369,7 @@ td.bold{font-weight:700;}
 <div class="share-bar">
   <span class="share-bar-label">Bitcoin UX Africa &middot; HRF Grant Proposal &middot; March 2026</span>
   <div class="share-bar-right">
+    <a class="btn-gdoc" href="https://docs.google.com/document/d/17dlAH-Koh734kruJnLiIvZv0kUVxioG0hWaDUjndbmE/edit?usp=sharing" target="_blank" style="display:flex;align-items:center;gap:7px;"><svg width="14" height="13" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg> Comment on Google Doc</a>
     <button class="btn-print" onclick="window.print()">Print / PDF</button>
     <button class="btn-share" onclick="navigator.clipboard.writeText(window.location.href)">Copy Link</button>
   </div>
