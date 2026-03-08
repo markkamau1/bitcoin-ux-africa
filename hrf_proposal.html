@@ -1334,4 +1334,1265 @@ td.bold{font-weight:700;}
 </footer>
 
 </body>
+</html>.phase-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;opacity:0.5;}
+.ph1{background:rgba(26,107,60,0.35);color:#6ee7a0;}.ph1 .phase-num{color:#6ee7a0;}
+.ph2{background:rgba(44,95,138,0.35);color:#93c5fd;}.ph2 .phase-num{color:#93c5fd;}
+.ph3{background:rgba(123,63,160,0.35);color:#c4b5fd;}.ph3 .phase-num{color:#c4b5fd;}
+.ph4{background:rgba(184,92,0,0.35);color:#fdba74;}.ph4 .phase-num{color:#fdba74;}
+.ph5{background:rgba(192,57,43,0.35);color:#fca5a5;}.ph5 .phase-num{color:#fca5a5;}
+
+/* ---- TOC ---- */
+.toc-block{background:var(--dark);padding:48px 64px;}
+.toc-block-inner{max-width:1100px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:36px 40px;}
+.toc-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:24px;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 48px;}
+.toc-item{display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.toc-num{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.2);width:24px;flex-shrink:0;}
+.toc-link{font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s;}
+.toc-link:hover{color:var(--orange);}
+.toc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-bottom:1px;}
+
+/* ---- LAYOUT ---- */
+.doc-wrap{max-width:1100px;margin:0 auto;padding:0 64px;}
+.section{padding:72px 0;}
+.section+.section{border-top:1px solid var(--border);}
+.full-bleed{padding-left:0;padding-right:0;}
+.full-bleed .doc-wrap{padding-left:64px;padding-right:64px;}
+.section-label{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.section-label::after{content:'';height:1px;background:linear-gradient(to right,var(--orange),transparent);width:60px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);color:var(--dark);line-height:0.95;letter-spacing:-0.5px;margin-bottom:16px;}
+.section-title em{font-style:normal;color:var(--orange);}
+.section-intro{font-family:'DM Serif Display',serif;font-size:1.1rem;line-height:1.7;color:var(--muted);font-style:italic;max-width:640px;margin-bottom:40px;}
+p.body-text{font-size:0.975rem;line-height:1.75;color:var(--text);margin-bottom:16px;max-width:780px;}
+.note{font-family:'DM Serif Display',serif;font-size:0.9rem;color:var(--muted);font-style:italic;margin:16px 0;padding:12px 20px;border-left:3px solid var(--orange);background:rgba(249,115,22,0.04);border-radius:0 6px 6px 0;max-width:780px;}
+h3.sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;color:var(--dark);margin:28px 0 12px;text-transform:uppercase;letter-spacing:0.05em;}
+h3.sub-light{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;color:white;margin:28px 0 12px;text-transform:uppercase;letter-spacing:0.05em;}
+.tag{display:inline-block;background:rgba(249,115,22,0.08);color:var(--orange-d);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;padding:4px 10px;border-radius:4px;border:1px solid rgba(249,115,22,0.15);}
+.tag-dark{display:inline-block;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,0.08);}
+ul.bullets{list-style:none;padding:0;margin:12px 0;}
+ul.bullets li{font-size:0.9rem;line-height:1.65;color:var(--text);padding:5px 0 5px 20px;position:relative;border-bottom:1px solid var(--border);}
+ul.bullets li:last-child{border-bottom:none;}
+ul.bullets li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:0.75rem;}
+ul.bullets.light li{color:rgba(255,255,255,0.55);border-bottom-color:rgba(255,255,255,0.06);}
+
+/* ---- TABLES ---- */
+.table-wrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:0.875rem;}
+thead tr{background:var(--dark);}
+thead th{padding:12px 14px;text-align:left;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-weight:500;border:1px solid rgba(255,255,255,0.06);}
+tbody td{padding:11px 14px;border:1px solid var(--border);color:var(--text);line-height:1.5;vertical-align:top;}
+tbody tr:nth-child(even){background:rgba(249,115,22,0.02);}
+tbody tr:hover{background:rgba(249,115,22,0.04);}
+.table-footer td{background:var(--dark)!important;color:white;font-weight:700;}
+td.mono{font-family:'DM Mono',monospace;font-size:0.8rem;}
+td.bold{font-weight:700;}
+.risk-high{color:#ef4444;font-weight:600;}
+.risk-med{color:#f97316;font-weight:600;}
+.risk-low{color:#22c55e;font-weight:600;}
+
+/* ---- PROBLEM GRID ---- */
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;margin:32px 0;}
+.problem-card{background:rgba(255,255,255,0.02);padding:36px 28px;}
+.problem-stat{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);color:var(--orange);line-height:1;letter-spacing:-2px;margin-bottom:12px;}
+.problem-card h3{font-size:0.875rem;font-weight:700;color:white;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;}
+.problem-card p{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+
+/* ---- THEORY OF CHANGE FLOW ---- */
+.toc-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;margin:32px 0;}
+.toc-step{padding:28px 20px;display:flex;flex-direction:column;gap:10px;}
+.toc-step-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;opacity:0.4;}
+.toc-step-name{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;}
+.toc-step-desc{font-size:0.8rem;line-height:1.55;opacity:0.6;}
+.s1{background:rgba(26,107,60,0.25);color:#6ee7a0;}.s1 .toc-step-desc{color:rgba(110,231,160,0.6);}
+.s2{background:rgba(44,95,138,0.25);color:#93c5fd;}.s2 .toc-step-desc{color:rgba(147,197,253,0.6);}
+.s3{background:rgba(123,63,160,0.25);color:#c4b5fd;}.s3 .toc-step-desc{color:rgba(196,181,253,0.6);}
+.s4{background:rgba(184,92,0,0.25);color:#fdba74;}.s4 .toc-step-desc{color:rgba(253,186,116,0.6);}
+.s5{background:rgba(192,57,43,0.25);color:#fca5a5;}.s5 .toc-step-desc{color:rgba(252,165,165,0.6);}
+
+/* ---- ASSUMPTION CARDS ---- */
+.assumption-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.assumption-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;border-left:3px solid var(--orange);display:flex;gap:14px;align-items:flex-start;}
+.assumption-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.assumption-text{font-size:0.875rem;line-height:1.6;color:var(--text);}
+
+/* ---- VISION CARDS ---- */
+.vision-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:12px;}
+.vision-card{background:white;border:1px solid var(--border);border-radius:10px;padding:28px;border-top:3px solid var(--orange);}
+.vision-num{display:inline-block;background:rgba(249,115,22,0.08);color:var(--orange-d);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;padding:4px 10px;border-radius:4px;border:1px solid rgba(249,115,22,0.15);margin-bottom:14px;}
+.vision-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px;}
+.vision-card p{font-size:0.85rem;line-height:1.65;color:var(--muted);}
+
+/* ---- YEAR NAV ---- */
+.year-nav{background:var(--dark);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 64px;position:sticky;top:49px;z-index:90;}
+.year-nav-inner{max-width:1100px;margin:0 auto;display:flex;}
+.year-nav-item{padding:16px 22px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all .2s;border-bottom:2px solid transparent;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.yn1{color:rgba(110,231,160,0.55);}.yn1:hover{color:#6ee7a0;border-color:#6ee7a0;}
+.yn2{color:rgba(147,197,253,0.55);}.yn2:hover{color:#93c5fd;border-color:#93c5fd;}
+.yn3{color:rgba(196,181,253,0.55);}.yn3:hover{color:#c4b5fd;border-color:#c4b5fd;}
+.yn4{color:rgba(253,186,116,0.55);}.yn4:hover{color:#fdba74;border-color:#fdba74;}
+.yn5{color:rgba(252,165,165,0.55);}.yn5:hover{color:#fca5a5;border-color:#fca5a5;}
+.yn-ov{color:rgba(255,255,255,0.25);}.yn-ov:hover{color:rgba(255,255,255,0.6);}
+.year-nav-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.yn1 .year-nav-dot{background:#6ee7a0;}.yn2 .year-nav-dot{background:#93c5fd;}
+.yn3 .year-nav-dot{background:#c4b5fd;}.yn4 .year-nav-dot{background:#fdba74;}
+.yn5 .year-nav-dot{background:#fca5a5;}
+
+/* ---- YEAR SECTION HERO ---- */
+.year-section{padding:0;}
+.year-hero{padding:56px 64px 44px;position:relative;}
+.year-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.year-badge{display:inline-flex;align-items:center;gap:16px;margin-bottom:20px;}
+.year-badge-num{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;line-height:1;}
+.year-badge-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.55;margin-bottom:3px;}
+.year-badge-title{font-size:1.1rem;font-weight:700;margin-top:2px;}
+.year-headline{font-family:'DM Serif Display',serif;font-size:clamp(1.15rem,2vw,1.7rem);line-height:1.55;max-width:740px;margin-bottom:28px;font-style:italic;}
+.year-meta-strip{display:flex;gap:32px;flex-wrap:wrap;padding-top:24px;border-top:1px solid;}
+.ym-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.45;margin-bottom:4px;}
+.ym-value{font-size:0.9rem;font-weight:700;}
+
+.y1-section .year-hero{background:linear-gradient(135deg,rgba(26,107,60,0.09),transparent);border-left:4px solid var(--y1);border-bottom:1px solid rgba(26,107,60,0.15);}
+.y1-section .year-badge-num,.y1-section .year-badge-title,.y1-section .ym-value{color:var(--y1);}
+.y1-section .year-meta-strip{border-color:rgba(26,107,60,0.15);}
+.y2-section .year-hero{background:linear-gradient(135deg,rgba(44,95,138,0.09),transparent);border-left:4px solid var(--y2);border-bottom:1px solid rgba(44,95,138,0.15);}
+.y2-section .year-badge-num,.y2-section .year-badge-title,.y2-section .ym-value{color:var(--y2);}
+.y2-section .year-meta-strip{border-color:rgba(44,95,138,0.15);}
+.y3-section .year-hero{background:linear-gradient(135deg,rgba(123,63,160,0.09),transparent);border-left:4px solid var(--y3);border-bottom:1px solid rgba(123,63,160,0.15);}
+.y3-section .year-badge-num,.y3-section .year-badge-title,.y3-section .ym-value{color:var(--y3);}
+.y3-section .year-meta-strip{border-color:rgba(123,63,160,0.15);}
+.y4-section .year-hero{background:linear-gradient(135deg,rgba(184,92,0,0.09),transparent);border-left:4px solid var(--y4);border-bottom:1px solid rgba(184,92,0,0.15);}
+.y4-section .year-badge-num,.y4-section .year-badge-title,.y4-section .ym-value{color:var(--y4);}
+.y4-section .year-meta-strip{border-color:rgba(184,92,0,0.15);}
+.y5-section .year-hero{background:linear-gradient(135deg,rgba(155,28,28,0.09),transparent);border-left:4px solid var(--y5);border-bottom:1px solid rgba(155,28,28,0.15);}
+.y5-section .year-badge-num,.y5-section .year-badge-title,.y5-section .ym-value{color:var(--y5);}
+.y5-section .year-meta-strip{border-color:rgba(155,28,28,0.15);}
+
+.year-body-wrap{max-width:1100px;margin:0 auto;padding:48px 64px;}
+
+/* ---- DELIVERABLES ---- */
+.deliverables-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.deliverable-card{background:white;border:1px solid var(--border);border-radius:8px;padding:20px;}
+.deliverable-icon{font-size:1.4rem;margin-bottom:8px;}
+.deliverable-title{font-size:0.875rem;font-weight:700;color:var(--dark);margin-bottom:6px;}
+.deliverable-desc{font-size:0.82rem;line-height:1.6;color:var(--muted);}
+
+/* ---- WALLET GRID ---- */
+.wallet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin:16px 0;}
+.wallet-card{background:white;padding:20px;}
+.wallet-category{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:6px;}
+.wallet-name{font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:6px;}
+.wallet-why{font-size:0.8rem;line-height:1.55;color:var(--muted);}
+
+/* ---- MILESTONES ---- */
+.milestone-list{margin:20px 0;}
+.milestone-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);}
+.milestone-item:last-child{border-bottom:none;}
+.milestone-month{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--muted);width:48px;flex-shrink:0;padding-top:2px;}
+.milestone-title{font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:2px;}
+.milestone-desc{font-size:0.82rem;color:var(--muted);line-height:1.5;}
+
+/* ---- GATE BOX ---- */
+.gate-box{border-radius:10px;padding:20px 24px;margin:24px 0;}
+.gate-box-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px;}
+.y1-gate{background:var(--y1-bg);border:1px solid var(--y1-bd);}.y1-gate .gate-box-title{color:var(--y1);}
+.y2-gate{background:var(--y2-bg);border:1px solid var(--y2-bd);}.y2-gate .gate-box-title{color:var(--y2);}
+.y3-gate{background:var(--y3-bg);border:1px solid var(--y3-bd);}.y3-gate .gate-box-title{color:var(--y3);}
+.y4-gate{background:var(--y4-bg);border:1px solid var(--y4-bd);}.y4-gate .gate-box-title{color:var(--y4);}
+.y5-gate{background:var(--y5-bg);border:1px solid var(--y5-bd);}.y5-gate .gate-box-title{color:var(--y5);}
+
+/* ---- BUDGET CARD ---- */
+.budget-card{background:var(--dark);border-radius:12px;padding:32px;margin:28px 0;position:relative;overflow:hidden;}
+.budget-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.07),transparent 70%);}
+.budget-card-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;}
+.budget-card-amount{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,4.5rem);color:var(--orange);line-height:1;letter-spacing:-1px;margin-bottom:4px;}
+.budget-card-sub{font-size:0.85rem;color:rgba(255,255,255,0.35);margin-bottom:24px;}
+.budget-lines{display:flex;flex-direction:column;}
+.budget-line{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.budget-line:last-child{border-bottom:none;}
+.bl-label{font-size:0.85rem;color:rgba(255,255,255,0.5);}
+.bl-amount{font-family:'DM Mono',monospace;font-size:0.85rem;color:rgba(255,255,255,0.8);}
+.budget-line.total .bl-label{font-weight:700;color:white;}
+.budget-line.total .bl-amount{color:var(--orange);font-size:1rem;}
+
+/* ---- YEAR SEPARATOR ---- */
+.year-sep{background:var(--dark);padding:16px 64px;}
+.year-sep-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:20px;}
+.year-sep-line{flex:1;height:1px;background:rgba(255,255,255,0.06);}
+.year-sep-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.18);}
+
+/* ---- AI GRID ---- */
+.ai-grid{border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;margin:20px 0;}
+.ai-row{display:grid;grid-template-columns:160px 1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.05);}
+.ai-row:last-child{border-bottom:none;}
+.ai-row.header{background:rgba(255,255,255,0.03);}
+.ai-cell{padding:14px 16px;font-size:0.83rem;line-height:1.55;color:rgba(255,255,255,0.5);border-right:1px solid rgba(255,255,255,0.05);}
+.ai-cell:last-child{border-right:none;}
+.ai-row:not(.header) .ai-cell:first-child{font-weight:600;color:rgba(255,255,255,0.75);}
+.ai-row.header .ai-cell{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+
+/* ---- GOVERNANCE ---- */
+.gov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+.gov-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;}
+.gov-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;}
+.gov-req{font-size:0.875rem;font-weight:600;color:var(--dark);margin-bottom:6px;}
+.gov-status{font-size:0.8rem;color:var(--muted);line-height:1.5;}
+
+/* ---- RISK REGISTER ---- */
+.risk-grid{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.risk-row{display:grid;grid-template-columns:180px 60px 70px 1fr 1.2fr;border-bottom:1px solid var(--border);}
+.risk-row:last-child{border-bottom:none;}
+.risk-row.header{background:var(--dark);}
+.risk-cell{padding:12px 14px;font-size:0.82rem;line-height:1.5;border-right:1px solid var(--border);vertical-align:top;}
+.risk-cell:last-child{border-right:none;}
+.risk-row:not(.header) .risk-cell:first-child{font-weight:600;color:var(--dark);}
+.risk-row:nth-child(even):not(.header){background:rgba(249,115,22,0.015);}
+.risk-row.header .risk-cell{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);border-right-color:rgba(255,255,255,0.06);}
+
+/* ---- ANNEX ---- */
+.annex-header{background:var(--dark);padding:24px 32px;border-radius:10px 10px 0 0;margin-top:40px;border:1px solid rgba(255,255,255,0.06);}
+.annex-letter{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;color:var(--orange);letter-spacing:0.15em;margin-bottom:4px;}
+.annex-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,3vw,2rem);color:white;line-height:1;}
+.annex-body{border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;padding:28px 32px;background:white;}
+
+/* ---- INTEGRITY ---- */
+.integrity-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);border-radius:10px;overflow:hidden;margin:28px 0;}
+.integrity-item{background:rgba(255,255,255,0.02);padding:18px 22px;display:flex;gap:14px;align-items:flex-start;}
+.integrity-check{color:var(--orange);font-size:1rem;flex-shrink:0;margin-top:2px;}
+.integrity-text{font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.55);}
+
+/* ---- EXECUTIVE SUMMARY ---- */
+.exec-summary{background:var(--black);padding:80px 0;position:relative;overflow:hidden;}
+.exec-summary::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(249,115,22,0.07),transparent);}
+.exec-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--orange);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.exec-kicker::before{content:'';display:block;width:32px;height:1px;background:var(--orange);}
+.exec-headline{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2.1rem);line-height:1.5;color:white;max-width:820px;margin-bottom:32px;}
+.exec-headline em{color:var(--orange);font-style:italic;}
+.exec-body{font-size:0.975rem;line-height:1.85;color:rgba(255,255,255,0.58);max-width:780px;margin-bottom:18px;}
+.exec-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;margin:36px 0;}
+.exec-pillar{background:rgba(255,255,255,0.02);padding:28px 24px;}
+.exec-pillar-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--orange);line-height:1;margin-bottom:8px;opacity:0.55;}
+.exec-pillar-title{font-size:0.85rem;font-weight:700;color:white;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;}
+.exec-pillar-desc{font-size:0.83rem;line-height:1.6;color:rgba(255,255,255,0.38);}
+.exec-ask-row{display:flex;align-items:flex-start;gap:32px;margin-top:40px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08);}
+.exec-ask-amount{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,4.5rem);color:var(--orange);line-height:1;letter-spacing:-1px;white-space:nowrap;}
+.exec-ask-note{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--orange);margin-top:6px;}
+.exec-ask-desc{font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.42);max-width:520px;padding-top:8px;}
+
+/* ---- 5-YEAR SUMMARY TABLE ---- */
+.year-summary-row{display:grid;grid-template-columns:80px 1fr 3fr 140px;gap:24px;align-items:start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.year-summary-row:last-child{border-bottom:none;}
+.ysr-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;}
+.ysr-title{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+.ysr-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;opacity:0.65;}
+.ysr-bullets{list-style:none;padding:0;}
+.ysr-bullets li{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.38);padding:2px 0 2px 14px;position:relative;}
+.ysr-bullets li::before{content:'·';position:absolute;left:0;color:var(--orange);}
+.ysr-amount{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;color:var(--orange);text-align:right;}
+.ysr-amount-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);text-align:right;margin-top:4px;}
+.yr1{color:var(--y1-l);}.yr2{color:var(--y2-l);}.yr3{color:var(--y3-l);}.yr4{color:var(--y4-l);}.yr5{color:var(--y5-l);}
+
+/* ---- ASK BOX ---- */
+.ask-box{border:1px solid rgba(249,115,22,0.2);border-radius:16px;padding:56px;text-align:center;position:relative;overflow:hidden;background:rgba(249,115,22,0.03);}
+.ask-box-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(249,115,22,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,0.04) 1px,transparent 1px);background-size:40px 40px;}
+.ask-box-inner{position:relative;z-index:1;}
+.ask-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+.ask-amount{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,8rem);color:white;line-height:0.9;letter-spacing:-2px;}
+.ask-subtitle{font-family:'DM Serif Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.38);font-style:italic;margin-top:14px;}
+
+/* ---- FOOTER ---- */
+.doc-footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.06);padding:40px 64px;}
+
+@media print {
+  @page { margin: 0; size: A4; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .share-bar, .year-nav { display: none !important; }
+  body { margin: 0 !important; padding: 0 !important; }
+  section, div { orphans: 0; widows: 0; }
+  .year-body-wrap { padding-top: 0 !important; }
+  .hero, .stats-strip, .phase-bar, .toc-block { page-break-inside: avoid; }
+  .annex-header { page-break-after: avoid; }
+  .annex-header + .annex-body { page-break-before: avoid; }
+  .deliverables-grid, .milestone-list, .budget-card, .gate-box,
+  .wallet-grid, .risk-grid, .gov-grid, .table-wrap { page-break-inside: avoid; }
+  h2.section-title, h3.sub, .year-badge { page-break-after: avoid; }
+}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:1px;margin-bottom:6px;}
+.footer-brand em{color:var(--orange);font-style:normal;}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.22);line-height:1.7;}
+.footer-contact{text-align:right;}
+.footer-contact-item{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.22);margin-bottom:4px;}
+.footer-contact-item a{color:var(--orange);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <span class="share-bar-label">Bitcoin UX Africa &middot; HRF Grant Proposal &middot; March 2026</span>
+  <div class="share-bar-right">
+    <a class="btn-gdoc" href="https://docs.google.com/document/d/17dlAH-Koh734kruJnLiIvZv0kUVxioG0hWaDUjndbmE/edit?usp=sharing" target="_blank" style="display:flex;align-items:center;gap:7px;"><svg width="14" height="13" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg> Comment on Google Doc</a>
+    <button class="btn-print" onclick="window.print()">Print / PDF</button>
+    <button class="btn-share" onclick="navigator.clipboard.writeText(window.location.href)">Copy Link</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><div class="eyebrow-dot"></div><span class="eyebrow-text">HRF Grant Proposal &middot; Pan-African Initiative &middot; March 2026</span></div>
+    <h1>Bitcoin UX<br><em>Africa</em></h1>
+    <p class="hero-sub">Building the research infrastructure, design standards, and trained designer community that gives 600 million Africans a real chance to use Bitcoin safely, in their own languages, on the devices they actually own.</p>
+    <div class="hero-meta">
+      <div><div class="meta-label">Total Ask</div><div class="meta-value"><em>$750,000</em> USD</div></div>
+      <div><div class="meta-label">Duration</div><div class="meta-value">5 Years</div></div>
+      <div><div class="meta-label">Annual Budget</div><div class="meta-value"><em>$150,000</em> / yr</div></div>
+      <div><div class="meta-label">Countries</div><div class="meta-value">KE &middot; NG &middot; GH &middot; ZA &middot; ET</div></div>
+      <div><div class="meta-label">Field Sessions</div><div class="meta-value">400&ndash;500</div></div>
+      <div><div class="meta-label">Submitted by</div><div class="meta-value">Mark Kamau &middot; bitcoinux.africa</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="strip-stat"><div class="strip-num">89%</div><div class="strip-label">Fail their first Bitcoin<br>transaction in our research</div></div>
+    <div class="strip-stat"><div class="strip-num">800M</div><div class="strip-label">Africans with a phone<br>but no smartphone</div></div>
+    <div class="strip-stat"><div class="strip-num">$95B</div><div class="strip-label">Annual African remittances<br>losing 8.5% to fees</div></div>
+    <div class="strip-stat"><div class="strip-num">0</div><div class="strip-label">USSD Bitcoin wallets<br>designed with African user data</div></div>
+  </div>
+</div>
+
+<!-- PHASE SEQUENCE BAR -->
+<div class="phase-bar">
+  <div class="phase-bar-inner">
+    <div class="phase-bar-label">Programme sequence &middot; each phase gates the next</div>
+    <div class="phases">
+      <div class="phase-item ph1"><div class="phase-num">01</div><div class="phase-name">Field Research</div><div class="phase-period">Years 1&ndash;3</div></div>
+      <div class="phase-item ph2"><div class="phase-num">02</div><div class="phase-name">Publication</div><div class="phase-period">Rolling Y2&ndash;3</div></div>
+      <div class="phase-item ph3"><div class="phase-num">03</div><div class="phase-name">Pattern Library</div><div class="phase-period">Year 3</div></div>
+      <div class="phase-item ph4"><div class="phase-num">04</div><div class="phase-name">Designer Cohorts</div><div class="phase-period">Years 3&ndash;4</div></div>
+      <div class="phase-item ph5"><div class="phase-num">05</div><div class="phase-name">Sustainability</div><div class="phase-period">Year 5</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc-block">
+  <div class="toc-block-inner">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <div>
+        <div class="toc-item"><span class="toc-num">ES</span><a href="#exec" class="toc-link">Executive Summary</a></div>
+        <div class="toc-item"><span class="toc-num">1</span><a href="#s1" class="toc-link">The Problem</a></div>
+        <div class="toc-item"><span class="toc-num">2</span><a href="#s2" class="toc-link">Theory of Change</a></div>
+        <div class="toc-item"><span class="toc-num">3</span><a href="#s3" class="toc-link">The Vision</a></div>
+        <div class="toc-item"><span class="toc-num">4</span><a href="#year1" class="toc-link">Year 1 &middot; Foundation</a></div>
+        <div class="toc-item"><span class="toc-num">5</span><a href="#year2" class="toc-link">Year 2 &middot; Expansion</a></div>
+        <div class="toc-item"><span class="toc-num">6</span><a href="#year3" class="toc-link">Year 3 &middot; Synthesis</a></div>
+      </div>
+      <div>
+        <div class="toc-item"><span class="toc-num">7</span><a href="#year4" class="toc-link">Year 4 &middot; Scale</a></div>
+        <div class="toc-item"><span class="toc-num">8</span><a href="#year5" class="toc-link">Year 5 &middot; Sustainability</a></div>
+        <div class="toc-item"><span class="toc-num">9</span><a href="#s5" class="toc-link">How AI Fits</a></div>
+        <div class="toc-item"><span class="toc-num">10</span><a href="#s7" class="toc-link">Participant Safety</a></div>
+        <div class="toc-item"><span class="toc-num">11</span><a href="#s8" class="toc-link">Governance &amp; Continuity</a></div>
+        <div class="toc-item"><span class="toc-num">12</span><a href="#s10" class="toc-link">The Ask</a></div>
+        <div class="toc-item"><span class="toc-num">A&ndash;I</span><a href="#annexes" class="toc-link">Annexes A through I</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<div id="exec" class="exec-summary">
+  <div class="doc-wrap" style="position:relative;z-index:2;">
+    <div class="exec-kicker">Executive Summary</div>
+    <h2 class="exec-headline">Bitcoin is the most powerful tool for financial freedom ever built. <em>Africans cannot use it.</em> That is a design failure, and it is solvable.</h2>
+    <p class="exec-body">Six hundred million people across Sub-Saharan Africa live under currency systems that fail them daily. Inflation devours savings overnight. Remittances lose 8% to corridors that move at the speed of bureaucracy. Formal bank accounts require documentation that millions will never possess. Bitcoin exists as a real alternative. But the wallets built to carry it were designed in San Francisco and Berlin, for English speakers with stable broadband and smartphones that cost three months' wages. The result is drop-off rates above 70% on the most basic transaction. This is not a technology problem. It is a design problem, and nobody has systematically studied it.</p>
+    <p class="exec-body">This initiative exists to do that work, rigorously, openly, and permanently. Phase 0 (340+ moderated sessions, 2023&ndash;2025, self-funded) proved the methodology and revealed the scale of the failure. This proposal funds the next five years: a five-country research programme that produces the world's first open usability corpus for Bitcoin in Africa, derives design patterns from that evidence, trains local designers to apply them, and exits leaving an initiative with the infrastructure, community, and early revenue to sustain the work beyond grant funding.</p>
+    <p class="exec-body">The urgency is concrete. Most Bitcoin wallets are built for fast broadband, high-end smartphones, and users who have never had to think about data costs. In Africa, the majority of users are on 2G connections, low-memory Android devices, or USSD feature phones with no app capability at all. Every year wallet teams ship to these markets without a single session of research conducted on those devices, in those conditions, with those users. Every year the gap between what wallets assume and what African users actually have grows wider. This proposal funds the evidence base that closes that gap, and it funds the people who will keep closing it long after HRF has exited.</p>
+    <div class="exec-pillars">
+      <div class="exec-pillar">
+        <div class="exec-pillar-num">01</div>
+        <div class="exec-pillar-title">The Research</div>
+        <div class="exec-pillar-desc">400&ndash;500 moderated usability sessions across 5 countries, 6 wallet categories, and multiple languages. Every finding published openly. Every session available for audit. The evidence base that does not currently exist anywhere in the world.</div>
+      </div>
+      <div class="exec-pillar">
+        <div class="exec-pillar-num">02</div>
+        <div class="exec-pillar-title">The Standards</div>
+        <div class="exec-pillar-desc">Open design patterns for USSD, low-literacy users, offline environments, and surveillance contexts, all derived from real sessions. A pattern library and training manual that wallet teams can use immediately, for free, forever.</div>
+      </div>
+      <div class="exec-pillar">
+        <div class="exec-pillar-num">03</div>
+        <div class="exec-pillar-title">The Institution</div>
+        <div class="exec-pillar-desc">Trained Bitcoin UX researchers in all 5 countries, recruited through cohorts and contracted as country anchors. The research continues beyond Year 5. Local ownership is not an aspiration. It is the architecture.</div>
+      </div>
+    </div>
+    <div class="exec-ask-row">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px;">Total 5-Year Investment</div>
+        <div class="exec-ask-amount">$750,000</div>
+        <div class="exec-ask-note">$150,000 per year &middot; each year fully self-contained</div>
+      </div>
+      <p class="exec-ask-desc">Each year of this proposal stands on its own. A reader reviewing Year 3 will find a complete picture: the budget, the deliverables, the evidence gates, and the context needed to understand what is being funded and why it matters. The five-year structure compounds the impact, but no individual year requires reading the others to make sense.</p>
+    </div>
+  </div>
+</div>
+
+<!-- YEAR NAVIGATION -->
+<div class="year-nav">
+  <div class="year-nav-inner">
+    <a href="#s1" class="year-nav-item yn-ov">The Problem</a>
+    <a href="#year1" class="year-nav-item yn1"><div class="year-nav-dot"></div>Year 1</a>
+    <a href="#year2" class="year-nav-item yn2"><div class="year-nav-dot"></div>Year 2</a>
+    <a href="#year3" class="year-nav-item yn3"><div class="year-nav-dot"></div>Year 3</a>
+    <a href="#year4" class="year-nav-item yn4"><div class="year-nav-dot"></div>Year 4</a>
+    <a href="#year5" class="year-nav-item yn5"><div class="year-nav-dot"></div>Year 5</a>
+    <a href="#s10" class="year-nav-item yn-ov">The Ask</a>
+    <a href="#annexes" class="year-nav-item yn-ov">Annexes</a>
+  </div>
+</div>
+
+<!-- S1: THE PROBLEM -->
+<div id="s1" class="full-bleed" style="background:var(--dark);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label" style="color:var(--orange);">The Problem</div>
+  <h2 class="section-title" style="color:white;">The protocol works.<br><em>The interfaces don't.</em></h2>
+  <p class="section-intro">What 340 moderated sessions with African Bitcoin users actually found.</p>
+  <div class="problem-grid">
+    <div class="problem-card"><div class="problem-stat">89%</div><h3>First-Transaction Failure</h3><p>Of first-time African Bitcoin users fail to complete their first transaction without abandoning or requiring intervention. The failure is not user failure. It is design failure.</p></div>
+    <div class="problem-card"><div class="problem-stat">73%</div><h3>Seed Phrase Failure</h3><p>Cannot complete seed phrase backup, the foundational act of self-custody. No wallet tested provided a low-literacy alternative to 12-word phrase management.</p></div>
+    <div class="problem-card"><div class="problem-stat">91%</div><h3>Ethiopia Abandonment</h3><p>Of Ethiopian participants abandoned entirely, driven by the complete absence of an Amharic interface. The highest failure rate of any country in our study.</p></div>
+    <div class="problem-card"><div class="problem-stat">0</div><h3>USSD Wallets Designed with African Data</h3><p>Zero wallets provided USSD access, offline transaction capability, or low-literacy alternatives, for a population of 800 million people without smartphones.</p></div>
+  </div>
+  <p class="body-text" style="color:rgba(255,255,255,0.52);max-width:100%;">No organisation is conducting original, open, field-based Bitcoin UX research with African users across multiple countries, multiple wallet categories, and multiple access contexts. This initiative fills that gap, and builds the human infrastructure to sustain that work permanently.</p>
+  <div class="note" style="border-left-color:var(--orange);background:rgba(249,115,22,0.06);color:rgba(255,255,255,0.42);">Full session documentation, observation logs, and methodology available for funder review on request. See Annex A for founder background and the evidence base for these figures.</div>
+</div>
+</div>
+
+<!-- S2: THEORY OF CHANGE -->
+<div id="s2" class="full-bleed" style="background:var(--black);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">Theory of Change</div>
+  <h2 class="section-title" style="color:white;">Sequential,<br><em>Evidence-Gated.</em></h2>
+  <p class="section-intro">Each phase is a prerequisite for the next. Nothing is published before it is verified. Nothing is taught before it is built from evidence.</p>
+  <div class="toc-flow">
+    <div class="toc-step s1"><div class="toc-step-num">01</div><div class="toc-step-name">Field Research</div><div class="toc-step-desc">Moderated sessions with real users in 5 countries reveal where and why Bitcoin fails them</div></div>
+    <div class="toc-step s2"><div class="toc-step-num">02</div><div class="toc-step-name">Published Results</div><div class="toc-step-desc">Open country reports and published corpus create a citable, credible evidence base</div></div>
+    <div class="toc-step s3"><div class="toc-step-num">03</div><div class="toc-step-name">Pattern Library</div><div class="toc-step-desc">Findings distilled into reusable USSD and low-literacy design patterns wallet teams can implement</div></div>
+    <div class="toc-step s4"><div class="toc-step-num">04</div><div class="toc-step-name">Training &amp; Cohorts</div><div class="toc-step-desc">A curriculum built from patterns enables local designers to train, test, and improve tools independently</div></div>
+    <div class="toc-step s5"><div class="toc-step-num">05</div><div class="toc-step-name">Institution</div><div class="toc-step-desc">Country anchors sustain research and design improvement after HRF funding ends</div></div>
+  </div>
+  <h3 class="sub-light">Key Assumptions</h3>
+  <div class="assumption-grid">
+    <div class="assumption-card"><span class="assumption-icon">&#128300;</span><span class="assumption-text"><strong>Research must precede patterns.</strong> Design standards without field evidence are guesswork. The pattern library is not built until the first two country reports are published.</span></div>
+    <div class="assumption-card"><span class="assumption-icon">&#128214;</span><span class="assumption-text"><strong>Patterns must precede curriculum.</strong> Trainers cannot teach what has not been validated. The training manual is not written until the pattern library is reviewed and stable.</span></div>
+    <div class="assumption-card"><span class="assumption-icon">&#127979;&#65039;</span><span class="assumption-text"><strong>Curriculum must precede cohorts.</strong> Running designer training with unvalidated materials wastes participants' time and risks replicating the existing failures this initiative exists to fix.</span></div>
+    <div class="assumption-card"><span class="assumption-icon">&#127758;</span><span class="assumption-text"><strong>Local ownership is necessary.</strong> Externally-produced research consistently fails to produce lasting change in the African tech ecosystem. Country anchors are recruited from within each research cohort.</span></div>
+  </div>
+</div>
+</div>
+
+<!-- S3: VISION -->
+<div id="s3" class="full-bleed" style="background:var(--cream);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">The Vision</div>
+  <h2 class="section-title">Three things that<br><em>don't exist yet.</em></h2>
+  <p class="section-intro">By 2031, this initiative will have built infrastructure the Bitcoin ecosystem does not currently have anywhere in the world.</p>
+  <div class="vision-grid">
+    <div class="vision-card">
+      <div class="vision-num">01</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <rect x="5" y="4" width="16" height="20" rx="1.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <line x1="9" y1="10" x2="17" y2="10" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="9" y1="13.5" x2="17" y2="13.5" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="9" y1="17" x2="14" y2="17" stroke="#f97316" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="5.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <path d="M19.8 22.1 L21.3 23.6 L24.2 20.5" stroke="#f97316" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Verified Open Research Corpus</h3>
+      <p>The deepest field research dataset on Bitcoin usability across African markets, covering five countries, six wallet categories, and multiple languages. Published openly. Continuously updated.</p>
+    </div>
+    <div class="vision-card">
+      <div class="vision-num">02</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <rect x="9" y="2" width="14" height="28" rx="2" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <rect x="12" y="5" width="8" height="5" rx="1" stroke="#f97316" stroke-width="1.2" fill="none"/>
+        <circle cx="13.5" cy="14" r="1" fill="#f97316"/><circle cx="16" cy="14" r="1" fill="#f97316"/><circle cx="18.5" cy="14" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="17.5" r="1" fill="#f97316"/><circle cx="16" cy="17.5" r="1" fill="#f97316"/><circle cx="18.5" cy="17.5" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="21" r="1" fill="#f97316"/><circle cx="16" cy="21" r="1" fill="#f97316"/><circle cx="18.5" cy="21" r="1" fill="#f97316"/>
+        <circle cx="13.5" cy="24.5" r="1" fill="#f97316"/><circle cx="16" cy="24.5" r="1" fill="#f97316"/><circle cx="18.5" cy="24.5" r="1" fill="#f97316"/>
+      </svg>
+      <h3>USSD &amp; Resilience Design Standard</h3>
+      <p>Tested, open design patterns for Bitcoin over USSD, low-literacy users, offline environments, and surveillance contexts, derived from real sessions rather than design studio assumptions.</p>
+    </div>
+    <div class="vision-card">
+      <div class="vision-num">03</div>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;">
+        <circle cx="10" cy="11" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <circle cx="22" cy="11" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <circle cx="16" cy="10" r="3.5" stroke="#f97316" stroke-width="1.5" fill="none"/>
+        <path d="M4 26c0-3.3 2.7-6 6-6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M28 26c0-3.3-2.7-6-6-6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M10 26c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h3>Permanent Local Design Community</h3>
+      <p>Trained Bitcoin UX designers and researchers in all five countries, recruited through cohorts, trained on the methodology, and contracted as country anchors. The initiative is built to sustain itself through wallet testing revenue, local anchor networks, and a community that depends on the research.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- YEAR NAV ANCHOR -->
+<div style="background:var(--dark);height:1px;"></div>
+
+<!-- YEAR 1 -->
+<div id="year1" class="year-section y1-section">
+  <div class="year-hero">
+    <div class="year-hero-inner">
+      <div class="year-badge">
+        <div class="year-badge-num">01</div>
+        <div>
+          <div class="year-badge-label">Year One &middot; Months 1&ndash;12</div>
+          <div class="year-badge-title">Foundation: Research Begins</div>
+        </div>
+      </div>
+      <p class="year-headline">Year 1 establishes the institution, launches field research in Kenya and Nigeria, and delivers the first two published country reports. By month 12, wallet teams will have more evidence about how African users fail than they have ever had before.</p>
+      <div class="year-meta-strip">
+        <div><div class="ym-label">Budget</div><div class="ym-value">$150,000</div></div>
+        <div><div class="ym-label">Countries Active</div><div class="ym-value">Kenya + Nigeria</div></div>
+        <div><div class="ym-label">Sessions Target</div><div class="ym-value">120&ndash;160</div></div>
+        <div><div class="ym-label">Phase Activity</div><div class="ym-value">Phase 1 Research + Setup</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-body-wrap">
+    <p class="body-text">Year 1 lays every foundation this initiative needs for the next four years. The organisation is registered, the advisory board is seated, coordinator contracts are signed, and field research opens in Kenya and Nigeria, the two highest-volume Bitcoin markets in Sub-Saharan Africa. By month 12, two country reports are published and the research methodology is documented for independent replication.</p>
+
+    <h3 class="sub">What Year 1 Funds</h3>
+    <div class="deliverables-grid">
+      <div class="deliverable-card"><div class="deliverable-icon">&#127963;&#65039;</div><div class="deliverable-title">Organisation Setup</div><div class="deliverable-desc">Kenyan Limited by Guarantee established. All IP held by the organisation. Advisory board appointed with signed conflict-of-interest declarations. One-time setup cost absorbed entirely in Year 1.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#127472;&#127466;</div><div class="deliverable-title">Kenya Field Research</div><div class="deliverable-desc">60&ndash;80 moderated usability sessions. Nairobi and secondary markets. Self-custody, custodial, and USSD wallet categories. Full session archive produced and held for audit.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#127475;&#127468;</div><div class="deliverable-title">Nigeria Field Research</div><div class="deliverable-desc">60&ndash;80 sessions. Lagos and secondary markets. Nigeria has the highest P2P Bitcoin adoption in Africa, making it the most valuable single-country dataset on the continent.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128203;</div><div class="deliverable-title">Two Published Country Reports</div><div class="deliverable-desc">Kenya and Nigeria reports. Published openly, with full session documentation available.</div></div>
+    </div>
+
+    <h3 class="sub">Six Wallet Categories Tested</h3>
+    <div class="wallet-grid">
+      <div class="wallet-card"><div class="wallet-category">Primary</div><div class="wallet-name">Self-Custody Smartphone</div><div class="wallet-why">Phoenix, Muun, Green, Blue Wallet, Breez. Where most first-time users arrive and most fail.</div></div>
+      <div class="wallet-card"><div class="wallet-category">Critical Gap</div><div class="wallet-name">USSD &amp; Feature Phone</div><div class="wallet-why">Machankura and SMS-based services. Highest need in the region. Zero existing user research.</div></div>
+      <div class="wallet-card"><div class="wallet-category">Entry Point</div><div class="wallet-name">Custodial &amp; Semi-Custodial</div><div class="wallet-why">Custody comprehension task battery. The actual entry point for most African users.</div></div>
+      <div class="wallet-card"><div class="wallet-category">Remittance</div><div class="wallet-name">Lightning-Native</div><div class="wallet-why">Fee structure, channels, remittance flows. Makes Bitcoin viable for small everyday payments.</div></div>
+      <div class="wallet-card"><div class="wallet-category">Security Tier</div><div class="wallet-name">Hardware &amp; Cold Storage</div><div class="wallet-why">Activist and journalist threat-model sessions. Adapted session design for high-risk participants.</div></div>
+      <div class="wallet-card"><div class="wallet-category">Local Innovation</div><div class="wallet-name">African-Built Wallets</div><div class="wallet-why">Identical methodology, equal publication prominence. Local innovation documented with full rigour.</div></div>
+    </div>
+
+    <h3 class="sub">Milestone Schedule</h3>
+    <div class="milestone-list">
+      <div class="milestone-item"><div class="milestone-month">M1</div><div><div class="milestone-title">Grant agreement signed &middot; Company registration confirmed</div><div class="milestone-desc">Organisation registered. Advisory board seated. Coordinator contracts signed. First tranche released.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M3</div><div><div class="milestone-title">Kenya field sessions commence</div><div class="milestone-desc">Coordinator onboarded. Session protocols finalised. Pilot sessions complete.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M5</div><div><div class="milestone-title">Nigeria field sessions commence</div><div class="milestone-desc">30+ Kenya sessions complete. Nigeria protocols live. Observation logs in archive.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M6</div><div><div class="milestone-title">Kenya sessions complete &middot; Preliminary brief published</div><div class="milestone-desc">All Kenya observation logs submitted. Findings brief published.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M9</div><div><div class="milestone-title">Nigeria sessions complete &middot; Kenya report finalised</div><div class="milestone-desc">Nigeria archive complete. AI methodology documented.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M12</div><div><div class="milestone-title">Both reports published &middot; Year 1 funder report accepted</div><div class="milestone-desc">Kenya and Nigeria country reports publicly available. Year 1 funder report accepted. All Year 2 evidence gates met.</div></div></div>
+    </div>
+
+    <div class="gate-box y1-gate">
+      <div class="gate-box-title">Year 1 &rarr; Year 2 Evidence Gates</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Kenya country report published openly</li>
+        <li>Nigeria country report published openly</li>
+        <li>Full session archive available for funder audit (120&ndash;160 sessions)</li>
+        <li>AI methodology documentation published, covering what AI did and what it did not do</li>
+        <li>Year 1 funder report accepted</li>
+        <li>Company registration confirmed, advisory board active with signed COI declarations</li>
+      </ul>
+    </div>
+
+    <div class="budget-card">
+      <div class="budget-card-label">Year 1 Budget &middot; $150,000 USD</div>
+      <div class="budget-card-amount">$150K</div>
+      <div class="budget-card-sub">Months 1&ndash;12 &middot; Kenya + Nigeria research &middot; Setup</div>
+      <div class="budget-lines">
+        <div class="budget-line"><span class="bl-label">Research delivery</span><span class="bl-amount">$111,000</span></div>
+        <div class="budget-line"><span class="bl-label">Field research and travel (Kenya + Nigeria)</span><span class="bl-amount">$16,000</span></div>
+        <div class="budget-line"><span class="bl-label">Participant compensation (~150 sessions)</span><span class="bl-amount">$3,000</span></div>
+        <div class="budget-line"><span class="bl-label">Tools, infrastructure, and secure storage</span><span class="bl-amount">$5,000</span></div>
+        <div class="budget-line"><span class="bl-label">Contingency (10%)</span><span class="bl-amount">$15,000</span></div>
+        <div class="budget-line total"><span class="bl-label">Year 1 Total</span><span class="bl-amount">$150,000</span></div>
+      </div>
+    </div>
+    <div class="note">Option for 1 disbursement, or in two tranches: $75,000 at M1 on agreement signing, $75,000 at M6 on Kenya session completion.</div>
+  </div>
+</div>
+
+<div class="year-sep"><div class="year-sep-inner"><div class="year-sep-line"></div><div class="year-sep-label">Year 2</div><div class="year-sep-line"></div></div></div>
+
+<!-- YEAR 2 -->
+<div id="year2" class="year-section y2-section">
+  <div class="year-hero">
+    <div class="year-hero-inner">
+      <div class="year-badge">
+        <div class="year-badge-num">02</div>
+        <div>
+          <div class="year-badge-label">Year Two &middot; Months 13&ndash;24</div>
+          <div class="year-badge-title">Expansion: Corpus Grows</div>
+        </div>
+      </div>
+      <p class="year-headline">Year 2 takes the research to Ghana and South Africa, publishes two more country reports, and begins cross-country synthesis. By month 24, four of five country reports are live and the first patterns common to all tested markets are identified.</p>
+      <div class="year-meta-strip">
+        <div><div class="ym-label">Budget</div><div class="ym-value">$150,000</div></div>
+        <div><div class="ym-label">Countries Active</div><div class="ym-value">Ghana + South Africa</div></div>
+        <div><div class="ym-label">Sessions Target</div><div class="ym-value">120&ndash;160</div></div>
+        <div><div class="ym-label">Cumulative Reports</div><div class="ym-value">4 of 5 published</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-body-wrap">
+    <p class="body-text">Year 2 begins only when Year 1's evidence gates are met. Kenya and Nigeria reports must be published and publicly available before any Year 2 funding is released. Ghana and South Africa represent distinct market contexts: Ghana's mobile money infrastructure is among the strongest in West Africa, while South Africa's more developed financial system creates a different set of barriers. Both require adapted protocols and both will produce findings that challenge assumptions built from European and American research.</p>
+    <p class="body-text">Alongside field research, the open corpus begins active curation. Year 1 reports are cross-referenced against Year 2 findings as they arrive. By month 24, four of five country reports are published and cross-country pattern identification is underway.</p>
+
+    <h3 class="sub">What Year 2 Funds</h3>
+    <div class="deliverables-grid">
+      <div class="deliverable-card"><div class="deliverable-icon">&#127468;&#127469;</div><div class="deliverable-title">Ghana Field Research</div><div class="deliverable-desc">60&ndash;80 moderated sessions. Accra and secondary markets. Ghana's mobile money penetration is high, so sessions are designed to surface what happens when MoMo habits meet Bitcoin's different model.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#127487;&#127462;</div><div class="deliverable-title">South Africa Field Research</div><div class="deliverable-desc">60&ndash;80 sessions. Johannesburg, Cape Town, and secondary markets. High economic inequality creates distinct user segments that single-market research cannot capture.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128202;</div><div class="deliverable-title">Two More Country Reports</div><div class="deliverable-desc">Ghana and South Africa reports published by M24. Four of five country reports now openly available and citable. Wallet failure rate dashboard updated with Year 2 data.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128279;</div><div class="deliverable-title">Cross-Country Synthesis Begins</div><div class="deliverable-desc">AI-assisted pattern analysis across the four-country dataset. Preliminary cross-country brief published, identifying failure modes that appear consistently across all four markets tested so far.</div></div>
+    </div>
+
+    <h3 class="sub">Milestone Schedule</h3>
+    <div class="milestone-list">
+      <div class="milestone-item"><div class="milestone-month">M13</div><div><div class="milestone-title">Year 2 commences &middot; Ghana coordinator contracted</div><div class="milestone-desc">Year 1 gates confirmed. Ghana coordinator onboarded. Session protocols finalised.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M15</div><div><div class="milestone-title">South Africa coordinator contracted &middot; Ghana sessions commence</div><div class="milestone-desc">SA coordinator onboarded. Session protocols finalised. Ghana pilot sessions complete.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M18</div><div><div class="milestone-title">Ghana sessions complete &middot; SA sessions underway &middot; Cross-country analysis starts</div><div class="milestone-desc">Ghana archive submitted. AI cross-country analysis begins on the combined Kenya, Nigeria, and Ghana dataset.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M21</div><div><div class="milestone-title">SA sessions complete &middot; Ghana report finalised</div><div class="milestone-desc">SA archive complete. Ghana report finalised.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M24</div><div><div class="milestone-title">Both reports published &middot; Cross-country brief published &middot; Year 2 funder report</div><div class="milestone-desc">Four of five country reports live. Cross-country preliminary brief published. Year 2 funder report accepted. All Year 3 gates met.</div></div></div>
+    </div>
+
+    <div class="gate-box y2-gate">
+      <div class="gate-box-title">Year 2 &rarr; Year 3 Evidence Gates</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Ghana country report published</li>
+        <li>South Africa country report published</li>
+        <li>Cumulative session archive: 240&ndash;320 sessions available for funder audit</li>
+        <li>Cross-country preliminary brief published, covering patterns across all four markets tested</li>
+        <li>Failure rate public dashboard updated with retestable benchmarks per wallet per task</li>
+        <li>Year 2 funder report accepted</li>
+        <li>Ethiopia coordinator identified and pre-contracted</li>
+      </ul>
+    </div>
+
+    <div class="budget-card">
+      <div class="budget-card-label">Year 2 Budget &middot; $150,000 USD</div>
+      <div class="budget-card-amount">$150K</div>
+      <div class="budget-card-sub">Months 13&ndash;24 &middot; Ghana + South Africa research &middot; Corpus curation</div>
+      <div class="budget-lines">
+        <div class="budget-line"><span class="bl-label">Research delivery</span><span class="bl-amount">$108,000</span></div>
+        <div class="budget-line"><span class="bl-label">Field research and travel (Ghana + South Africa)</span><span class="bl-amount">$16,000</span></div>
+        <div class="budget-line"><span class="bl-label">Participant compensation (~150 sessions)</span><span class="bl-amount">$3,000</span></div>
+        <div class="budget-line"><span class="bl-label">Tools and infrastructure</span><span class="bl-amount">$4,000</span></div>
+        <div class="budget-line"><span class="bl-label">Cross-country analysis and corpus curation</span><span class="bl-amount">$4,000</span></div>
+        <div class="budget-line"><span class="bl-label">Contingency</span><span class="bl-amount">$15,000</span></div>
+        <div class="budget-line total"><span class="bl-label">Year 2 Total</span><span class="bl-amount">$150,000</span></div>
+      </div>
+    </div>
+    <div class="note">Option for 1 disbursement, or in two tranches: $75,000 at M13 on Year 1 gate confirmation, $75,000 at M18 on Ghana session completion.</div>
+  </div>
+</div>
+
+<div class="year-sep"><div class="year-sep-inner"><div class="year-sep-line"></div><div class="year-sep-label">Year 3</div><div class="year-sep-line"></div></div></div>
+
+<!-- YEAR 3 -->
+<div id="year3" class="year-section y3-section">
+  <div class="year-hero">
+    <div class="year-hero-inner">
+      <div class="year-badge">
+        <div class="year-badge-num">03</div>
+        <div>
+          <div class="year-badge-label">Year Three &middot; Months 25&ndash;36</div>
+          <div class="year-badge-title">Synthesis: Knowledge Becomes Standards</div>
+        </div>
+      </div>
+      <p class="year-headline">Year 3 completes the five-country research corpus, publishes the world's first open Bitcoin UX pattern library derived from African field evidence, and delivers the training manual that will teach the next generation of designers.</p>
+      <div class="year-meta-strip">
+        <div><div class="ym-label">Budget</div><div class="ym-value">$150,000</div></div>
+        <div><div class="ym-label">Countries Active</div><div class="ym-value">Ethiopia (research) + KE/NG (pilot cohorts)</div></div>
+        <div><div class="ym-label">Sessions Target</div><div class="ym-value">80&ndash;100 (Ethiopia)</div></div>
+        <div><div class="ym-label">New Outputs</div><div class="ym-value">Pattern Library + Training Manual</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-body-wrap">
+    <p class="body-text">Year 3 is the turning point. Ethiopia completes the five-country research corpus, with safety protocols adapted for a high-risk operating environment. At the same time, the pattern library is produced from the four published country reports. The sequencing is deliberate: patterns are derived from evidence, not drafted ahead of it.</p>
+    <p class="body-text">The training manual follows the pattern library. Kenya and Nigeria, the most established research markets, host the first two designer cohort pilots. These pilots test the curriculum with practitioners and generate the feedback that finalises the manual before Year 4's full cohort rollout.</p>
+
+    <h3 class="sub">What Year 3 Funds</h3>
+    <div class="deliverables-grid">
+      <div class="deliverable-card"><div class="deliverable-icon">&#127466;&#127481;</div><div class="deliverable-title">Ethiopia Field Research</div><div class="deliverable-desc">80&ndash;100 moderated sessions. Addis Ababa and secondary markets. Adapted session design for journalists and activists. AI support reduces the minimum sessions required, limiting participant exposure.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128193;</div><div class="deliverable-title">Complete 5-Country Corpus</div><div class="deliverable-desc">Ethiopia report published. Full five-country corpus live under open licence. Cross-country longitudinal analysis published. Wallet failure rate dashboard updated with the complete dataset.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128208;</div><div class="deliverable-title">Bitcoin UX Pattern Library</div><div class="deliverable-desc">Documented, tested design patterns for USSD, low-literacy onboarding, offline transaction flows, and surveillance-resistant interfaces. Each pattern cites the specific sessions it addresses. Reviewed by at least one wallet team before publication.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128218;</div><div class="deliverable-title">Training Manual v1 + Pilot Cohorts</div><div class="deliverable-desc">Structured curriculum built directly from the pattern library. Reviewed by local designers in Kenya and Nigeria before finalisation. Pilot cohorts in both countries (15&ndash;20 designers each) test and refine the manual.</div></div>
+    </div>
+
+    <div class="note">The pattern library is not produced until at least three country reports are published. The training manual is not delivered to cohorts until it has been reviewed by local designers. Running cohorts with an unreviewed curriculum wastes participants' time and risks teaching the same assumptions this research exists to replace.</div>
+
+    <h3 class="sub">Milestone Schedule</h3>
+    <div class="milestone-list">
+      <div class="milestone-item"><div class="milestone-month">M25</div><div><div class="milestone-title">Year 3 commences &middot; Ethiopia research begins</div><div class="milestone-desc">Year 2 gates confirmed. Ethiopia safety assessment complete. Coordinator contracted. Sessions commence.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M28</div><div><div class="milestone-title">Pattern library drafting begins</div><div class="milestone-desc">Based on four published country reports. Each pattern cites supporting sessions. Wallet team review invited.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M30</div><div><div class="milestone-title">Ethiopia sessions complete &middot; Pattern library published</div><div class="milestone-desc">Ethiopia archive submitted. Pattern library v1 live. USSD design standards document published.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M33</div><div><div class="milestone-title">Ethiopia report published &middot; Training manual in local designer review</div><div class="milestone-desc">Five-country corpus complete. Cross-country synthesis published. Training manual submitted to Kenya and Nigeria local designers for review.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M36</div><div><div class="milestone-title">Training manual v1 finalised &middot; KE + NG pilot cohorts complete &middot; Year 3 report</div><div class="milestone-desc">Manual finalised from pilot feedback. 30&ndash;40 designers trained in pilots. Year 3 funder report accepted. All Year 4 gates met.</div></div></div>
+    </div>
+
+    <div class="gate-box y3-gate">
+      <div class="gate-box-title">Year 3 &rarr; Year 4 Evidence Gates</div>
+      <ul class="bullets" style="margin:0;">
+        <li>All five country reports published, each published openly</li>
+        <li>Open corpus live under open licence, structured for continuous update</li>
+        <li>Bitcoin wallet UX pattern library published, each pattern citing session evidence</li>
+        <li>USSD design standards document and low-literacy design framework published as standalone references</li>
+        <li>Training manual v1 finalised following review by Kenya and Nigeria local designers</li>
+        <li>Kenya and Nigeria pilot cohorts complete (30&ndash;40 designers trained with signed-off session archives)</li>
+        <li>Year 3 funder report accepted</li>
+      </ul>
+    </div>
+
+    <div class="budget-card">
+      <div class="budget-card-label">Year 3 Budget &middot; $150,000 USD</div>
+      <div class="budget-card-amount">$150K</div>
+      <div class="budget-card-sub">Months 25&ndash;36 &middot; Ethiopia research &middot; Pattern library &middot; Training manual &middot; Pilot cohorts</div>
+      <div class="budget-lines">
+        <div class="budget-line"><span class="bl-label">Research delivery</span><span class="bl-amount">$93,000</span></div>
+        <div class="budget-line"><span class="bl-label">Field research and travel (Ethiopia)</span><span class="bl-amount">$10,000</span></div>
+        <div class="budget-line"><span class="bl-label">Participant compensation (~100 sessions)</span><span class="bl-amount">$2,000</span></div>
+        <div class="budget-line"><span class="bl-label">Pattern library production and design</span><span class="bl-amount">$8,000</span></div>
+        <div class="budget-line"><span class="bl-label">Training manual writing and review</span><span class="bl-amount">$8,000</span></div>
+        <div class="budget-line"><span class="bl-label">Kenya and Nigeria pilot cohort delivery</span><span class="bl-amount">$10,000</span></div>
+        <div class="budget-line"><span class="bl-label">Cross-country analysis and synthesis</span><span class="bl-amount">$4,000</span></div>
+        <div class="budget-line"><span class="bl-label">Contingency</span><span class="bl-amount">$15,000</span></div>
+        <div class="budget-line total"><span class="bl-label">Year 3 Total</span><span class="bl-amount">$150,000</span></div>
+      </div>
+    </div>
+    <div class="note">Option for 1 disbursement, or in two tranches: $75,000 at M25 on Year 2 gate confirmation, $75,000 at M30 on Ethiopia session completion and pattern library publication.</div>
+  </div>
+</div>
+
+<div class="year-sep"><div class="year-sep-inner"><div class="year-sep-line"></div><div class="year-sep-label">Year 4</div><div class="year-sep-line"></div></div></div>
+
+<!-- YEAR 4 -->
+<div id="year4" class="year-section y4-section">
+  <div class="year-hero">
+    <div class="year-hero-inner">
+      <div class="year-badge">
+        <div class="year-badge-num">04</div>
+        <div>
+          <div class="year-badge-label">Year Four &middot; Months 37&ndash;48</div>
+          <div class="year-badge-title">Scale: Designers Trained</div>
+        </div>
+      </div>
+      <p class="year-headline">Year 4 scales the training programme to Ghana and South Africa, seeds country anchor relationships in all four Phase 1 markets, and begins the transition toward financial sustainability.</p>
+      <div class="year-meta-strip">
+        <div><div class="ym-label">Budget</div><div class="ym-value">$150,000</div></div>
+        <div><div class="ym-label">Cohorts Active</div><div class="ym-value">Ghana + South Africa</div></div>
+        <div><div class="ym-label">Designers Trained (cumul.)</div><div class="ym-value">60&ndash;80 across 4 countries</div></div>
+        <div><div class="ym-label">New Outputs</div><div class="ym-value">Pattern Library v2 &middot; Country Anchors</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-body-wrap">
+    <p class="body-text">Year 4 is when the training programme moves from pilot to programme. Ghana and South Africa cohorts are delivered using the reviewed manual. In Kenya and Nigeria, the strongest performers from the Year 3 pilot cohorts are identified as country anchor candidates and offered continuing engagement contracts.</p>
+    <p class="body-text">The pattern library is updated with findings that emerged during cohort delivery. Practitioners testing patterns in real contexts often surface edge cases the original research did not expose. The sustainability model is tested concurrently: UX support client relationships are established, a Spiral co-funding application is submitted, and the goal is to have at least two country anchors partially funded by sources other than HRF before Year 5 begins.</p>
+
+    <h3 class="sub">What Year 4 Funds</h3>
+    <div class="deliverables-grid">
+      <div class="deliverable-card"><div class="deliverable-icon">&#127979;&#65039;</div><div class="deliverable-title">Ghana + South Africa Designer Cohorts</div><div class="deliverable-desc">15&ndash;20 designers per country trained using the reviewed manual. Each participant conducts a real usability session as part of completion. Signed-off session archives are required, not just attendance.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#9875;&#65039;</div><div class="deliverable-title">Country Anchor Identification</div><div class="deliverable-desc">Top performers from all four cohorts evaluated for anchor roles. Anchor contracts offered. A sustainability pathway drafted for each anchor's post-Year-5 funding, with non-HRF sources identified.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128208;</div><div class="deliverable-title">Pattern Library v2</div><div class="deliverable-desc">Updated with practitioner feedback from all four cohorts. New patterns added where evidence warrants.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128188;</div><div class="deliverable-title">Sustainability Infrastructure</div><div class="deliverable-desc">UX support programme operational with paying clients and structural separation documented. Spiral co-funding application submitted. Training programme fee structure piloted with at least one cohort participant group.</div></div>
+    </div>
+
+    <h3 class="sub">Milestone Schedule</h3>
+    <div class="milestone-list">
+      <div class="milestone-item"><div class="milestone-month">M37</div><div><div class="milestone-title">Year 4 commences &middot; Ghana cohort begins</div><div class="milestone-desc">Year 3 gates confirmed. Ghana cohort opens. Kenya and Nigeria anchor candidates identified from Year 3 pilots.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M40</div><div><div class="milestone-title">South Africa cohort begins &middot; Ghana cohort complete</div><div class="milestone-desc">SA cohort opens. Ghana designers have signed-off session archives. Sustainability discussions underway with potential non-HRF funders.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M44</div><div><div class="milestone-title">SA cohort complete &middot; Pattern library v2 published &middot; Anchor contracts drafted</div><div class="milestone-desc">All four cohorts complete. Pattern library v2 live. Anchor candidate contracts under negotiation.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M48</div><div><div class="milestone-title">Anchor contracts signed (all 4 countries) &middot; Spiral application submitted &middot; Year 4 report</div><div class="milestone-desc">Four country anchors contracted. Spiral application lodged. Year 4 funder report accepted. All Year 5 gates met.</div></div></div>
+    </div>
+
+    <div class="gate-box y4-gate">
+      <div class="gate-box-title">Year 4 &rarr; Year 5 Evidence Gates</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Ghana and South Africa cohorts complete, 30&ndash;40 designers with signed-off session archives</li>
+        <li>Cumulative total: 60&ndash;80 designers trained across four countries</li>
+        <li>Pattern library v2 published</li>
+        <li>Country anchor contracts signed in Kenya, Nigeria, Ghana, and South Africa</li>
+        <li>Sustainability plan documented with multiple revenue streams identified</li>
+        <li>Year 4 funder report accepted</li>
+        <li>Ethiopia cohort plan confirmed and coordinator identified</li>
+      </ul>
+    </div>
+
+    <div class="budget-card">
+      <div class="budget-card-label">Year 4 Budget &middot; $150,000 USD</div>
+      <div class="budget-card-amount">$150K</div>
+      <div class="budget-card-sub">Months 37&ndash;48 &middot; Cohort delivery &middot; Anchor development &middot; Sustainability testing</div>
+      <div class="budget-lines">
+        <div class="budget-line"><span class="bl-label">Research delivery</span><span class="bl-amount">$93,000</span></div>
+        <div class="budget-line"><span class="bl-label">Cohort delivery (venue, materials, travel)</span><span class="bl-amount">$16,000</span></div>
+        <div class="budget-line"><span class="bl-label">Country anchor contracts, all 4 countries (part-year)</span><span class="bl-amount">$16,000</span></div>
+        <div class="budget-line"><span class="bl-label">Pattern library v2 (production and design)</span><span class="bl-amount">$8,000</span></div>
+        <div class="budget-line"><span class="bl-label">Sustainability infrastructure setup</span><span class="bl-amount">$2,000</span></div>
+        <div class="budget-line"><span class="bl-label">Contingency</span><span class="bl-amount">$15,000</span></div>
+        <div class="budget-line total"><span class="bl-label">Year 4 Total</span><span class="bl-amount">$150,000</span></div>
+      </div>
+    </div>
+    <div class="note">Option for 1 disbursement, or in two tranches: $75,000 at M37 on Year 3 gate confirmation, $75,000 at M44 on all four cohorts complete and anchor contracts drafted.</div>
+  </div>
+</div>
+
+<div class="year-sep"><div class="year-sep-inner"><div class="year-sep-line"></div><div class="year-sep-label">Year 5</div><div class="year-sep-line"></div></div></div>
+
+<!-- YEAR 5 -->
+<div id="year5" class="year-section y5-section">
+  <div class="year-hero">
+    <div class="year-hero-inner">
+      <div class="year-badge">
+        <div class="year-badge-num">05</div>
+        <div>
+          <div class="year-badge-label">Year Five &middot; Months 49&ndash;60</div>
+          <div class="year-badge-title">Sustainability: The Path Forward</div>
+        </div>
+      </div>
+      <p class="year-headline">Year 5 trains the final cohort in Ethiopia, activates all five country anchors, publishes the complete pattern library, and lays the groundwork for long-term sustainability, with mature wallet teams beginning to pay for testing services and the anchor network generating local revenue.</p>
+      <div class="year-meta-strip">
+        <div><div class="ym-label">Budget</div><div class="ym-value">$150,000</div></div>
+        <div><div class="ym-label">Cohorts Active</div><div class="ym-value">Ethiopia</div></div>
+        <div><div class="ym-label">Designers Trained (cumul.)</div><div class="ym-value">75&ndash;100 across 5 countries</div></div>
+        <div><div class="ym-label">Completion</div><div class="ym-value">Month 60 &middot; Institution active</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-body-wrap">
+    <p class="body-text">Year 5 is the beginning of a different phase, not the end of the work. The Ethiopia cohort completes the training programme across all five countries. All five country anchors are active and generating some local revenue. The pattern library is released as a permanent open resource. And the first wallet teams are paying for structured annual retesting, a revenue model that can grow as the ecosystem matures.</p>
+    <p class="body-text">Year 5 closes with an account of the initiative: its methodology, its anchor network, and its sustainability plan. The goal is to reduce dependence on any single funder and build multiple revenue streams so the work can continue regardless of grant cycles.</p>
+
+    <h3 class="sub">What Year 5 Funds</h3>
+    <div class="deliverables-grid">
+      <div class="deliverable-card"><div class="deliverable-icon">&#127466;&#127481;</div><div class="deliverable-title">Ethiopia Designer Cohort</div><div class="deliverable-desc">15&ndash;20 designers trained in Addis Ababa with adapted safety protocols. Completes five-country training coverage. Ethiopia country anchor candidate identified from cohort and offered a continuing contract.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#127758;</div><div class="deliverable-title">All 5 Country Anchors Active</div><div class="deliverable-desc">Five country anchors operating part-time, each with a revenue pathway identified. Annual wallet retest programme generating income in at least two markets. The goal is a diversified base that reduces reliance on any single grant.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#128208;</div><div class="deliverable-title">Pattern Library Final Edition</div><div class="deliverable-desc">Comprehensive, formally released under open licence. Covers all six wallet categories, all five markets, and all identified failure modes. The most complete Bitcoin UX reference in existence, freely available.</div></div>
+      <div class="deliverable-card"><div class="deliverable-icon">&#127937;&#65039;</div><div class="deliverable-title">Final Report</div><div class="deliverable-desc">Full public documentation of the initiative: methodology, anchor network status, and sustainability plan for the next phase.</div></div>
+    </div>
+
+    <h3 class="sub">What Continues After Year 5</h3>
+    <ul class="bullets">
+      <li>Annual wallet retest programme: wallet teams pay for structured retesting against the established benchmarks. As more teams mature and care about African market performance, this becomes the primary revenue stream</li>
+      <li>UX support programme: paying clients, with structural separation fully documented, fund ongoing coordinator activity at local market rates</li>
+      <li>Spiral co-funding: parallel funding track supports methodology extension into new markets outside the original five</li>
+      <li>Training programme fees: subsequent cohorts run on a partial fee model, with grants covering subsidised places for researchers in underserved markets</li>
+      <li>Pattern library maintenance: open-source community model for updates, with the anchor network as gatekeepers of evidence standards</li>
+    </ul>
+
+    <h3 class="sub">Milestone Schedule</h3>
+    <div class="milestone-list">
+      <div class="milestone-item"><div class="milestone-month">M49</div><div><div class="milestone-title">Year 5 commences &middot; Ethiopia cohort begins &middot; All 5 anchors active</div><div class="milestone-desc">Year 4 gates confirmed. Ethiopia cohort opens. Ethiopia anchor contracted alongside the existing four.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M53</div><div><div class="milestone-title">Ethiopia cohort complete &middot; Pattern library final edition in production</div><div class="milestone-desc">Ethiopia designers have signed-off session archives. All five anchors active. First wallet retest contracts signed. Pattern library in editorial review.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M57</div><div><div class="milestone-title">Pattern library final edition published &middot; Sustainability pathway active</div><div class="milestone-desc">Complete pattern library live. At least two non-HRF revenue streams active. Anchor sustainability plans reviewed by advisory board.</div></div></div>
+      <div class="milestone-item"><div class="milestone-month">M60</div><div><div class="milestone-title">Final report published &middot; Sustainability plan live</div><div class="milestone-desc">Final report publicly available. All five anchors active. Sustainability plan published.</div></div></div>
+    </div>
+
+    <div class="gate-box y5-gate">
+      <div class="gate-box-title">Year 5 Completion Standards</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Ethiopia cohort complete, 15&ndash;20 designers with signed-off session archives</li>
+        <li>All five country anchors active with documented sustainability pathways and at least one revenue stream each</li>
+        <li>Pattern library final edition published openly under open licence</li>
+        <li>At least two non-HRF revenue streams generating income</li>
+        <li>Final report published with sustainability plan and anchor network status</li>
+        <li>Cumulative totals: 400&ndash;500 research sessions, 75&ndash;100 trained designers, 5 country reports, 5 anchors, 1 pattern library, 1 training manual</li>
+      </ul>
+    </div>
+
+    <div class="budget-card">
+      <div class="budget-card-label">Year 5 Budget &middot; $150,000 USD</div>
+      <div class="budget-card-amount">$150K</div>
+      <div class="budget-card-sub">Months 49&ndash;60 &middot; Ethiopia cohort &middot; Five country anchors &middot; Pattern library final &middot; Independence</div>
+      <div class="budget-lines">
+        <div class="budget-line"><span class="bl-label">Research delivery</span><span class="bl-amount">$92,000</span></div>
+        <div class="budget-line"><span class="bl-label">All five country anchor contracts (part-year)</span><span class="bl-amount">$25,000</span></div>
+        <div class="budget-line"><span class="bl-label">Pattern library final edition production</span><span class="bl-amount">$10,000</span></div>
+        <div class="budget-line"><span class="bl-label">Exit report production and publication</span><span class="bl-amount">$5,000</span></div>
+        <div class="budget-line"><span class="bl-label">Advisory board final review</span><span class="bl-amount">$3,000</span></div>
+        <div class="budget-line"><span class="bl-label">Contingency</span><span class="bl-amount">$15,000</span></div>
+        <div class="budget-line total"><span class="bl-label">Year 5 Total</span><span class="bl-amount">$150,000</span></div>
+      </div>
+    </div>
+    <div class="note">Option for 1 disbursement, or in two tranches: $75,000 at M49 on Year 4 gate confirmation, $75,000 at M57 on pattern library publication and confirmation.</div>
+  </div>
+</div>
+
+<!-- 5-YEAR OVERVIEW -->
+<div id="summary" style="background:var(--black);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label" style="color:var(--orange);">Five-Year Overview</div>
+  <h2 class="section-title" style="color:white;">$750,000.<br><em>Five years. One institution.</em></h2>
+  <p class="section-intro" style="color:rgba(255,255,255,0.38);">Each year is $150,000. Each year stands alone. Together they build something that does not exist anywhere in the world.</p>
+  <div style="margin:36px 0;">
+    <div class="year-summary-row"><div class="ysr-num yr1">01</div><div><div class="ysr-title" style="color:var(--y1-l);">Foundation</div><div class="ysr-period" style="color:rgba(110,231,160,0.75);">Kenya + Nigeria &middot; M1&ndash;M12</div></div><ul class="ysr-bullets"><li>Organisation registered, advisory board seated</li><li>120&ndash;160 moderated sessions in Kenya and Nigeria</li><li>Two country reports published</li><li>Phase 0 methodology scaled and fully documented</li></ul><div><div class="ysr-amount">$150K</div><div class="ysr-amount-label">Year 1</div></div></div>
+    <div class="year-summary-row"><div class="ysr-num yr2">02</div><div><div class="ysr-title" style="color:var(--y2-l);">Expansion</div><div class="ysr-period" style="color:rgba(147,197,253,0.75);">Ghana + South Africa &middot; M13&ndash;M24</div></div><ul class="ysr-bullets"><li>120&ndash;160 sessions in Ghana and South Africa</li><li>Two more country reports published</li><li>Four of five country reports now open and citable</li><li>First cross-country synthesis published</li></ul><div><div class="ysr-amount">$150K</div><div class="ysr-amount-label">Year 2</div></div></div>
+    <div class="year-summary-row"><div class="ysr-num yr3">03</div><div><div class="ysr-title" style="color:var(--y3-l);">Synthesis</div><div class="ysr-period" style="color:rgba(196,181,253,0.75);">Ethiopia + Pattern Library &middot; M25&ndash;M36</div></div><ul class="ysr-bullets"><li>80&ndash;100 sessions in Ethiopia with adapted safety protocols</li><li>Five-country corpus complete and published</li><li>Bitcoin UX pattern library v1 published</li><li>Training manual reviewed, pilot cohorts in Kenya and Nigeria</li></ul><div><div class="ysr-amount">$150K</div><div class="ysr-amount-label">Year 3</div></div></div>
+    <div class="year-summary-row"><div class="ysr-num yr4">04</div><div><div class="ysr-title" style="color:var(--y4-l);">Scale</div><div class="ysr-period" style="color:rgba(253,186,116,0.75);">Designer Cohorts &middot; M37&ndash;M48</div></div><ul class="ysr-bullets"><li>Ghana and South Africa designer cohorts delivered</li><li>60&ndash;80 designers trained across four countries</li><li>Country anchors contracted in all four Phase 1 markets</li><li>Pattern library v2 published, sustainability model tested</li></ul><div><div class="ysr-amount">$150K</div><div class="ysr-amount-label">Year 4</div></div></div>
+    <div class="year-summary-row" style="border-bottom:none;"><div class="ysr-num yr5">05</div><div><div class="ysr-title" style="color:var(--y5-l);">Institution</div><div class="ysr-period" style="color:rgba(252,165,165,0.75);">Ethiopia Cohort &middot; M49&ndash;M60</div></div><ul class="ysr-bullets"><li>Ethiopia cohort, 75&ndash;100 total designers trained</li><li>All five country anchors active with sustainability pathways</li><li>Pattern library final edition published under open licence</li><li>Final report published, sustainability plan live</li></ul><div><div class="ysr-amount">$150K</div><div class="ysr-amount-label">Year 5</div></div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-top:36px;">
+    <div style="background:rgba(255,255,255,0.02);padding:28px;text-align:center;"><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--orange);line-height:1;margin-bottom:8px;">$750K</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Total 5-year<br>investment</div></div>
+    <div style="background:rgba(255,255,255,0.02);padding:28px;text-align:center;"><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--orange);line-height:1;margin-bottom:8px;">400&ndash;500</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Moderated research<br>sessions</div></div>
+    <div style="background:rgba(255,255,255,0.02);padding:28px;text-align:center;"><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--orange);line-height:1;margin-bottom:8px;">75&ndash;100</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Bitcoin UX designers<br>trained</div></div>
+    <div style="background:rgba(255,255,255,0.02);padding:28px;text-align:center;"><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--orange);line-height:1;margin-bottom:8px;">5</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Country anchors<br>operating post-exit</div></div>
+  </div>
+</div>
+</div>
+
+<!-- S5: HOW AI FITS -->
+<div id="s5" class="full-bleed" style="background:var(--dark);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">How AI Fits</div>
+  <h2 class="section-title" style="color:white;">Bounded.<br><em>Verified. Supervised.</em></h2>
+  <p class="section-intro">AI handles volume work that would otherwise limit scale, and enables research in environments where human presence creates safety risks. It does not replace observation, generate findings, or validate its own output.</p>
+  <div class="ai-grid">
+    <div class="ai-row header"><div class="ai-cell">Application</div><div class="ai-cell">What AI Does</div><div class="ai-cell">Data Handled</div><div class="ai-cell">Human Oversight Required</div></div>
+    <div class="ai-row"><div class="ai-cell">Transcript analysis</div><div class="ai-cell">Clusters failure patterns across all countries from anonymised session transcripts</div><div class="ai-cell">Anonymised transcripts only. No names, locations, or identifiers.</div><div class="ai-cell">Researcher validates every cluster before it becomes a finding</div></div>
+    <div class="ai-row"><div class="ai-cell">Pre-session USSD testing</div><div class="ai-cell">Runs through USSD flows as a synthetic first pass, flagging structural failures before real user sessions</div><div class="ai-cell">No participant data. Wallet software only.</div><div class="ai-cell">Researcher reviews all flagged issues and decides which warrant testing</div></div>
+    <div class="ai-row"><div class="ai-cell">Operational security</div><div class="ai-cell">Reduces the minimum sessions needed in high-risk environments, limiting participant exposure</div><div class="ai-cell">No participant data involved in the reduction calculation</div><div class="ai-cell">Advisory board reviews the country-specific risk assessment before sessions commence</div></div>
+    <div class="ai-row"><div class="ai-cell">Localisation</div><div class="ai-cell">Generates candidate phrasings for Bitcoin concepts across all research markets</div><div class="ai-cell">No participant data. Terminology only.</div><div class="ai-cell">Native speakers review and approve all final phrasings</div></div>
+    <div class="ai-row"><div class="ai-cell">Corpus analysis</div><div class="ai-cell">Longitudinal pattern detection across the growing five-country dataset</div><div class="ai-cell">Anonymised aggregate data only</div><div class="ai-cell">Lead researcher reviews all outputs before any finding is published</div></div>
+  </div>
+  <div class="note" style="background:rgba(249,115,22,0.05);color:rgba(255,255,255,0.4);border-left-color:var(--orange);">Full AI tools registry with data handling and oversight requirements per tool: see Annex F.</div>
+</div>
+</div>
+
+<!-- S7: PARTICIPANT SAFETY -->
+<div id="s7" class="full-bleed section" style="background:var(--cream);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">Participant Safety</div>
+  <h2 class="section-title">Protecting<br><em>research participants.</em></h2>
+  <p class="section-intro">Research in high-risk environments requires protocols designed specifically for those environments. One-size-fits-all consent forms and data handling are not acceptable here.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;">
+    <div style="background:white;border:1px solid var(--border);border-radius:8px;padding:24px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">Standard Protocol (All Countries)</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Informed consent in participant's preferred language before any session begins</li>
+        <li>Right to withdraw at any point, with all data destroyed on request</li>
+        <li>No government-accessible cloud storage in any country</li>
+        <li>Session recordings held for 3 years maximum, deleted on schedule</li>
+        <li>No names or identifying information in published findings</li>
+      </ul>
+    </div>
+    <div style="background:white;border:1px solid var(--border);border-radius:8px;padding:24px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">Ethiopia-Specific Protocol</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Safety assessment conducted by advisory board before sessions commence</li>
+        <li>AI pre-screening reduces required session count, limiting participant exposure</li>
+        <li>No data held in-country beyond 90 days</li>
+        <li>Coordinator has authority to pause or cancel at any point without justification to the founder</li>
+        <li>Participants using pseudonyms throughout; no real names in any record</li>
+      </ul>
+    </div>
+  </div>
+  <p class="body-text">Participant safety sits above research completeness. If safety conditions in Ethiopia deteriorate, research pauses. The advisory board holds explicit authority to suspend activity in any country at any time. This is not a risk mitigation measure. It is a commitment.</p>
+  <div class="note">Detailed data protection policy, breach notification procedure, and participant rights documentation: see Annex G.</div>
+</div>
+</div>
+
+<!-- S8: GOVERNANCE & CONTINUITY -->
+<div id="s8" class="full-bleed section" style="background:var(--white);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">Governance &amp; Continuity</div>
+  <h2 class="section-title">Structured to<br><em>outlast the founder.</em></h2>
+  <p class="section-intro">The initiative is designed so that no single person's incapacity can stop the work. All IP is held by the organisation. All methodology is published. All authority is distributed.</p>
+  <div class="gov-grid">
+    <div class="gov-card">
+      <div class="gov-role">Founder</div>
+      <div class="gov-req">Mark Kamau</div>
+      <div class="gov-status">Lead researcher and programme director. Full methodology published by M6. Deputy coordinator designated before Year 1 closes. If incapacitated, advisory board activates succession protocol.</div>
+    </div>
+    <div class="gov-card">
+      <div class="gov-role">Advisory Board</div>
+      <div class="gov-req">3&ndash;5 members, diverse expertise</div>
+      <div class="gov-status">Quarterly review authority. Can block phase advancement. Can suspend country operations. Can remove founder from disbursement authority. Succession authority if founder is incapacitated for more than 4 weeks.</div>
+    </div>
+    <div class="gov-card">
+      <div class="gov-role">Organisation</div>
+      <div class="gov-req">Kenyan Limited by Guarantee (registered M1)</div>
+      <div class="gov-status">Holds all IP. Receives all funds. Continues operating independently of any individual. Structure prevents any single person from controlling research integrity.</div>
+    </div>
+  </div>
+  <h3 class="sub">Conflict of Interest Controls</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:20px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Structural Separation</div>
+      <ul class="bullets" style="margin:0;">
+        <li>Separate accounting codes for research and commercial activities</li>
+        <li>Paying UX support clients identified in a public register on the website</li>
+        <li>Findings about paying clients reviewed by an independent external researcher before publication</li>
+        <li>No finding modified, delayed, or suppressed based on commercial relationships</li>
+      </ul>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:20px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Funding and Personnel Restrictions</div>
+      <ul class="bullets" style="margin:0;">
+        <li>No funding from wallet developers, exchanges, or payment processors</li>
+        <li>Founder and staff may not hold financial interests in tested wallet teams</li>
+        <li>Advisory board members disclose financial relationships on appointment and annually</li>
+        <li>Advisory board has final authority in conflict of interest disputes</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note" style="margin-top:24px;">Full conflict of interest policy: Annex H. Risk register: Annex I. Milestone and accountability schedule: Annex D.</div>
+</div>
+</div>
+
+<!-- S10: THE ASK -->
+<div id="s10" style="background:var(--black);padding:80px 0;">
+<div class="doc-wrap">
+  <div class="ask-box">
+    <div class="ask-box-grid" aria-hidden="true"></div>
+    <div class="ask-box-inner">
+      <div class="ask-label">Total 5-Year Grant Request</div>
+      <div class="ask-amount">$750,000</div>
+      <p class="ask-subtitle">$150,000 per year &middot; each year independently auditable &middot; clean annual boundaries</p>
+      <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <span class="tag-dark">5 countries</span>
+        <span class="tag-dark">400&ndash;500 field sessions</span>
+        <span class="tag-dark">75&ndash;100 designers trained</span>
+        <span class="tag-dark">5 country anchors</span>
+        <span class="tag-dark">1 open pattern library</span>
+        <span class="tag-dark">institution exits standing</span>
+      </div>
+    </div>
+  </div>
+  <p class="body-text" style="color:rgba(255,255,255,0.42);max-width:780px;margin:40px auto 0;text-align:center;">HRF is not being asked to fund a research project. It is being asked to seed a permanent institution, one that moves through a principled sequence: research first, publication second, patterns third, training fourth, local ownership fifth. Each year earns the next. At Year 5, the infrastructure is in place and the path to sustainability is active.</p>
+</div>
+</div>
+
+<!-- INTEGRITY STATEMENT -->
+<div style="background:var(--dark);padding:72px 0;border-top:1px solid rgba(255,255,255,0.05);">
+<div class="doc-wrap">
+  <div class="section-label">Integrity Statement</div>
+  <h2 class="section-title" style="color:white;">Unconditional<br><em>commitments.</em></h2>
+  <div class="integrity-grid">
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">We accept no funding from wallet developers, exchanges, or payment processors</span></div>
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">No wallet pays to be included or excluded from testing</span></div>
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">All session data is available for funder audit on request</span></div>
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">All findings are published regardless of whether they favour any wallet team, funder, or partner</span></div>
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">The pattern library and training manual are built from published research, never ahead of it</span></div>
+    
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">No participant data processed by third-party AI services without explicit consent</span></div>
+    <div class="integrity-item"><span class="integrity-check">&#9670;</span><span class="integrity-text">Any material change to scope, methodology, sequencing, or budget communicated to HRF before implementation</span></div>
+  </div>
+  <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="font-size:1rem;font-weight:600;color:white;margin-bottom:4px;">Mark Kamau</div>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:0.1em;">Founder &middot; mark@bitcoinux.africa &middot; bitcoinux.africa &middot; March 2026</div>
+  </div>
+</div>
+</div>
+
+<!-- ANNEXES -->
+<div id="annexes" class="full-bleed section" style="background:var(--cream);padding:72px 0;">
+<div class="doc-wrap">
+  <div class="section-label">Supporting Documentation</div>
+  <h2 class="section-title">Annexes<br><em>A through I</em></h2>
+
+  <div class="annex-header"><div class="annex-letter">Annex A</div><div class="annex-title">Founder Background &amp; Track Record</div></div>
+  <div class="annex-body">
+    <p class="body-text">Mark Kamau is a UX researcher and practitioner whose work focuses on the design failures that exclude low-income and low-literacy users from digital financial systems. Phase 0 of this initiative was conducted independently before this funding application.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Area</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="bold">Relevant experience</td><td>Over 20 years of research and design focused on African mobile financial services, working with both startups and multinational organisations.</td></tr>
+          <tr><td class="bold">Phase 0 research</td><td>Conducted research and moderated usability sessions across the continent over the years.</td></tr>
+          <tr><td class="bold">Country relationships</td><td>Established coordinator relationships in all Phase 1 countries. Coordinators identified; formal contracts pending grant award.</td></tr>
+
+          <tr><td class="bold">Bitcoin ecosystem</td><td>Attended 3 ABC conferences, worked on first Bitcoin UX bootcamp. Holding a UX and design series at bitdev kenya and working with several bitcoin wallets on their UX at an ongoing basis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">A full CV and Phase 0 session documentation index is available on request. Mark Kamau welcomes a reference call with any wallet team or researcher engaged during Phase 0.</div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex B</div><div class="annex-title">Country Selection Criteria &amp; Scorecard</div></div>
+  <div class="annex-body">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criterion</th><th>Kenya</th><th>Nigeria</th><th>Ghana</th><th>S. Africa</th><th>Ethiopia</th><th>Disqualifying?</th></tr></thead>
+        <tbody>
+          <tr><td>Bitcoin adoption &amp; need</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>No</td></tr>
+          <tr><td>Mobile infrastructure</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>No</td></tr>
+          <tr><td>Language &amp; literacy landscape</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9733;</td><td>No</td></tr>
+          <tr><td>Research feasibility &amp; safety</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9734;&#9734;</td><td>Low score &rarr; Year 3</td></tr>
+          <tr><td>Geographic &amp; economic diversity</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>No</td></tr>
+          <tr><td>Mobile money ecosystem baseline</td><td>&#9733;&#9733;&#9733;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9734;</td><td>&#9733;&#9733;&#9733;</td><td>No</td></tr>
+          <tr class="table-footer"><td>Selected</td><td>Phase 1 Y1</td><td>Phase 1 Y1</td><td>Phase 1 Y2</td><td>Phase 1 Y2</td><td>Phase 1 Y3</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body-text">Ethiopia's low research feasibility score is why it is sequenced to Year 3. The additional time allows safety protocol development, local coordinator training, and AI methodology configuration to reduce the required session count and limit participant exposure.</p>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex C</div><div class="annex-title">Wallet Selection Criteria</div></div>
+  <div class="annex-body">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criterion</th><th>Definition</th><th>Disqualifying?</th></tr></thead>
+        <tbody>
+          <tr><td class="bold">Active use in target markets</td><td>Evidence of download volume or known user base in at least one of the 5 countries at time of testing</td><td>Yes</td></tr>
+          <tr><td class="bold">Android availability</td><td>Available on Android at time of testing. iOS-only wallets documented as a gap.</td><td>Yes for primary category; gap documented if absent</td></tr>
+          <tr><td class="bold">No payment for inclusion/exclusion</td><td>Wallet developer has not paid this initiative. Enforced unconditionally.</td><td>Yes, absolute disqualification if violated</td></tr>
+          <tr><td class="bold">Non-KYC (primary category)</td><td>No mandatory identity verification for basic send/receive</td><td>Yes for primary category; KYC wallets in custodial category</td></tr>
+          <tr><td class="bold">Version &amp; date published</td><td>Every finding cites exact wallet version and session date</td><td>Publication standard, not selection criterion</td></tr>
+          <tr><td class="bold">Retest on material UX update</td><td>If wallet ships significant UX changes post-testing, retest offered on priority schedule</td><td>Quality standard, not selection criterion</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex D</div><div class="annex-title">Milestone &amp; Accountability Schedule</div></div>
+  <div class="annex-body">
+    <h3 class="sub">Research Phase (Years 1&ndash;3)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Month</th><th>Milestone</th><th>Evidence Required</th><th>Disbursement</th><th>Risk</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">M1</td><td>Organisation registered; coordinators contracted (KE, NG)</td><td>Registration docs; signed coordinator contracts</td><td>Y1 Tranche 1 ($75K)</td><td><span class="risk-med">Med</span></td></tr>
+          <tr><td class="mono">M6</td><td>Kenya research complete (60&ndash;80 sessions)</td><td>Session archive; observation logs; preliminary brief</td><td>Y1 Tranche 2 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M9</td><td>Nigeria research complete (60&ndash;80 sessions)</td><td>Session archive; Nigeria preliminary brief</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M12</td><td>KE and NG reports published; Y1 funder report</td><td>Both reports live; Y1 report accepted</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M13</td><td>Y2 commences; GH and SA coordinators contracted</td><td>Y1 gates confirmed; contracts signed</td><td>Y2 Tranche 1 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M18</td><td>Ghana research complete (60&ndash;80 sessions)</td><td>Session archive; Ghana preliminary brief</td><td>Y2 Tranche 2 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M21</td><td>South Africa research complete (60&ndash;80 sessions)</td><td>Session archive; SA preliminary brief</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M25</td><td>Y3 commences; Ethiopia coordinator contracted; sessions commence</td><td>Y2 gates confirmed; ET contract signed; safety assessment approved</td><td>Y3 Tranche 1 ($75K)</td><td><span class="risk-high">High</span></td></tr>
+          <tr><td class="mono">M30</td><td>Ethiopia research complete; pattern library published</td><td>Session archive; ET preliminary brief; pattern library v1 live</td><td>Y3 Tranche 2 ($75K)</td><td><span class="risk-high">High</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="sub">Training Phase (Years 3&ndash;5)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Month</th><th>Milestone</th><th>Evidence Required</th><th>Disbursement</th><th>Risk</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">M36</td><td>Training manual v1 finalised; KE + NG pilot cohorts complete</td><td>Manual review complete; 30&ndash;40 signed-off archives</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M37</td><td>Y4 commences; GH + SA cohorts begin</td><td>Y3 gates confirmed</td><td>Y4 Tranche 1 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M44</td><td>GH + SA cohorts complete; pattern library v2; anchor contracts drafted</td><td>60&ndash;80 designers trained; library v2 live; contracts in negotiation</td><td>Y4 Tranche 2 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M48</td><td>All 4 anchor contracts signed; Y4 funder report</td><td>Signed anchor contracts; Spiral application submitted; Y4 report accepted</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M49</td><td>Y5 commences; Ethiopia cohort begins; all 5 anchors active</td><td>Y4 gates confirmed</td><td>Y5 Tranche 1 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M57</td><td>Pattern library final edition published; sustainability confirmed</td><td>Library live; wallet retest revenue active; 2+ revenue streams operational</td><td>Y5 Tranche 2 ($75K)</td><td><span class="risk-low">Low</span></td></tr>
+          <tr><td class="mono">M60</td><td>Final report published; sustainability plan active</td><td>Final report live; 5 anchors active; sustainability plan published</td><td>&mdash;</td><td><span class="risk-low">Low</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex E</div><div class="annex-title">Research Methodology</div></div>
+  <div class="annex-body">
+    <p class="body-text">Each country study uses a standardised moderated usability methodology developed and refined during Phase 0. Sessions are 60&ndash;90 minutes, conducted in the participant's preferred language, with a structured task battery covering key Bitcoin actions.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Component</th><th>Standard</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td class="bold">Session format</td><td>Moderated think-aloud, 60&ndash;90 minutes</td><td>Captures failure moments in real time, not retrospective recall</td></tr>
+          <tr><td class="bold">Task battery</td><td>8&ndash;12 standardised tasks per session, wallet-category specific</td><td>Cross-country comparability; failure rates are meaningful only if tasks are identical</td></tr>
+          <tr><td class="bold">Language</td><td>Participant's preferred language; sessions conducted in the language most comfortable for the participant</td><td>Language barriers suppress real failure modes; conducting sessions in the participant's own language surfaces failure modes English-only research missest findings</td></tr>
+          <tr><td class="bold">Recruitment</td><td>Non-expert users with basic mobile money familiarity; no prior Bitcoin experience required</td><td>Expert users mask the design failures that affect the majority</td></tr>
+          <tr><td class="bold">Session archive</td><td>Audio recording, observation log within 24 hours, task completion record, signed consent</td><td>Verifiability; every finding must be traceable to a session</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex F</div><div class="annex-title">AI Tools Registry</div></div>
+  <div class="annex-body">
+    <div class="ai-grid" style="border-color:var(--border);">
+      <div class="ai-row header" style="background:var(--dark);"><div class="ai-cell">Tool</div><div class="ai-cell">Application</div><div class="ai-cell">Data Governance</div><div class="ai-cell">Human Oversight</div></div>
+      <div class="ai-row" style="border-bottom-color:var(--border);"><div class="ai-cell" style="color:var(--dark);font-weight:600;">LLM (Claude, GPT-4)</div><div class="ai-cell" style="color:var(--text);">Cross-country transcript analysis; clustering failure patterns across all markets</div><div class="ai-cell" style="color:var(--text);">Anonymised transcripts only. Explicit participant consent required. No providers that train on submitted data.</div><div class="ai-cell" style="color:var(--text);">Researcher validates every cluster. AI output is hypothesis, not finding.</div></div>
+      <div class="ai-row" style="border-bottom-color:var(--border);"><div class="ai-cell" style="color:var(--dark);font-weight:600;">USSD flow simulator (custom)</div><div class="ai-cell" style="color:var(--text);">Pre-session structural analysis of USSD menu flows before real user sessions</div><div class="ai-cell" style="color:var(--text);">No participant data. Wallet software only.</div><div class="ai-cell" style="color:var(--text);">Researcher reviews all flagged issues before real-session testing.</div></div>
+      <div class="ai-row" style="border-bottom-color:var(--border);"><div class="ai-cell" style="color:var(--dark);font-weight:600;">LLM localisation</div><div class="ai-cell" style="color:var(--text);">Candidate phrasings for Bitcoin concepts across all research markets</div><div class="ai-cell" style="color:var(--text);">No participant data. Terminology only.</div><div class="ai-cell" style="color:var(--text);">Native speakers select and approve all final phrasings.</div></div>
+      <div class="ai-row" style="border-bottom-color:var(--border);"><div class="ai-cell" style="color:var(--dark);font-weight:600;">Pattern detection (custom + LLM)</div><div class="ai-cell" style="color:var(--text);">Longitudinal corpus analysis; regression and trend detection across the growing dataset</div><div class="ai-cell" style="color:var(--text);">Anonymised aggregate data only. Annual methodology audit published.</div><div class="ai-cell" style="color:var(--text);">Findings reviewed by lead researcher before any publication.</div></div>
+    </div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex G</div><div class="annex-title">Data Protection &amp; Privacy Policy</div></div>
+  <div class="annex-body">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data Type</th><th>Purpose</th><th>Retention</th><th>Cross-Border?</th><th>Storage Standard</th></tr></thead>
+        <tbody>
+          <tr><td>Session recordings</td><td>Observation analysis</td><td>3 years from session</td><td>Only with explicit consent</td><td>E2E encrypted; no government-accessible cloud in high-risk countries</td></tr>
+          <tr><td>Consent forms</td><td>Legal record</td><td>5 years</td><td>Only with explicit consent</td><td>Secure document storage</td></tr>
+          <tr><td>Observation logs</td><td>Research analysis</td><td>5 years</td><td>Anonymised before transfer</td><td>Encrypted at rest</td></tr>
+          <tr><td>Task completion records</td><td>Quantitative analysis</td><td>5 years</td><td>Permitted (no personal data)</td><td>Standard cloud storage</td></tr>
+          <tr><td>Anonymised transcripts</td><td>AI-assisted analysis</td><td>5 years</td><td>Permitted after anonymisation</td><td>Provider must have no-training-on-data policy</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="bullets" style="margin-top:16px;">
+      <li>Kenyan Limited by Guarantee subject to Kenyan data protection law. Country-specific legal assessments conducted before sessions commence in each new country. Where local law provides stronger protections, the stricter standard applies.</li>
+      <li>Breach notification: any suspected breach reported to advisory board within 24 hours and to HRF within 48 hours.</li>
+      <li>Participant rights: withdraw consent at any time prior to publication; request deletion; access a plain-language summary of data use. Consent forms provided in the participant's preferred language.</li>
+    </ul>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex H</div><div class="annex-title">Conflict of Interest Policy</div></div>
+  <div class="annex-body">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:20px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Structural Separation</div>
+        <ul class="bullets" style="margin:0;"><li>Separate accounting codes for research and commercial activities</li><li>Paying UX support clients identified in a public register on the website</li><li>Findings about paying clients reviewed by an independent external researcher before publication</li><li>No finding modified, delayed, or suppressed based on commercial relationships</li></ul>
+      </div>
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:20px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Funding and Personnel Restrictions</div>
+        <ul class="bullets" style="margin:0;"><li>No funding from wallet developers, exchanges, or payment processors</li><li>Founder and staff may not hold financial interests in tested wallet teams</li><li>Advisory board members disclose financial relationships on appointment and annually</li><li>Advisory board has final authority in conflict of interest disputes</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="annex-header" style="margin-top:32px;"><div class="annex-letter">Annex I</div><div class="annex-title">Risk Register</div></div>
+  <div class="annex-body">
+    <div class="risk-grid">
+      <div class="risk-row header"><div class="risk-cell">Risk</div><div class="risk-cell">Like.</div><div class="risk-cell">Impact</div><div class="risk-cell">Trigger / Early Warning</div><div class="risk-cell">Mitigation</div></div>
+      <div class="risk-row"><div class="risk-cell">Founder incapacity</div><div class="risk-cell"><span class="risk-low">Low</span></div><div class="risk-cell"><span class="risk-high">High</span></div><div class="risk-cell">Extended absence &gt;4 weeks</div><div class="risk-cell">Full methodology published M6; deputy coordinator designated; all IP in organisation; advisory board succession authority</div></div>
+      <div class="risk-row"><div class="risk-cell">Ethiopia safety deterioration</div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell"><span class="risk-high">High</span></div><div class="risk-cell">Government actions targeting digital activists; coordinator security incident</div><div class="risk-cell">Safety assessment before commencement; AI reduces minimum sessions; pause protocol with advisory board authority; no data held in-country beyond 90 days</div></div>
+      <div class="risk-row"><div class="risk-cell">Coordinator underperformance</div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell">Q1 session count &lt;60% of target; log quality below standard</div><div class="risk-cell">Milestone-based payment; quarterly sample review; backup coordinator pipeline identified before contract start</div></div>
+      <div class="risk-row"><div class="risk-cell">Wallet teams ignore findings</div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell">0 design changes attributable at Y3 annual review</div><div class="risk-cell">Wallet team engagement built during Phase 0; open licence; UX support programme creates adoption pathway; wallet teams in pattern library review</div></div>
+      <div class="risk-row"><div class="risk-cell">Sequencing slippage</div><div class="risk-cell"><span class="risk-med">Med</span></div><div class="risk-cell"><span class="risk-high">High</span></div><div class="risk-cell">Pressure to show curriculum output before corpus is ready</div><div class="risk-cell">Phase gate structure written into disbursement conditions; advisory board has authority to block early phase advancement</div></div>
+      <div class="risk-row"><div class="risk-cell">FX / budget overrun</div><div class="risk-cell"><span class="risk-low">Low</span></div><div class="risk-cell"><span class="risk-low">Low</span></div><div class="risk-cell">USD moves &gt;15% from budget assumption</div><div class="risk-cell">10% contingency per year; quarterly financial review; funder notification if variance &gt;5%</div></div>
+      <div class="risk-row"><div class="risk-cell">Participant data breach</div><div class="risk-cell"><span class="risk-low">Low</span></div><div class="risk-cell"><span class="risk-high">High</span></div><div class="risk-cell">Unusual access to secure storage; coordinator reports suspicious activity</div><div class="risk-cell">E2E encryption; no government-accessible cloud in high-risk countries; 24hr advisory board notification; 48hr HRF notification; GDPR breach protocol</div></div>
+      <div class="risk-row"><div class="risk-cell">Sustainability failure after Year 5</div><div class="risk-cell"><span class="risk-low">Low</span></div><div class="risk-cell"><span class="risk-high">High</span></div><div class="risk-cell">Y4 Spiral application unsuccessful; UX support revenue below target by Y4</div><div class="risk-cell">Wallet retest revenue model active by Y5; multiple revenue streams targeted from Y3; anchor contracts designed to build local revenue gradually; no single-funder dependence by Y5</div></div>
+    </div>
+    <div class="note" style="margin-top:16px;">Risk register reviewed quarterly by the advisory board. Sequencing slippage is a risk specific to this proposal's phase-gate structure. The risk that pressure builds to advance phases before evidence gates are met is now formally managed and written into disbursement conditions.</div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Bitcoin UX <em>Africa</em></div>
+      <div class="footer-sub">Pan-African Bitcoin UX &amp; Resilience Initiative<br>Original field research &middot; Open patterns &middot; Local designers<br>bitcoinux.africa</div>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-item">Mark Kamau &middot; Founder</div>
+      <div class="footer-contact-item"><a href="mailto:mark@bitcoinux.africa">mark@bitcoinux.africa</a></div>
+      <div class="footer-contact-item">@bitcoin_ux</div>
+      <div class="footer-contact-item" style="margin-top:8px;">$750,000 &middot; 5 years &middot; $150,000 / yr</div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
